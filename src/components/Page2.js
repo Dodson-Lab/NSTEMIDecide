@@ -53,17 +53,16 @@ class Page2 extends Component {
                     This means you did not have enough blood flow to your heart,
                     which can cause damage to your heart muscles. 
                     Due to the type of heart attack you had, you do not require an emergency
-                    procedure. But there are a few treatment options for you, including medications and procedures.
+                    procedure. But there are a few treatment options for you,
+                    including medications and procedures.
                     This is a tool for you and your cardiologist to discuss the available 
                     treatment options, learn about their risks and benefits,
                     and determine if they match your values.
                 </Text>
             </View>
-            {/* <View style={styles.sectionContainer}> */}
                 <View style={styles.imageContainer}>
                     <Image style={styles.image} source={ HEARTIMAGE } resizeMode="contain"/>
                 </View>
-            {/* </View> */}
             </View>
             </ScrollView>
             </SafeAreaView>
@@ -85,11 +84,9 @@ const styles = StyleSheet.create({
   },
   sectionContainer: {
     marginTop: hp('2%'),
-    // marginBottom: hp('1%'),
     paddingHorizontal: wp('5%'),
   },
   imageContainer: {
-    // width: wp('100%'),
     height: hp('45%'),
     alignContent: 'center',
     margin: wp('5%'),

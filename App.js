@@ -36,23 +36,23 @@ import FlipPage, {FlipPagePage} from 'react-native-flip-page';
 
 import Page1 from './src/components/Page1'
 import Page2 from './src/components/Page2'
-// import Page3 from './src/components/Page3'
+import Page3 from './src/components/Page3'
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-          <FlipPage orientation={'horizontal'}>
-            <FlipPagePage>
-              <Page1/>
-            </FlipPagePage>
-            <FlipPagePage>
-              <Page2/>
-            </FlipPagePage>
-            <FlipPagePage>
-              {/* <Page3/> */}
-            </FlipPagePage>
-          </FlipPage>
+        <FlipPage orientation={'horizontal'}>
+          <FlipPagePage>
+            <Page1/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page2/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page3/>
+          </FlipPagePage>
+        </FlipPage>
     </>
   );
 };
@@ -101,14 +101,6 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
-  // footer: {
-  //   color: Colors.dark,
-  //   fontSize: 12,
-  //   fontWeight: '600',
-  //   padding: 4,
-  //   paddingRight: 12,
-  //   textAlign: 'right',
-  // },
 });
 
 export default App;
