@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: hp('3.5%'),
-    fontWeight: '600',
+    fontWeight: '700',
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
   },
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   noteTitle: {
     fontSize: hp('2%'),
-    fontWeight: '600',
+    fontWeight: '700',
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
   },

@@ -33,7 +33,10 @@ import {
 } from 'react-native-responsive-screen';
 
 import FlipPage, {FlipPagePage} from 'react-native-flip-page';
+
 import Page1 from './src/components/Page1'
+import Page2 from './src/components/Page2'
+// import Page3 from './src/components/Page3'
 
 const App: () => React$Node = () => {
   return (
@@ -44,7 +47,10 @@ const App: () => React$Node = () => {
               <Page1/>
             </FlipPagePage>
             <FlipPagePage>
-              <Text style={{color: 'blue'}}>Page 2</Text>
+              <Page2/>
+            </FlipPagePage>
+            <FlipPagePage>
+              {/* <Page3/> */}
             </FlipPagePage>
           </FlipPage>
     </>
