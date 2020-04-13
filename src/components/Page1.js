@@ -26,10 +26,15 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
+
 class Page1 extends Component {
     render() {
         return (
             <SafeAreaView>
+
+        
+
             <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
@@ -59,7 +64,10 @@ class Page1 extends Component {
                 </Text>
             </View>
             </View>
+
             </ScrollView>
+
+
             </SafeAreaView>
         )
     }
@@ -109,14 +117,6 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
-  // footer: {
-  //   color: Colors.dark,
-  //   fontSize: 12,
-  //   fontWeight: '600',
-  //   padding: 4,
-  //   paddingRight: 12,
-  //   textAlign: 'right',
-  // },
 });
 
 export default Page1;

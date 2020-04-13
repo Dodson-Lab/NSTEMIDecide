@@ -26,11 +26,7 @@ import {
   listenOrientationChange as lor,
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
-import { HEARTIMAGE } from '../..';
-
-// import {
-//     HEARTIMAGE,
-// } from 'images';
+import { HEART_BLOOD_IMAGE } from '../..';
 
 class Page2 extends Component {
     render() {
@@ -61,7 +57,7 @@ class Page2 extends Component {
                 </Text>
             </View>
                 <View style={styles.imageContainer}>
-                    <Image style={styles.image} source={ HEARTIMAGE } resizeMode="contain"/>
+                    <Image style={styles.image} source={ HEART_BLOOD_IMAGE } resizeMode="contain"/>
                 </View>
             </View>
             </ScrollView>

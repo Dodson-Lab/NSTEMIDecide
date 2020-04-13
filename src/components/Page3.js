@@ -42,8 +42,10 @@ class Page3 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <View style={styles.sectionContainer}>
+                <View style={[styles.sectionContainer, styles.centerTitle]}>
                     <Text style={styles.sectionTitle}>Your values</Text>
+                </View>
+                <View style={styles.sectionContainer}>
                     <Text style={styles.sectionParagraph}>
                         We understand that being diagnosed with a heart attack may be causing you worry and fear. 
                         Others like you may even feel sad or depressed because they
@@ -69,11 +71,17 @@ class Page3 extends Component {
                     </Text>
                 </View>
                 <View style={styles.sectionContainer}>
-                    <View style={styles.blueBox}>
-                        <Unorderedlist><Text>What are my priorities?</Text></Unorderedlist>
-                        <Unorderedlist><Text>How do I feel about procedures?</Text></Unorderedlist>
-                        <Unorderedlist><Text>What are my current fears about the cardiac
+                    <View style={[styles.blueBox]}>
+                      <View style={styles.listItem}>
+                        <Unorderedlist><Text style={styles.listText}>What are my priorities?</Text></Unorderedlist>
+                      </View>
+                      <View style={styles.listItem}>
+                        <Unorderedlist><Text style={styles.listText}>How do I feel about procedures?</Text></Unorderedlist>
+                      </View>
+                      <View style={styles.listItem}>
+                        <Unorderedlist><Text style={styles.listText}>What are my current fears about the cardiac
                             catheterization procedure?</Text></Unorderedlist>
+                      </View>
                     </View>
                 </View>
             </View>
@@ -95,13 +103,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#E8E8E8',
     height: hp('100%')
   },
+  listItem: {
+    marginTop: hp('.5%'),
+  },
+  listText: {
+    fontSize: hp('2.2%'),
+  },
   sectionContainer: {
     marginTop: hp('2%'),
-    // marginBottom: hp('1%'),
     paddingHorizontal: wp('5%'),
   },
   imageContainer: {
-    // width: wp('100%'),
     height: hp('45%'),
     alignContent: 'center',
     margin: wp('5%'),
@@ -113,6 +125,10 @@ const styles = StyleSheet.create({
       flex: 1,
       margin: wp('2%')
   },
+  centerTitle: {
+    alignItems: 'center',
+    alignContent: 'center',
+  },
   sectionTitle: {
     fontSize: hp('3.5%'),
     fontWeight: '700',
@@ -121,7 +137,7 @@ const styles = StyleSheet.create({
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
-    marginTop: hp('2%'),
+    marginTop: hp('1.5%'),
     fontWeight: '400',
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
@@ -142,13 +158,11 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   blueBox: {
-      width: wp('90%'),
       backgroundColor: '#ddeaf6',
-      height: hp('10%'),
       borderColor: Colors.black,
-      borderRadius: 10,
-      borderWidth: wp('.5%'),
-      padding: 10
+      borderRadius: wp('2%'),
+      borderWidth: wp('.4%'),
+      padding: wp('2.5%')
   }
 });
 

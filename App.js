@@ -37,6 +37,11 @@ import FlipPage, {FlipPagePage} from 'react-native-flip-page';
 import Page1 from './src/components/Page1'
 import Page2 from './src/components/Page2'
 import Page3 from './src/components/Page3'
+import Page4 from './src/components/Page4'
+import Page5 from './src/components/Page5'
+import Page6 from './src/components/Page6'
+import Page7 from './src/components/Page7'
+import Page8 from './src/components/Page8'
 
 const App: () => React$Node = () => {
   return (
@@ -51,6 +56,21 @@ const App: () => React$Node = () => {
           </FlipPagePage>
           <FlipPagePage>
             <Page3/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page4/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page5/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page6/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page7/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page8/>
           </FlipPagePage>
         </FlipPage>
     </>
