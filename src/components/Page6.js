@@ -46,7 +46,7 @@ class Page6 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <View style={[styles.sectionContainer, styles.centerTitle]}>
+                <View style={[styles.titleContainer, styles.centerTitle]}>
                     <Text style={styles.sectionTitle}>Ways to improve blood flow</Text>
                 </View>
             <View style={styles.sectionContainer}>
@@ -136,10 +136,14 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%')
+    // height: hp('100%')
+  },
+  titleContainer: {
+    marginTop: hp('1%'),
+    paddingHorizontal: wp('5%'),
   },
   sectionContainer: {
-    marginTop: hp('1%'),
+    margin: hp('1%'),
     paddingHorizontal: wp('5%'),
   },
   boldText: {
@@ -153,7 +157,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   listItem: {
-    marginBottom: hp('1%')
+    margin: wp('2%')
   },
   underlineText: {
     textDecorationLine: 'underline',
@@ -186,10 +190,12 @@ const styles = StyleSheet.create({
   },
   containerWrapper: {
     // width: wp('30%'),
-    marginLeft: wp('2%'),
-    marginTop: wp('3%'),
-    marginBottom: wp('3%'),
+    // marginLeft: wp('2%'),
+    // marginTop: wp('3%'),
+    // marginBottom: wp('3%'),
     flex: 1,
+    justifyContent: 'center',
+    // alignItems: 'center'
   },
   labelBox: {
     margin: wp('1%'),
@@ -202,7 +208,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
   },
   labelContainer: {
-    width: wp('100%')
+    // width: wp('90%')
   },
   sectionParagraph: {
     marginBottom: wp('3%')

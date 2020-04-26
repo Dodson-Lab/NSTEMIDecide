@@ -27,9 +27,11 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons/FontAwesome'
 
 class Page4 extends Component {
+
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -43,7 +45,7 @@ class Page4 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <View style={[styles.sectionContainer, styles.centerTitle]}>
+                <View style={[styles.titleContainer, styles.centerTitle]}>
                     <Text style={styles.sectionTitle}>I had a heart attack.</Text>
                     <Text style={styles.sectionTitle}>What are my options?</Text>
                 </View>
@@ -64,6 +66,12 @@ class Page4 extends Component {
                                 (heart attack)
                             </Text>
                         </View>
+                    </View>
+                </View>
+                <View style={styles.arrowContainer}>
+                    <View style={{flex: 1, flexDirection: 'row'}}>
+                    <Icon name="long-arrow-down" style={styles.arrowLeft}/>
+                    <Icon name="long-arrow-down" style={styles.arrowRight}/>
                     </View>
                 </View>
                 <View style={[styles.sectionBlueContainer, styles.sideBySide]}>
@@ -91,39 +99,57 @@ class Page4 extends Component {
                             and you are found to have a blocked artery,
                             you may also be considered for: 
                             </Text>
-                        {/* </View> */}
+
+                            <View style={styles.labelContainer}>
+                              <View style={styles.labelBox}>
+                                  <Text style={[styles.labelText, styles.boldText]}>
+                                      Option 1
+                                  </Text>
+                              </View>
+                            </View>
+                            <Text style={styles.sectionParagraph}>
+                              Stent placement during procedure</Text>
+                              <View style={styles.labelContainer}>
+                              <View style={styles.labelBox}>
+                                  <Text style={[styles.labelText, styles.boldText]}>
+                                      Option 2
+                                  </Text>
+                              </View>
+                            </View>
+                            <Text style={styles.sectionParagraph}>
+                            Further discussion with your cardiologist for possible future bypass surgery
+                            </Text>
                     </View>
                     <View style={[styles.smallBlueBox]}>
-                        {/* <View style={styles.sectionBox}> */}
-                            <Text style={styles.sectionParagraph}>
-                            If you choose <Text style={styles.highlight}>not</Text> to have a cardiac catheterization procedure, you will still:
-                            </Text>
-                            <Text></Text>
-                            <Text style={styles.sectionParagraph}>
-                            Have the option to get a cardiac catheterization procedure
-                            in the future if you have symptoms later on
-                            </Text>
-                        {/* </View> */}
+                      <Text style={styles.sectionParagraph}>
+                      If you choose <Text style={styles.highlight}>not</Text> to have a cardiac catheterization procedure, you will still:
+                      </Text>
+                      <Text></Text>
+                      <Text style={styles.sectionParagraph}>
+                      Have the option to get a cardiac catheterization procedure
+                      in the future if you have symptoms later on
+                      </Text>
                     </View>
                 </View>
                 </View>
-                <View style={styles.addedMargin}>
-                <View style={styles.sectionBlueContainer}>
-                    <View style={styles.blueBox}>
-                        <Text style={[styles.sectionParagraph, styles.centerText]}>
-                        With either a procedure or no procedure, you will still
-                        receive medicines to help your heart.
-                        </Text>
+                <View style={[styles.sectionBlueContainer, styles.sideBySide]}>
+                    <View style={[styles.smallBlueBox]}>
+                        <View style={styles.sectionBox}>
+                            <Text style={[styles.sectionParagraph, styles.centerText]}>
+                            With either a procedure or no procedure, you will still
+                            receive medicines to help your heart.
+                            </Text>
+                        </View>
                     </View>
                 </View>
+                {/* <View style={styles.sectionContainer}>  */}
+                <View style={styles.textWithIcon}>
+                  <Text style={styles.iconText}>
+                  These options are described in detail on the following pages
+                  </Text>
+                  <Icon name="long-arrow-right" style={styles.rightArrow}/>
                 </View>
-                <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionParagraph}>
-                    These options are described in detail on the following pages
-                    </Text>
-
-      <Icon name="long-arrow-right" color="#4F8EF7" />
-                </View>
+                {/* </View> */}
             </View>
             </ScrollView>
             <View><Text style={styles.footer}>4</Text></View>
@@ -140,8 +166,50 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
   },
+  icon: {
+    fontSize: 35,
+    color: Colors.black
+  },
+  rightArrow: {
+    fontSize: 35,
+    // margin: -10,
+    // marginTop: 20
+  },
+  arrowLeft: {
+    fontSize: 35,
+    paddingRight: wp('10%')
+  },
+  arrowRight: {
+    fontSize: 35,
+    paddingLeft: wp('10%')
+  },
+  iconText: {
+    paddingRight: 8,
+    fontSize: hp('2.2%'),
+    fontWeight: '400',
+    color: Colors.black,
+    fontFamily: 'Helvetica Neue',
+    // textAlign: 'center'
+  },
+  arrowContainer: {
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  textWithIcon: {
+    // width: wp('90%'),
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    margin: hp('1%'),
+    paddingHorizontal: wp('2%'),
+    marginBottom: hp('2%'),
+  },
   addedMargin: {
     margin: hp('1%')
+  },
+  textBeforeIcon: {
+    marginRight: 20
   },
   body: {
     backgroundColor: '#E8E8E8',
@@ -158,8 +226,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp('2%'),
     marginBottom: hp('2%'),
   },
+  titleContainer: {
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+    paddingHorizontal: wp('2%'),
+  },
   sectionBlueContainer: {
-    marginTop: hp('1%'),
     paddingHorizontal: wp('2%'),
     alignItems: 'center',
     alignContent: 'center',
@@ -184,7 +256,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   noteTitle: {
     fontSize: hp('2%'),
@@ -223,6 +295,46 @@ footer: {
   margin: hp('.5%')
 },
 
+labelBox: {
+  // margin: wp('2%'),
+  backgroundColor: '#dbdbdb',
+  borderWidth: 1,
+  // borderRightWidth: 0
+  // paddingTop: wp('.5%'),
+  // paddingBottom: wp('.5%'),
+  // paddingLeft: wp('1%'),
+  // paddingRight: wp('7%'),
+  // alignContent: 'center',
+  // alignItems: 'center'
+},
+// triangle: {
+//   width: 0,
+//   height: 0,
+//   backgroundColor: 'transparent',
+//   borderStyle: 'solid',
+//   borderLeftWidth: 20,
+//   borderRightWidth: 20,
+//   borderBottomWidth: 20,
+//   borderLeftColor: 'transparent',
+//   borderRightColor: 'transparent',
+//   borderBottomColor: '#dbdbdb',
+// },
+// triangleRight: {
+//   transform: [
+//     {rotate: '90deg'}
+//   ]
+// },
+labelContainer: {
+  width: wp('40%'),
+  marginLeft: wp('-5%'),
+  margin: 10,
+},
+labelText: {
+  fontSize: hp('2%'),
+  color: Colors.black,
+  fontWeight: "700",
+  padding: 3
+},
 
 });
 

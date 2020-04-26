@@ -50,24 +50,26 @@ class Page7 extends Component {
                         what are the benefits and risks of each option?
                     </Text>
                 </View>
-                <View style={styles.sectionContainer}>
-                    <View style={styles.whiteContainer}>
-                    <Text style={[styles.sectionParagraph, styles.centerTitle]}> 
-                    In studies to date of patients age ≥75, cardiac catheterization procedure has not been shown to prolong your life. 
-                    </Text>
-                    <Text></Text>
-                    <Text style={[styles.sectionParagraph, styles.centerTitle, styles.boldText]}> 
-                    Your risks of experiencing a repeated heart attack, heart procedure, and other risks will be discussed in the following pages. 
-                    </Text>
-                    <Text></Text>
-                    </View>
+                <View style={styles.contentWhiteContainer}>
+                  <View style={styles.sectionContainer}>
+                      <View style={styles.whiteContainer}>
+                      <Text style={[styles.sectionParagraph, styles.centerTitle]}> 
+                      In studies to date of patients age ≥75, cardiac catheterization procedure has not been shown to prolong your life. 
+                      </Text>
+                      <Text></Text>
+                      <Text style={[styles.sectionParagraph, styles.centerTitle, styles.boldText]}> 
+                      Your risks of experiencing a repeated heart attack, heart procedure, and other risks will be discussed in the following pages. 
+                      </Text>
+                      <Text></Text>
+                      </View>
+                  </View>
                 </View>
             </View>
-            <View style={styles.whiteContainer}>
-                  <View style={styles.sectionNote}>
-                      <Text style={styles.boldText}>
-                      Please note:
-                      </Text>
+              <View style={styles.sectionNote}>
+                  <Text style={styles.boldText}>
+                    Please note:
+                  </Text>
+                  <View style={styles.whiteContainer}>
                       <Text>
                       Numbers used in this decision aid were based on studies of older adults who experienced a heart attack.
                       Your clinical circumstances may be different from the populations observed
@@ -95,10 +97,15 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('87%'),
+    // height: hp('90%'),
   },
   contentContainer: {
-      flex: 1
+    alignItems: 'center',
+    margin: 10
+  },
+  contentWhiteContainer: {
+    // width: wp('150%'),
+    marginBottom: hp('15%')
   },
   sectionContainer: {
     marginTop: hp('8%'),
@@ -124,19 +131,22 @@ const styles = StyleSheet.create({
   },
   sectionNote: {
     fontSize: hp('1.5%'),
-    height: 130
+    // margin: wp('1%'),
+    padding: wp('5%'),
   },
   boldText: {
     fontWeight: '700'
   },
   whiteContainer: {
     backgroundColor: Colors.white,
-    paddingLeft: hp('1.5%'),
-    paddingRight: hp('1.5%'),
-    paddingTop: hp('1.5%'),
-    margin: hp('.5%'),
+    // margin: wp('2%'),
+    padding: wp('3%'),
+    // paddingLeft: hp('1.5%'),
+    // paddingRight: hp('1.5%'),
+    // paddingTop: hp('1.5%'),
+    // margin: hp('.5%'),
     borderColor: Colors.gray,
-    borderWidth: wp('.1%'),
+    borderWidth: wp('.2%'),
   },
   footer: {
     fontSize: hp('2%'),

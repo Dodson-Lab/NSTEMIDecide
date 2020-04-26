@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%')
   },
   sectionContainer: {
     marginTop: hp('2%'),
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   listText: {
-    fontSize: hp('2.2%')
+    fontSize: hp('2.4%')
   },
   labelText: {
     fontSize: hp('2%'),
@@ -125,10 +124,8 @@ const styles = StyleSheet.create({
   imageContainer: {
     height: hp('35%'),
     alignContent: 'center',
-    marginRight: wp('2%'),
-    marginLeft: wp('2%'),
     backgroundColor: Colors.white,
-    marginTop: hp('1%')
+    margin: wp('3%'),
   },
   centerTitle: {
     alignItems: 'center',
