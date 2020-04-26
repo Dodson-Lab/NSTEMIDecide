@@ -31,8 +31,9 @@ import { HEART_BLOOD_IMAGE } from '../..';
 class Page2 extends Component {
     render() {
         return (
-            <SafeAreaView>
-            <ScrollView
+            <SafeAreaView style={{flex: 1}}>
+            <ScrollView 
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -56,11 +57,14 @@ class Page2 extends Component {
                     and determine if they match your values.
                 </Text>
             </View>
+                <View style={styles.sectionContainer}>
                 <View style={styles.imageContainer}>
                     <Image style={styles.image} source={ HEART_BLOOD_IMAGE } resizeMode="contain"/>
                 </View>
+                </View>
             </View>
             </ScrollView>
+            <View><Text style={styles.footer}>2</Text></View>
             </SafeAreaView>
         )
     }
@@ -76,17 +80,18 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%')
+    // height: hp('100%')
   },
   sectionContainer: {
+    margin: hp('1%'),
     marginTop: hp('2%'),
     paddingHorizontal: wp('5%'),
   },
   imageContainer: {
     height: hp('45%'),
     alignContent: 'center',
-    margin: wp('5%'),
     backgroundColor: Colors.white,
+    marginBottom: hp('2%')
   },
   image: {
       width: undefined,
@@ -122,6 +127,12 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  footer: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+    margin: hp('.5%')
+  }
 });
 
 export default Page2;

@@ -34,8 +34,9 @@ import { CARDIAC_CATHETERIZATION_IMAGE } from '../..';
 class Page5 extends Component {
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
             <ScrollView
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -72,19 +73,18 @@ class Page5 extends Component {
                 </View>
             </View>
             <View style={styles.labelContainer}>
-              {/* <View style={[styles.darkBlueLabel]}> */}
                 <View style={styles.labelBox}>
                     <Text style={[styles.labelText, styles.boldText]}>
                         Cardiac catheterization
                     </Text>
                 </View>
-              {/* </View> */}
             </View>
                 <View style={styles.imageContainer}>
                     <Image style={styles.image} source={ CARDIAC_CATHETERIZATION_IMAGE } resizeMode="contain"/>
                 </View>
             </View>
             </ScrollView>
+            <View><Text style={styles.footer}>5</Text></View>
             </SafeAreaView>
         )
     }
@@ -159,6 +159,12 @@ const styles = StyleSheet.create({
   labelContainer: {
     width: wp('65%')
   },
+  footer: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+    margin: hp('.5%')
+  }
 });
 
 export default Page5;

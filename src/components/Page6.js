@@ -35,8 +35,9 @@ import { CABG_IMAGE } from '../..';
 class Page6 extends Component {
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
             <ScrollView
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -114,14 +115,12 @@ class Page6 extends Component {
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.imageSmallContainer}>
-                    {/* <View style={styles.containerWrapper}> */}
-                        <Image style={styles.image} source={ CABG_IMAGE } resizeMode="contain"/>
-                    {/* </View> */}
+                  <Image style={styles.image} source={ CABG_IMAGE } resizeMode="contain"/>
                 </View>
             </View>
-                
             </View>
             </ScrollView>
+            <View><Text style={styles.footer}>6</Text></View>
             </SafeAreaView>
         )
     }
@@ -207,6 +206,12 @@ const styles = StyleSheet.create({
   },
   sectionParagraph: {
     marginBottom: wp('3%')
+  },
+  footer: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+    margin: hp('.5%')
   }
 });
 

@@ -30,8 +30,9 @@ import {
 class Page7 extends Component {
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
             <ScrollView
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -56,28 +57,29 @@ class Page7 extends Component {
                     </Text>
                     <Text></Text>
                     <Text style={[styles.sectionParagraph, styles.centerTitle, styles.boldText]}> 
-    Your risks of experiencing a repeated heart attack, heart procedure, and other risks will be discussed in the following pages. 
+                    Your risks of experiencing a repeated heart attack, heart procedure, and other risks will be discussed in the following pages. 
                     </Text>
                     <Text></Text>
                     </View>
                 </View>
             </View>
             <View style={styles.whiteContainer}>
-                <View style={styles.sectionNote}>
-                    <Text style={styles.boldText}>
-                    Please note:
-                    </Text>
-                    <Text>
-                    Numbers used in this decision aid were based on studies of older adults who experienced a heart attack.
-                    Your clinical circumstances may be different from the populations observed
-                    in these studies.</Text>
-                    <Text style={styles.boldText}>
-                    Your individual medical history has not been considered in these estimates.
-                    </Text>
-                    </View>
-                </View>
+                  <View style={styles.sectionNote}>
+                      <Text style={styles.boldText}>
+                      Please note:
+                      </Text>
+                      <Text>
+                      Numbers used in this decision aid were based on studies of older adults who experienced a heart attack.
+                      Your clinical circumstances may be different from the populations observed
+                      in these studies.</Text>
+                      <Text style={styles.boldText}>
+                      Your individual medical history has not been considered in these estimates.
+                      </Text>
+                  </View>
+              </View>
             </View>
             </ScrollView>
+            <View><Text style={styles.footer}>7</Text></View>
             </SafeAreaView>
         )
     }
@@ -93,13 +95,15 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%'),
+    height: hp('87%'),
   },
   contentContainer: {
       flex: 1
   },
   sectionContainer: {
-    marginTop: hp('12%'),
+    marginTop: hp('8%'),
+    marginLeft: wp('2.5%'),
+    marginRight: wp('2.5%'),
     textAlign: 'center',
   },
   centerTitle: {
@@ -130,9 +134,15 @@ const styles = StyleSheet.create({
     paddingLeft: hp('1.5%'),
     paddingRight: hp('1.5%'),
     paddingTop: hp('1.5%'),
-    margin: hp('2%'),
+    margin: hp('.5%'),
     borderColor: Colors.gray,
     borderWidth: wp('.1%'),
+  },
+  footer: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+    margin: hp('.5%')
   }
 });
 

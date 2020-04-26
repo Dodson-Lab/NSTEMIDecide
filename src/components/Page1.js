@@ -26,16 +26,12 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
-import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
-
 class Page1 extends Component {
     render() {
         return (
-            <SafeAreaView>
-
-        
-
+            <SafeAreaView style={{flex: 1}}>
             <ScrollView
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -44,30 +40,28 @@ class Page1 extends Component {
             </View>
           )}
             <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Cardiac catheterization:</Text>
-                <Text style={styles.sectionDescription}>
-                Is this procedure right for you?
-                </Text>
+              <View style={styles.sectionContainer}>
+                  <Text style={styles.sectionTitle}>Cardiac catheterization:</Text>
+                  <Text style={styles.sectionDescription}>
+                  Is this procedure right for you?
+                  </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                  <Text style={styles.sectionTitle}>A Decision Aid Tool</Text>
+                  <Text style={styles.sectionDescription}>
+                  for older patients (age ≥75) considering cardiac catheterization as
+                  treatment for a heart attack
+                  </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                  <Text style={styles.noteTitle}>Note for clinicians:</Text>
+                  <Text style={styles.noteDescription}>
+                  This decision aid is designed for patients with Non-ST elevation MI (NSTEMI) only.
+                  </Text>
+              </View>
             </View>
-            <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>A Decision Aid Tool</Text>
-                <Text style={styles.sectionDescription}>
-                for older patients (age ≥75) considering cardiac catheterization as
-                treatment for a heart attack
-                </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-                <Text style={styles.noteTitle}>Note for clinicians:</Text>
-                <Text style={styles.noteDescription}>
-                This decision aid is designed for patients with Non-ST elevation MI (NSTEMI) only.
-                </Text>
-            </View>
-            </View>
-
             </ScrollView>
-
-
+            <View><Text style={styles.footer}>1</Text></View>
             </SafeAreaView>
         )
     }
@@ -83,12 +77,12 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%')
+    // height: hp('100%'),
   },
   sectionContainer: {
-    marginTop: hp('15%'),
+    marginTop: hp('12%'),
+    margin: hp('1%'),
     paddingHorizontal: 24,
-    flex: 1,
   },
   sectionTitle: {
     fontSize: hp('3.5%'),
@@ -103,13 +97,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
   },
   noteTitle: {
-    fontSize: hp('2%'),
+    fontSize: hp('1.8%'),
     fontWeight: '700',
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
   },
   noteDescription: {
-    fontSize: hp('2%'),
+    fontSize: hp('1.8%'),
     fontWeight: '400',
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
@@ -117,6 +111,12 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  footer: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+    margin: hp('.5%')
+  }
 });
 
 export default Page1;

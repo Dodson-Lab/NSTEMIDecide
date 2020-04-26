@@ -27,11 +27,14 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 class Page4 extends Component {
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
             <ScrollView
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -79,6 +82,7 @@ class Page4 extends Component {
                         </View>
                     </View>
                 </View>
+                <View style={styles.sectionBlueContainer}>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={[styles.smallBlueBox]}>
                         {/* <View style={styles.sectionBox}> */}
@@ -102,23 +106,27 @@ class Page4 extends Component {
                         {/* </View> */}
                     </View>
                 </View>
+                </View>
+                <View style={styles.addedMargin}>
                 <View style={styles.sectionBlueContainer}>
-                    <View style={[styles.blueBox]}>
-                        {/* <View style={styles.sectionBox}> */}
-                            <Text style={styles.sectionParagraph}>
-                            With either a procedure or no procedure, you will still
-                            receive medicines to help your heart.
-                            </Text>
-                        {/* </View> */}
+                    <View style={styles.blueBox}>
+                        <Text style={[styles.sectionParagraph, styles.centerText]}>
+                        With either a procedure or no procedure, you will still
+                        receive medicines to help your heart.
+                        </Text>
                     </View>
                 </View>
-                {/* <View style={styles.sectionContainer}>
+                </View>
+                <View style={styles.sectionContainer}>
                     <Text style={styles.sectionParagraph}>
                     These options are described in detail on the following pages
                     </Text>
-                </View> */}
+
+      <Icon name="long-arrow-right" color="#4F8EF7" />
+                </View>
             </View>
             </ScrollView>
+            <View><Text style={styles.footer}>4</Text></View>
             </SafeAreaView>
         )
     }
@@ -132,23 +140,30 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
   },
+  addedMargin: {
+    margin: hp('1%')
+  },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%')
+    // height: hp('100%')
+  },
+  centerText: {
+    textAlign: 'center'
   },
   sectionBox: {
     alignItems: 'center',
   },
   sectionContainer: {
-    marginTop: hp('2%'),
-    paddingHorizontal: wp('5%'),
+    margin: hp('1%'),
+    paddingHorizontal: wp('2%'),
+    marginBottom: hp('2%'),
   },
   sectionBlueContainer: {
-    marginTop: hp('2%'),
-    paddingHorizontal: wp('5%'),
+    marginTop: hp('1%'),
+    paddingHorizontal: wp('2%'),
     alignItems: 'center',
     alignContent: 'center',
-    display: 'flex'
+    // display: 'flex'
   },
   sideBySide: {
       flexDirection: 'row',
@@ -189,21 +204,26 @@ const styles = StyleSheet.create({
   blueBox: {
       backgroundColor: '#ddeaf6',
       borderColor: Colors.black,
-    //   borderRadius: wp('2%'),
       borderWidth: wp('.4%'),
       padding: wp('2%'),
-    //   width: wp('70%'),
   },
   smallBlueBox: {
     backgroundColor: '#ddeaf6',
     borderColor: Colors.black,
-  //   borderRadius: wp('2%'),
     borderWidth: wp('.4%'),
     padding: wp('2.5%'),
     width: wp('40%'),
     margin: hp('1%'),
     flex: 1,
-}
+},
+footer: {
+  fontSize: hp('2%'),
+  textAlign: 'center',
+  fontFamily: 'Helvetica Neue',
+  margin: hp('.5%')
+},
+
+
 });
 
 export default Page4;

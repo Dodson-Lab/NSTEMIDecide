@@ -32,8 +32,9 @@ import Unorderedlist from 'react-native-unordered-list';
 class Page3 extends Component {
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
             <ScrollView
+            maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           {global.HermesInternal == null ? null : (
@@ -86,6 +87,7 @@ class Page3 extends Component {
                 </View>
             </View>
             </ScrollView>
+            <View><Text style={styles.footer}>3</Text></View>
             </SafeAreaView>
         )
     }
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    height: hp('100%')
+    // height: hp('90%')
   },
   listItem: {
     marginTop: hp('.5%'),
@@ -112,18 +114,6 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: hp('2%'),
     paddingHorizontal: wp('5%'),
-  },
-  imageContainer: {
-    height: hp('45%'),
-    alignContent: 'center',
-    margin: wp('5%'),
-    backgroundColor: Colors.white,
-  },
-  image: {
-      width: undefined,
-      height: undefined,
-      flex: 1,
-      margin: wp('2%')
   },
   centerTitle: {
     alignItems: 'center',
@@ -142,18 +132,6 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontFamily: 'Helvetica Neue',
   },
-  noteTitle: {
-    fontSize: hp('2%'),
-    fontWeight: '600',
-    color: Colors.black,
-    fontFamily: 'Helvetica Neue',
-  },
-  noteDescription: {
-    fontSize: hp('2%'),
-    fontWeight: '400',
-    color: Colors.black,
-    fontFamily: 'Helvetica Neue',
-  },
   highlight: {
     fontWeight: '700',
   },
@@ -163,6 +141,12 @@ const styles = StyleSheet.create({
       borderRadius: wp('2%'),
       borderWidth: wp('.4%'),
       padding: wp('2.5%')
+  },
+  footer: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+    margin: hp('.5%')
   }
 });
 
