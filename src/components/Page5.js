@@ -84,7 +84,11 @@ class Page5 extends Component {
                 </View>
             </View>
             </ScrollView>
-            <View><Text style={styles.footer}>5</Text></View>
+            <View style={styles.footer}>
+              <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
+              <Text style={styles.copyright}>All Rights Reserved.</Text>
+              <Text style={styles.pageNumber}>5</Text>
+            </View>
             </SafeAreaView>
         )
     }
@@ -157,11 +161,18 @@ const styles = StyleSheet.create({
     width: wp('65%')
   },
   footer: {
+    margin: hp('.5%')
+  },
+  pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
     fontFamily: 'Helvetica Neue',
-    margin: hp('.5%')
-  }
+  },
+  copyright: {
+    fontSize: hp('1.2%'),
+    textAlign: 'right',
+    fontFamily: 'Helvetica Neue',
+  },
 });
 
 export default Page5;

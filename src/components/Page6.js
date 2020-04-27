@@ -71,7 +71,7 @@ class Page6 extends Component {
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.imageContainer}>
-                    <View style={styles.containerWrapper}>
+                    {/* <View style={styles.containerWrapper}>
                         <View style={styles.listItem}>
                         <Unorderedlist><Text style={styles.listText}>
                         Balloon catheter is inserted into the artery.
@@ -92,9 +92,15 @@ class Page6 extends Component {
                         Catheter is removed. Stent remains to hold artery open.
                         </Text></Unorderedlist>
                         </View>
-                    </View>
+                    </View> */}
                     <View style={styles.containerWrapper}>
                         <Image style={styles.image} source={ PCI_IMAGE } resizeMode="contain"/>
+                        <Text style={styles.attribution}>
+                          © RelayHealth and/or its affiliates.
+                        </Text>
+                        <Text style={styles.attribution}>
+                          All rights reserved.
+                        </Text>
                     </View>
                 </View>
             </View>
@@ -115,12 +121,22 @@ class Page6 extends Component {
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.imageSmallContainer}>
-                  <Image style={styles.image} source={ CABG_IMAGE } resizeMode="contain"/>
+                  <View style={styles.containerWrapper}>
+                    <Image style={styles.image} source={ CABG_IMAGE } resizeMode="contain"/>
+                    <Text style={styles.attribution}>
+                      © American Heart Association.
+                    </Text>
+                  </View>
                 </View>
             </View>
+            <View style={styles.sectionContainer}></View>
             </View>
             </ScrollView>
-            <View><Text style={styles.footer}>6</Text></View>
+            <View style={styles.footer}>
+              <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
+              <Text style={styles.copyright}>All Rights Reserved.</Text>
+              <Text style={styles.pageNumber}>6</Text>
+            </View>
             </SafeAreaView>
         )
     }
@@ -145,6 +161,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     margin: hp('1%'),
     paddingHorizontal: wp('5%'),
+    // marginBottom: hp('2%')
   },
   boldText: {
     fontWeight: '700'
@@ -155,6 +172,10 @@ const styles = StyleSheet.create({
   labelText: {
     fontSize: hp('2.2%'),
     color: Colors.white,
+  },
+  attribution: {
+    fontSize: 7,
+    textAlign: 'right'
   },
   listItem: {
     margin: wp('2%')
@@ -189,12 +210,13 @@ const styles = StyleSheet.create({
     // marginBottom: hp('1.5%')
   },
   containerWrapper: {
-    // width: wp('30%'),
+    // width: wp('1%'),
     // marginLeft: wp('2%'),
     // marginTop: wp('3%'),
     // marginBottom: wp('3%'),
     flex: 1,
     justifyContent: 'center',
+    margin: wp('1.5%')
     // alignItems: 'center'
   },
   labelBox: {
@@ -214,11 +236,18 @@ const styles = StyleSheet.create({
     marginBottom: wp('3%')
   },
   footer: {
+    margin: hp('.5%')
+  },
+  pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
     fontFamily: 'Helvetica Neue',
-    margin: hp('.5%')
-  }
+  },
+  copyright: {
+    fontSize: hp('1.2%'),
+    textAlign: 'right',
+    fontFamily: 'Helvetica Neue',
+  },
 });
 
 export default Page6;

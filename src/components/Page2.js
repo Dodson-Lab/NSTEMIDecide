@@ -64,7 +64,11 @@ class Page2 extends Component {
                 </View>
             </View>
             </ScrollView>
-            <View><Text style={styles.footer}>2</Text></View>
+            <View style={styles.footer}>
+              <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
+              <Text style={styles.copyright}>All Rights Reserved.</Text>
+              <Text style={styles.pageNumber}>2</Text>
+            </View>
             </SafeAreaView>
         )
     }
@@ -80,7 +84,6 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    // height: hp('100%')
   },
   sectionContainer: {
     margin: hp('1%'),
@@ -128,10 +131,17 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   footer: {
+    margin: hp('.5%')
+  },
+  pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
     fontFamily: 'Helvetica Neue',
-    margin: hp('.5%')
+  },
+  copyright: {
+    fontSize: hp('1.2%'),
+    textAlign: 'right',
+    fontFamily: 'Helvetica Neue',
   }
 });
 

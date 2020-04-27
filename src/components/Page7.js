@@ -81,7 +81,11 @@ class Page7 extends Component {
               </View>
             </View>
             </ScrollView>
-            <View><Text style={styles.footer}>7</Text></View>
+            <View style={styles.footer}>
+              <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
+              <Text style={styles.copyright}>All Rights Reserved.</Text>
+              <Text style={styles.pageNumber}>7</Text>
+            </View>
             </SafeAreaView>
         )
     }
@@ -139,21 +143,23 @@ const styles = StyleSheet.create({
   },
   whiteContainer: {
     backgroundColor: Colors.white,
-    // margin: wp('2%'),
     padding: wp('3%'),
-    // paddingLeft: hp('1.5%'),
-    // paddingRight: hp('1.5%'),
-    // paddingTop: hp('1.5%'),
-    // margin: hp('.5%'),
     borderColor: Colors.gray,
     borderWidth: wp('.2%'),
   },
   footer: {
+    margin: hp('.5%')
+  },
+  pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
     fontFamily: 'Helvetica Neue',
-    margin: hp('.5%')
-  }
+  },
+  copyright: {
+    fontSize: hp('1.2%'),
+    textAlign: 'right',
+    fontFamily: 'Helvetica Neue',
+  },
 });
 
 export default Page7;

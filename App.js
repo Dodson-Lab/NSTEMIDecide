@@ -61,6 +61,9 @@ import Page5 from './src/components/Page5'
 import Page6 from './src/components/Page6'
 import Page7 from './src/components/Page7'
 import Page8 from './src/components/Page8'
+import Page9 from './src/components/Page9'
+import Page10 from './src/components/Page10'
+import Page11 from './src/components/Page11'
 
 const App: () => React$Node = () => {
   return (
@@ -90,6 +93,15 @@ const App: () => React$Node = () => {
           </FlipPagePage>
           <FlipPagePage>
             <Page8/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page9/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page10/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page11/>
           </FlipPagePage>
         </FlipPage>
     </>

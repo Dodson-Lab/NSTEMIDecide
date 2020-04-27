@@ -43,186 +43,293 @@ class Page8 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization
+              <View style={styles.sectionContainer}>
+                  <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization
+                  </Text>
+              </View>
+
+              <View style={[styles.cardContainer]}>
+                  <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
+                  <Text style={[styles.cardText, styles.highlight]}>
+                  Chance of Another <Text style={styles.orangeText}>Heart Attack</Text> in the Next Year.
+                  </Text>
+              </View>
+
+              <View style={[styles.columnContainer]}>
+                  <View style={[styles.whiteColumn]}>
+                    <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
+                      No cardiac catheterization
                     </Text>
-                </View>
-                <View style={styles.sectionContainer}>
+                    <Text></Text>
+                    <Text style={[styles.sectionParagraph]}>
+                      <Text style={styles.highlight}>79/100 </Text>
+                      people did not have another heart attack.
+                    </Text>
+                    <Text></Text>
+                    <Text style={[styles.sectionParagraph]}>
+                      <Text style={styles.highlight}>21/100 </Text>
+                      people did.
+                    </Text>
                     <View style={styles.imageContainer}>
-                        <View style={styles.imageSmallWrapper}>
-                            <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
-                        </View>
-                        <View style={styles.containerWrapper}>
-                            <Text style={styles.cardText}>
-                            Chance of Another <Text style={styles.orangeText}>Heart Attack</Text> in the Next Year.
-                            </Text>
-                        </View>
+                    <Image style={styles.dotImage} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
-                </View>
-                <View style={styles.sectionContainer}>
-                  <View style={{flexDirection:"row"}}>
-                      <View style={styles.whiteContainer}>
-                          <Text>No cardiac catheterization</Text>
-                          <Text>79/100 people did not have another heart attack.</Text>
-                          <Text>21/100 people did.</Text>
-                          <View style={styles.imageWrapper}>
-                            <Image style={styles.image} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
-                          </View>
-                          <View styles={styles.CircleShapeView}></View>
-                          {/* <Text>Did not have another heart attack</Text>
-                          <Text>Had another heart attack</Text> */}
+
+                    <View style={[styles.container]}>
+                      <View style={styles.dotItem}>
+                        <View style={[styles.circle, styles.blue]}></View>
                       </View>
-                      <View style={styles.whiteContainer}>
-                          <Text>88/100 people did not have another heart attack.</Text>
-                          <Text>12/100 people did.</Text>
-                          <View style={styles.imageWrapper}>
-                            <Image style={styles.image} source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
-                          </View>
-                          <Text>Did not have another heart attack</Text>
-                          <Text>Prevented from another heart attack due to having the procedure</Text>
-                          <Text>Had another heart attack</Text>
+                      <View style={styles.item}>
+                        <Text>Did not have another heart attack</Text>
                       </View>
+                      <View style={styles.dotItem}>
+                        <View style={[styles.circle, styles.orange]}></View>
+                      </View>
+                      <View style={styles.item}>
+                        <Text>Had another heart attack</Text>
+                      </View>
+                    </View>
                   </View>
-                </View>
+                  <View style={[styles.whiteColumn]}>
+                      <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
+                      Cardiac catheterization
+                      </Text>
+                      <Text></Text>
+                    <Text style={[styles.sectionParagraph]}>
+                      <Text style={styles.highlight}>88/100 </Text>
+                      people did not have another heart attack.
+                    </Text>
+                    <Text></Text>
+                    <Text style={[styles.sectionParagraph]}>
+                      <Text style={styles.highlight}>12/100 </Text>
+                      people did.
+                    </Text>
+                    <View style={styles.imageContainer}>
+                    <Image style={styles.dotImage} source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
+                    </View>
+                    <View style={[styles.container]}>
+                      <View style={styles.dotItem}>
+                        <View style={[styles.circle, styles.blue]}></View>
+                      </View>
+                      <View style={styles.item}>
+                        <Text>Did not have another heart attack</Text>
+                      </View>
+                      <View style={styles.dotItem}>
+                        <View style={[styles.circle, styles.darkBlue]}></View>
+                      </View>
+                      <View style={styles.item}>
+                        <Text>Prevented from another heart attack due to having the procedure</Text>
+                      </View>
+                      <View style={styles.dotItem}>
+                        <View style={[styles.circle, styles.orange]}></View>
+                      </View>
+                      <View style={styles.item}>
+                        <Text>Had another heart attack</Text>
+                      </View>
+                    </View>
+                  </View>
+              </View>
+              <View style={[styles.smallCardContainer]}>
+              <View style={[styles.smallCard]}>
+                  <Text style={[styles.smallCardText, styles.highlight, styles.centerText]}>
+                  Due to having the procedure, 9/100 additional people did not have another heart attack.
+                  </Text>
+              </View>
+              </View>
+
+              <View style={styles.sectionContainer}>
+                  <Text style={styles.sectionParagraph}>
+                  <Text style={styles.highlightUnderline}>Note</Text>: Many patients who undergo cardiac catheterization also undergo a
+                  procedure to open a blocked artery (either a stent or bypass surgery).
+                  </Text>
+              </View>
+              <View style={styles.attributionWrapper}>
+                <Text style={[styles.attribution, styles.highlight]}>Sources of Information</Text>
+                <Text style={styles.attribution}>Garg et al. Routine Invasive Versus Selective Invasive Strategy in Elderly Patients Older Than 75 Years 
+                    With Non-ST-Segment Elevation Acute Coronary Syndrome: A Systematic Review and Meta-Analysis. Mayo Clinical Proceedings. 2018; 436-444.
+                </Text>
+              </View>
             </View>
             </ScrollView>
-            <View><Text style={styles.footer}>8</Text></View>
+              <View style={styles.footer}>
+                <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
+                <Text style={styles.copyright}>All Rights Reserved.</Text>
+                <Text style={styles.pageNumber}>8</Text>
+              </View>
             </SafeAreaView>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    scrollView: {
-      backgroundColor: Colors.lighter,
-    },
-    engine: {
-      position: 'absolute',
-      right: 0,
-    },
-    body: {
-      backgroundColor: '#E8E8E8',
-      height: hp('100%'),
-      fontFamily: 'Helvetica Neue'
-    },
-    sectionTitle: {
-        fontSize: hp('3%'),
-        fontWeight: '700',
-        fontFamily: 'Helvetica Neue',
-        textAlign: 'center'
-    },
-    whiteContainer: {
-      flex: 1,
-      backgroundColor: Colors.white,
-      paddingLeft: hp('1.5%'),
-      paddingRight: hp('1.5%'),
-      paddingTop: hp('1.5%'),
-      margin: hp('.5%'),
-      // height: hp('40%'),
-      borderColor: Colors.gray,
-      borderWidth: wp('.1%'),
-    },
-    cardText: {
-        fontSize: hp('2.2%'),
-        fontWeight: '700',
-        // textAlign: 'center',
-        // padding: hp('1%')
-    },
-    orangeText: {
-        color: "#ed7d31"
-    },
-      sectionContainer: {
-          margin: wp('2%')
-        // marginTop: hp('1%'),
-        // padding: wp('5%'),
-      },
-      boldText: {
-        fontWeight: '700'
-      },
-      imageWrapper: {
-        // flex: 1,
-        // height: hp('36%'),
-        // backgroundColor: Colors.white,
-        flexDirection: "row",
-      },
-    //   labelText: {
-    //     fontSize: hp('2.2%'),
-    //     color: Colors.white,
-    //   },
-    //   listItem: {
-    //     marginBottom: hp('1%')
-    //   },
-      // underlineText: {
-      //   textDecorationLine: 'underline',
-      // },
-      imageContainer: {
-        // width: wp('80%'),
-        // backgroundColor: Colors.white,
-        flexDirection: "row",
-      },
-      image: {
-          width: wp('20%'),
-          height: hp('40%'),
-          // height: undefined,
-          flex: 1,
-      },
-      imageSmallWrapper: {
-        margin: wp('.5%'),
-      },
-      containerWrapper: {
-        //   margin: wp('2%')
-        // width: wp('75%'),
-        // margin: wp('2%')
-        // alignContent: "center",
-        // alignItems: "center"
-        // marginLeft: wp('2%'),
-        // marginTop: wp('3%'),
-        // marginBottom: wp('3%'),
-        // flex: 1,
-      },
-      footer: {
-        fontSize: hp('2%'),
-        textAlign: 'center',
-        fontFamily: 'Helvetica Neue',
-        margin: hp('.5%')
-      },
-      blueDot: {
-        width: 44,
-        height: 44,
-        borderRadius: 44/2,
-        color: "#7cb4d4",
-        backgroundColor: "#7cb4d4",
+  scrollView: {
+    backgroundColor: Colors.lighter,
+  },
+  engine: {
+    position: 'absolute',
+    right: 0,
+  },
+  body: {
+    backgroundColor: '#E8E8E8',
+    // height: hp('100%')
+  },
+  sectionContainer: {
+    margin: wp('3%')
+  },
+  sectionTitle: {
+    fontSize: hp('3%'),
+    fontWeight: '700',
+    fontFamily: 'Helvetica Neue',
+    textAlign: 'center'
+  },
 
+  whiteColumn: {
+    backgroundColor: Colors.white,
+    borderColor: Colors.black,
+    borderWidth: wp('.1%'),
+    padding: wp('2.5%'),
+    // width: wp('40%'),
+    margin: hp('1%'),
+    flex: 1,
+    alignItems: 'center',
+},
+imageContainer: {
+  margin: wp('2%')
+},
+container: {
+  flex: 1,
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  alignItems: 'flex-start' // if you want to fill rows left to right
+},
+dotItem: {
+  width: '15%',
+  marginTop: 2
+},
+item: {
+  width: '85%' // is 50% of container width
+},
+cardContainer: {
+  padding: 5,
+  alignItems: 'center',
+  alignContent: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  margin: wp('2%'),
+  backgroundColor: Colors.white,
+  borderColor: Colors.gray,
+  borderWidth: wp('.1%'),
+},
+smallCardContainer: {
+  alignItems: 'center',
+  alignContent: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  flex: 1
+},
+smallCard: {
+  margin: wp('2%'),
+  padding: wp('2%'),
+  width: wp('70%'),
+  backgroundColor: Colors.white,
+  borderColor: Colors.gray,
+  borderWidth: wp('.2%'),
+},
+columnContainer: {
+  alignItems: 'center',
+  alignContent: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+},
+image: {
+  width: 35,
+  height: 35
+},
+dotImage: {
+  width: 170,
+  height: 170
+},
+cardText: {
+  fontSize: hp('2.2%'),
+  fontWeight: '700',
+},
+smallCardText: {
+  fontSize: hp('1.8%'),
+  fontWeight: "200"
+},
+orangeText: {
+  color: "#ed7d31"
+},
+centerText: {
+  textAlign: 'center'
+},
+highlightUnderline: {
+  fontWeight: '700',
+  textDecorationLine: 'underline'
+},
+highlight: {
+  fontWeight: '700',
+},
+centerText: {
+  textAlign: 'center'
+},
+sectionParagraph: {
+  fontSize: hp('2%'),
+  fontWeight: '400',
+  color: Colors.black,
+  fontFamily: 'Helvetica Neue',
+  alignItems: 'center',
+},
+dotText: {
+  fontSize: hp('1.5%'),
+  fontWeight: '400',
+  color: Colors.black,
+  fontFamily: 'Helvetica Neue',
+  alignItems: 'center',
+},
+ circle: {
+  width: 15,
+  height: 15,
+  borderRadius: 15/2,
+},
+blue: {
+  backgroundColor: "#7cb4d4",
+},
+orange: {
+  backgroundColor: "#f68000",
+},
+darkBlue: {
+  backgroundColor: "#456d84"
+},
+circleContainer: {
+  margin: 2,
+  marginTop: -4
+},
+sideBySide: {
+  flex: 1
+},
 
-        // height: 25px;
-        // width: 25px;
-        // background-color: #bbb;
-        // border-radius: 50%;
-        // display: "flex"
-      },
-      darkBlueDot: {
-        color: "#456d84"
-      },
-      orangeDot: {
-        color: "#f68000"
-      },
-      CircleShapeView: {
-        //To make Circle Shape
-        width: 150,
-        height: 150,
-        borderRadius: 150 / 2,
-        backgroundColor: '#FF00FF',
-      },
-      labelBox: {
-        // margin: wp('1%'),
-        // backgroundColor: '#1f3864',
-        // paddingTop: wp('.5%'),
-        // paddingBottom: wp('.5%'),
-        // paddingLeft: wp('4%'),
-        // paddingRight: wp('7%'),
-        // alignContent: 'center',
-        // alignItems: 'center',
-      },
-  });
+//  FOOTER 
+  footer: {
+    margin: hp('.5%')
+  },
+  pageNumber: {
+    fontSize: hp('2%'),
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue',
+  },
+  copyright: {
+    fontSize: hp('1.2%'),
+    textAlign: 'right',
+    fontFamily: 'Helvetica Neue',
+  },
+  attributionWrapper: {
+    margin: 10,
+  },
+  attribution: {
+    fontSize: hp('1.2%'),
+    textAlign: 'left',
+    fontFamily: 'Helvetica Neue',
+  },
+});
 
 export default Page8;
