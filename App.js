@@ -64,12 +64,13 @@ import Page8 from './src/components/Page8'
 import Page9 from './src/components/Page9'
 import Page10 from './src/components/Page10'
 import Page11 from './src/components/Page11'
+import Page12 from './src/components/Page12'
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-        <FlipPage orientation={'horizontal'}>
+        <FlipPage orientation={'horizontal'} responsive='true'>
           <FlipPagePage>
             <Page1/>
           </FlipPagePage>
@@ -102,6 +103,9 @@ const App: () => React$Node = () => {
           </FlipPagePage>
           <FlipPagePage>
             <Page11/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page12/>
           </FlipPagePage>
         </FlipPage>
     </>
