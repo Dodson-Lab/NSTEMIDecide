@@ -13,12 +13,15 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SplashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ubN-ea-rfC">
-                    <rect key="frame" x="144" y="146" width="193" height="188"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DGc-Cy-oPs">
+                    <rect key="frame" x="-16" y="-16" width="512" height="512"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.96460121870000004" green="0.96476620440000005" blue="0.96459084750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DGc-Cy-oPs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6h7-cv-0SK"/>
+                <constraint firstItem="DGc-Cy-oPs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Foz-b7-94g"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="573.91304347826087" y="411.83035714285711"/>

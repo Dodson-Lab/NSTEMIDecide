@@ -45,7 +45,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DecisionAidAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecisionAidAppTests.m; sourceTree = "<group>"; };
 		0BEA0DE856C133C68F3BA11E /* Pods-DecisionAidAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecisionAidAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DecisionAidAppTests/Pods-DecisionAidAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* DecisionAidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionAidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* NSTEMI Decide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NSTEMI Decide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DecisionAidApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DecisionAidApp/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* DecisionAidApp.app */,
+				13B07F961A680F5B00A75B9A /* NSTEMI Decide.app */,
 				00E356EE1AD99517003FC87E /* DecisionAidAppTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* DecisionAidApp-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* DecisionAidApp-tvOSTests.xctest */,
@@ -245,7 +245,7 @@
 			);
 			name = DecisionAidApp;
 			productName = DecisionAidApp;
-			productReference = 13B07F961A680F5B00A75B9A /* DecisionAidApp.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* NSTEMI Decide.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* DecisionAidApp-tvOS */ = {
@@ -693,7 +693,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = DecisionAidApp;
+				PRODUCT_NAME = "NSTEMI Decide";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -713,7 +713,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = DecisionAidApp;
+				PRODUCT_NAME = "NSTEMI Decide";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
