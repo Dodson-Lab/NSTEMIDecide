@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -27,6 +28,8 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 import { HEART_BLOOD_IMAGE } from '../..';
+
+let screenheight = Dimensions.get("window").height;
 
 class Page2 extends Component {
     render() {
@@ -84,6 +87,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
+    height: screenheight + hp('5%')
   },
   sectionContainer: {
     margin: hp('1%'),

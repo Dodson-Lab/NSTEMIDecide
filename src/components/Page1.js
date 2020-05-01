@@ -13,6 +13,7 @@ import {
   ScrollView,
   View,
   Text,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -26,10 +27,12 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+let screenheight = Dimensions.get("window").height;
+
 class Page1 extends Component {
     render() {
         return (
-            <SafeAreaView style={{flex: 1}}>
+            <SafeAreaView style={{flex: 1, backgroundColor: "e8e8e8"}}>
             <ScrollView
             maximumZoomScale={10.0}
           contentInsetAdjustmentBehavior="automatic"
@@ -80,11 +83,12 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
+    height: screenheight
     // height: hp('100%'),
   },
   sectionContainer: {
-    marginTop: hp('12%'),
+    marginTop: hp('10%'),
     margin: hp('1%'),
     paddingHorizontal: 24,
   },

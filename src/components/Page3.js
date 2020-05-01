@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -26,6 +27,8 @@ import {
   listenOrientationChange as lor,
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
+
+let screenheight = Dimensions.get("window").height;
 
 import Unorderedlist from 'react-native-unordered-list';
 
@@ -107,6 +110,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
+    height: screenheight - hp('10%')
     // height: hp('90%')
   },
   listItem: {

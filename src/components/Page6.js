@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -28,7 +29,7 @@ import {
 } from 'react-native-responsive-screen';
 
 import Unorderedlist from 'react-native-unordered-list';
-
+let screenheight = Dimensions.get("window").height;
 import { PCI_IMAGE } from '../..';
 import { CABG_IMAGE } from '../..';
 
@@ -152,7 +153,6 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    // height: hp('100%')
   },
   titleContainer: {
     marginTop: hp('1%'),

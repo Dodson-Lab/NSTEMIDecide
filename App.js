@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,6 +15,7 @@ import {
   Text,
   StatusBar,
   Image,
+  Platform
 } from 'react-native';
 
 import {
@@ -36,20 +37,6 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 Icon.loadFont();
 
-// export const HEART_BLOOD_IMAGE = require('./images/heart_blood_clot.png')
-// export const CARDIAC_CATHETERIZATION_IMAGE = require('./images/cardiac_catheterization.jpg')
-// export const PCI_IMAGE = require('./images/PCI.jpg')
-// export const BED_IMAGE = require('./images/bed.png')
-// export const BRAIN_IMAGE = require('./images/brain.jpg')
-// export const CABG_IMAGE = require('./images/CABG.png')
-// export const DROPLET_IMAGE = require('./images/droplet.jpg')
-// export const HEART_ATACK_NO_OP_IMAGE = require('./images/heart_attack_no_op.png')
-// export const HEART_ATACK_OP_IMAGE = require('./images/heart_attack_op.png')
-// export const HEART_PROCEDUCE_NO_OP_IMAGE = require('./images/heart_procedure_no_op.png')
-// export const HEART_PROCEDURE_OP_IMAGE = require('./images/heart_procedure_op.png')
-// export const KIDNEY_IMAGE = require('./images/kidney.jpg')
-// export const COMFORT_IMAGE = require('./images/comfort.jpg')
-// export const HEART_IMAGE = require('./images/heart.png')
 
 import FlipPage, {FlipPagePage} from 'react-native-flip-page';
 
@@ -65,11 +52,18 @@ import Page9 from './src/components/Page9'
 import Page10 from './src/components/Page10'
 import Page11 from './src/components/Page11'
 import Page12 from './src/components/Page12'
+import Page13 from './src/components/Page13'
+
+import SplashScreen from 'react-native-splash-screen'
 
 const App: () => React$Node = () => {
+  useEffect( () => {
+    SplashScreen.hide()
+  }, []);
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
+      
         <FlipPage orientation={'horizontal'} responsive='true'>
           <FlipPagePage>
             <Page1/>
@@ -106,6 +100,9 @@ const App: () => React$Node = () => {
           </FlipPagePage>
           <FlipPagePage>
             <Page12/>
+          </FlipPagePage>
+          <FlipPagePage>
+            <Page13/>
           </FlipPagePage>
         </FlipPage>
     </>

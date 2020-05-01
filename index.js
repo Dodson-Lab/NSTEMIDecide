@@ -20,4 +20,5 @@ export const HEART_PROCEDURE_OP_IMAGE = require('./images/heart_procedure_op.png
 export const KIDNEY_IMAGE = require('./images/kidney.jpg')
 export const COMFORT_IMAGE = require('./images/comfort.jpg')
 export const HEART_IMAGE = require('./images/heart.png')
+export const LOGO = require('./images/logo.png')
 AppRegistry.registerComponent(appName, () => App);

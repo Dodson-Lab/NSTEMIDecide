@@ -13,12 +13,15 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+
+let screenheight = Dimensions.get("window").height;
 
 import {
   widthPercentageToDP as wp,
@@ -101,6 +104,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
+    height: screenheight - hp('10%')
     // height: hp('90%'),
   },
   contentContainer: {

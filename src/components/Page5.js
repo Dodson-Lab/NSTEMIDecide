@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -28,6 +29,8 @@ import {
 } from 'react-native-responsive-screen';
 
 import Unorderedlist from 'react-native-unordered-list';
+
+let screenheight = Dimensions.get("window").height;
 
 import { CARDIAC_CATHETERIZATION_IMAGE } from '../..';
 
@@ -56,6 +59,7 @@ class Page5 extends Component {
                       <Text style={styles.underlineText}>Cardiac catheterization</Text> is a procedure to look for blockages in your heart.
                     </Text> 
                     </Unorderedlist>
+                    <Text></Text>
                     </View>
                     <View style={styles.listItem}>
                     <Unorderedlist><Text style={styles.listText}>
@@ -63,6 +67,7 @@ class Page5 extends Component {
                         one of two spots: through the leg (femoral artery) or
                         the wrist (radial artery).
                     </Text></Unorderedlist>
+                    <Text></Text>
                     </View>
                     <View style={styles.listItem}>
                     <Unorderedlist><Text style={styles.listText}>
@@ -70,6 +75,7 @@ class Page5 extends Component {
                     to see  if there are blocked arteries.
                         </Text></Unorderedlist>
                     </View>
+                    <Text></Text>
                 </View>
             </View>
             <View style={styles.labelContainer}>
@@ -104,6 +110,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
+    height: screenheight - hp('10%')
   },
   sectionContainer: {
     marginTop: hp('2%'),
@@ -120,7 +127,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   listItem: {
-    marginBottom: hp('2%')
+    // marginBottom: hp('2%')
   },
   underlineText: {
     textDecorationLine: 'underline',

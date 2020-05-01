@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -26,6 +27,8 @@ import {
   listenOrientationChange as lor,
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
+
+let screenheight = Dimensions.get("window").height;
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 // import Icon from 'react-native-vector-icons/FontAwesome'
@@ -217,6 +220,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
+    // height: screenheight
     // height: hp('100%')
   },
   centerText: {

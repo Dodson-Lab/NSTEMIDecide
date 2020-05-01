@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -26,6 +27,8 @@ import {
   listenOrientationChange as lor,
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
+
+let screenheight = Dimensions.get("window").height;
 
 import { HEART_IMAGE, HEART_ATACK_NO_OP_IMAGE, HEART_ATACK_OP_IMAGE } from '../..';
 
@@ -170,7 +173,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E8E8E8',
-    // height: hp('100%')
+    // height: screenheight
   },
   sectionContainer: {
     margin: wp('3%')
@@ -188,7 +191,7 @@ const styles = StyleSheet.create({
     borderWidth: wp('.1%'),
     padding: wp('2.5%'),
     // width: wp('40%'),
-    margin: hp('1%'),
+    margin: hp('1.5%'),
     flex: 1,
     alignItems: 'center',
 },
@@ -214,7 +217,7 @@ cardContainer: {
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  margin: wp('2%'),
+  margin: wp('3%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
   borderWidth: wp('.1%'),
