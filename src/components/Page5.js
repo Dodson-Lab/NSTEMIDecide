@@ -35,6 +35,25 @@ let screenheight = Dimensions.get("window").height;
 import { CARDIAC_CATHETERIZATION_IMAGE } from '../..';
 
 class Page5 extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -47,30 +66,38 @@ class Page5 extends Component {
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
-            <View style={styles.body}>
-                <View style={[styles.sectionContainer, styles.centerTitle]}>
+            <View
+              onLayout={this.onLayout} 
+              style={[styles.body]}>
+                <View style={[styles.sectionContainer, styles.centerTitle, {marginTop: this.state.height * .03}]}>
                     <Text style={styles.sectionTitle}>What is cardiac catheterization?</Text>
                 </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.sectionParagraph}>
-                    <View style={styles.listItem}>
-                    <Unorderedlist>
+                    <View
+              onLayout={this.onLayout} 
+              style={[styles.listItem, {marginTop: this.state.height * .02}]}>
+                    <Unorderedlist style={styles.bullet}>
                     <Text style={[styles.boldText, styles.listText]}>
                       <Text style={styles.underlineText}>Cardiac catheterization</Text> is a procedure to look for blockages in your heart.
                     </Text> 
                     </Unorderedlist>
                     <Text></Text>
                     </View>
-                    <View style={styles.listItem}>
-                    <Unorderedlist><Text style={styles.listText}>
+                    <View
+              onLayout={this.onLayout} 
+              style={[styles.listItem, {marginTop: this.state.height * .01}]}>
+                    <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
                         A dye is injected through a tube (catheter). This tube can enter
                         one of two spots: through the leg (femoral artery) or
                         the wrist (radial artery).
                     </Text></Unorderedlist>
                     <Text></Text>
                     </View>
-                    <View style={styles.listItem}>
-                    <Unorderedlist><Text style={styles.listText}>
+                    <View
+              onLayout={this.onLayout} 
+              style={[styles.listItem, {marginTop: this.state.height * .01}]}>
+                    <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
                     The dye makes the arteries visible on X-ray, allowing doctors
                     to see  if there are blocked arteries.
                         </Text></Unorderedlist>
@@ -78,14 +105,21 @@ class Page5 extends Component {
                     <Text></Text>
                 </View>
             </View>
-            <View style={styles.labelContainer}>
-                <View style={styles.labelBox}>
-                    <Text style={[styles.labelText, styles.boldText]}>
-                        Cardiac catheterization
-                    </Text>
-                </View>
-            </View>
-                <View style={styles.imageContainer}>
+            <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}></View>
+            {/* <View style={[styles.sectionContainer]}> */}
+              <View style={[styles.labelContainer, {width: this.state.width * .55}]}>
+                  <View style={styles.labelBox}>
+                      <Text style={[styles.labelText, styles.boldText]}>
+                          Cardiac catheterization
+                      </Text>
+                  </View>
+              </View>
+            {/* </View> */}
+                <View
+                onLayout={this.onLayout} 
+                style={[styles.imageContainer, {height: hp("40%")}]}>
                     <Image style={styles.image} source={ CARDIAC_CATHETERIZATION_IMAGE } resizeMode="contain"/>
                 </View>
             </View>
@@ -109,11 +143,10 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
-    height: screenheight - hp('10%')
+    backgroundColor: '#f6f6f6',
+    // height: screenheight - hp('10%')
   },
   sectionContainer: {
-    marginTop: hp('2%'),
     paddingHorizontal: wp('5%'),
   },
   boldText: {
@@ -123,20 +156,24 @@ const styles = StyleSheet.create({
     fontSize: hp('2.4%')
   },
   labelText: {
-    fontSize: hp('2%'),
+    fontSize: hp('2.5%'),
     color: Colors.white,
   },
   listItem: {
-    // marginBottom: hp('2%')
+    // marginTop: hp('2%')
+  },
+  bullet: {
+    fontSize: hp('2%')
   },
   underlineText: {
     textDecorationLine: 'underline',
   },
   imageContainer: {
-    height: hp('35%'),
+    // height: hp('40%'),
     alignContent: 'center',
     backgroundColor: Colors.white,
     margin: wp('3%'),
+    borderWidth: 1,
   },
   centerTitle: {
     alignItems: 'center',
@@ -151,21 +188,15 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     marginBottom: hp('1.5%')
   },
   labelBox: {
-    margin: wp('1%'),
+    // margin: wp('1%'),
     backgroundColor: '#1f3864',
-    paddingTop: wp('.5%'),
-    paddingBottom: wp('.5%'),
-    paddingLeft: wp('1%'),
-    paddingRight: wp('7%'),
-    alignContent: 'center',
-    alignItems: 'center'
-  },
-  labelContainer: {
-    width: wp('65%')
+    padding: wp('1%'),
+    // margin: wp('2%'),
+    paddingHorizontal: wp('2%')
   },
   footer: {
     margin: hp('.5%')
@@ -173,12 +204,12 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 });
 

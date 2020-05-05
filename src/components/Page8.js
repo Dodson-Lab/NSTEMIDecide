@@ -33,6 +33,24 @@ let screenheight = Dimensions.get("window").height;
 import { HEART_IMAGE, HEART_ATACK_NO_OP_IMAGE, HEART_ATACK_OP_IMAGE } from '../..';
 
 class Page8 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -57,14 +75,13 @@ class Page8 extends Component {
                   Chance of Another <Text style={styles.orangeText}>Heart Attack</Text> in the Next Year.
                   </Text>
               </View>
-
               <View style={[styles.columnContainer]}>
                   <View style={[styles.whiteColumn]}>
                     <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
                       No cardiac catheterization
                     </Text>
                     <Text></Text>
-                    <Text style={[styles.sectionParagraph]}>
+                    <Text style={[styles.sectionParagraph, styles.centerText]}>
                       <Text style={styles.highlight}>79/100 </Text>
                       people did not have another heart attack.
                     </Text>
@@ -73,23 +90,33 @@ class Page8 extends Component {
                       <Text style={styles.highlight}>21/100 </Text>
                       people did.
                     </Text>
-                    <View style={styles.imageContainer}>
-                    <Image style={styles.dotImage} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
+                    <View
+                    style={[styles.imageContainer]}>
+                    <Image
+                    onLayout={this.onLayout}
+                    style={[styles.dotImage, {
+                      width: wp('40%'),
+                      height: wp('40%')}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
-
                     <View style={[styles.container]}>
-                      <View style={styles.dotItem}>
-                        <View style={[styles.circle, styles.blue]}></View>
-                      </View>
-                      <View style={styles.item}>
-                        <Text>Did not have another heart attack</Text>
-                      </View>
+                      {/* <View style={styles.legendItem}> */}
+                        <View style={styles.dotItem}>
+                          <View style={[styles.circle, styles.blue]}></View>
+                        </View>
+                        <View style={styles.item}>
+                          <Text style={styles.legend}>Did not have another heart attack</Text>
+                        </View>
+                      {/* </View> */}
+                      {/* </View> */}
+                      {/* <View style={styles.legendItem}> */}
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Had another heart attack</Text>
+                        <Text style={styles.legend}>Had another heart attack</Text>
                       </View>
+                      {/* </View> */}
+                      {/* </View> */}
                     </View>
                   </View>
                   <View style={[styles.whiteColumn]}>
@@ -97,7 +124,7 @@ class Page8 extends Component {
                       Cardiac catheterization
                       </Text>
                       <Text></Text>
-                    <Text style={[styles.sectionParagraph]}>
+                    <Text style={[styles.sectionParagraph, styles.centerText]}>
                       <Text style={styles.highlight}>88/100 </Text>
                       people did not have another heart attack.
                     </Text>
@@ -107,26 +134,33 @@ class Page8 extends Component {
                       people did.
                     </Text>
                     <View style={styles.imageContainer}>
-                    <Image style={styles.dotImage} source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
+                    <Image 
+                    onLayout={this.onLayout}
+                    style={[styles.dotImage, {
+                      width: wp('40%'),
+                      height: wp('40%')}]}
+                      source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
+                    <View style={styles.legendItem}>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Did not have another heart attack</Text>
+                        <Text style={styles.legend}>Did not have another heart attack</Text>
                       </View>
+                    </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.darkBlue]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Prevented from another heart attack due to having the procedure</Text>
+                        <Text style={styles.legend}>Prevented from another heart attack due to having the procedure</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Had another heart attack</Text>
+                        <Text style={styles.legend}>Had another heart attack</Text>
                       </View>
                     </View>
                   </View>
@@ -138,7 +172,6 @@ class Page8 extends Component {
                   </Text>
               </View>
               </View>
-
               <View style={styles.sectionContainer}>
                   <Text style={styles.sectionParagraph}>
                   <Text style={styles.highlightUnderline}>Note</Text>: Many patients who undergo cardiac catheterization also undergo a
@@ -151,6 +184,7 @@ class Page8 extends Component {
                     With Non-ST-Segment Elevation Acute Coronary Syndrome: A Systematic Review and Meta-Analysis. Mayo Clinical Proceedings. 2018; 436-444.
                 </Text>
               </View>
+              <View></View>
             </View>
             </ScrollView>
               <View style={styles.footer}>
@@ -172,7 +206,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
     // height: screenheight
   },
   sectionContainer: {
@@ -181,10 +215,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: hp('3%'),
     fontWeight: '700',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     textAlign: 'center'
   },
-
+  legend: {
+    fontSize: hp('1.5%'),
+  },
   whiteColumn: {
     backgroundColor: Colors.white,
     borderColor: Colors.black,
@@ -194,6 +230,9 @@ const styles = StyleSheet.create({
     margin: hp('1.5%'),
     flex: 1,
     alignItems: 'center',
+},
+legendItem: {
+  marginTop: 5
 },
 imageContainer: {
   margin: wp('2%')
@@ -205,11 +244,11 @@ container: {
   alignItems: 'flex-start' // if you want to fill rows left to right
 },
 dotItem: {
-  width: '15%',
-  marginTop: 2
+  width: '10%',
+  marginTop: -5
 },
 item: {
-  width: '85%' // is 50% of container width
+  width: '85%', // is 50% of container width
 },
 cardContainer: {
   padding: 5,
@@ -248,8 +287,8 @@ image: {
   height: 35
 },
 dotImage: {
-  width: 170,
-  height: 170
+  // width: wp('40%'),
+  // height: wp('40%')
 },
 cardText: {
   fontSize: hp('2.2%'),
@@ -279,20 +318,20 @@ sectionParagraph: {
   fontSize: hp('2%'),
   fontWeight: '400',
   color: Colors.black,
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Avenir',
   alignItems: 'center',
 },
 dotText: {
-  fontSize: hp('1.5%'),
+  fontSize: wp('4%'),
   fontWeight: '400',
   color: Colors.black,
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Avenir',
   alignItems: 'center',
 },
  circle: {
-  width: 15,
-  height: 15,
-  borderRadius: 15/2,
+  width: wp('3%'),
+  height: wp('3%'),
+  borderRadius: hp('3%') / 2,
 },
 blue: {
   backgroundColor: "#7cb4d4",
@@ -318,20 +357,21 @@ sideBySide: {
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   attributionWrapper: {
     margin: 10,
+    paddingHorizontal: 20
   },
   attribution: {
     fontSize: hp('1.2%'),
     textAlign: 'left',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 });
 

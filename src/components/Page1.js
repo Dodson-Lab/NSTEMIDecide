@@ -30,6 +30,26 @@ import {
 let screenheight = Dimensions.get("window").height;
 
 class Page1 extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
+
     render() {
         return (
             <SafeAreaView style={{flex: 1, backgroundColor: "e8e8e8"}}>
@@ -42,21 +62,29 @@ class Page1 extends Component {
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
-            <View style={styles.body}>
-              <View style={styles.sectionContainer}>
+            <View 
+              onLayout={this.onLayout}
+              style={[styles.body, {height: this.state.height}]}>
+              <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .05}]}>
                   <Text style={styles.sectionTitle}>Cardiac catheterization:</Text>
                   <Text style={styles.sectionDescription}>
                   Is this procedure right for you?
                   </Text>
               </View>
-              <View style={styles.sectionContainer}>
+              <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .03}]}>
                   <Text style={styles.sectionTitle}>A Decision Aid Tool</Text>
                   <Text style={styles.sectionDescription}>
                   for older patients (age ≥75) considering cardiac catheterization as
                   treatment for a heart attack
                   </Text>
               </View>
-              <View style={styles.sectionContainer}>
+              <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .03}]}>
                   <Text style={styles.noteTitle}>Note for clinicians:</Text>
                   <Text style={styles.noteDescription}>
                   This decision aid is designed for patients with Non-ST elevation MI (NSTEMI) only.
@@ -88,7 +116,7 @@ const styles = StyleSheet.create({
     // height: hp('100%'),
   },
   sectionContainer: {
-    marginTop: hp('10%'),
+    marginTop: hp('2%'),
     margin: hp('1%'),
     paddingHorizontal: 24,
   },
@@ -96,25 +124,25 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   sectionDescription: {
     fontSize: hp('3.5%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   noteTitle: {
     fontSize: hp('1.8%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   noteDescription: {
     fontSize: hp('1.8%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   highlight: {
     fontWeight: '700',
@@ -125,12 +153,12 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   }
 });
 

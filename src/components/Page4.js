@@ -127,7 +127,7 @@ class Page4 extends Component {
                       <Text style={styles.sectionParagraph}>
                       If you choose <Text style={styles.highlight}>not</Text> to have a cardiac catheterization procedure, you will still:
                       </Text>
-                      <Text></Text>
+                      
                       <Text style={styles.sectionParagraph}>
                       Have the option to get a cardiac catheterization procedure
                       in the future if you have symptoms later on
@@ -178,8 +178,7 @@ const styles = StyleSheet.create({
     color: Colors.black
   },
   rightArrow: {
-    fontSize: 35,
-    // margin: -10,
+    fontSize: wp('5%'),
     // marginTop: 20
   },
   arrowLeft: {
@@ -195,7 +194,7 @@ const styles = StyleSheet.create({
     fontSize: hp('2.2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     // textAlign: 'center'
   },
   arrowContainer: {
@@ -219,7 +218,7 @@ const styles = StyleSheet.create({
     marginRight: 20
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
     // height: screenheight
     // height: hp('100%')
   },
@@ -235,7 +234,7 @@ const styles = StyleSheet.create({
     marginBottom: hp('2%'),
   },
   titleContainer: {
-    marginTop: hp('2%'),
+    marginTop: hp('3%'),
     marginBottom: hp('1%'),
     paddingHorizontal: wp('2%'),
   },
@@ -257,26 +256,26 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     alignItems: 'center',
   },
   noteTitle: {
     fontSize: hp('2%'),
     fontWeight: '600',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   noteDescription: {
     fontSize: hp('2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   highlight: {
     fontWeight: '700',
@@ -284,13 +283,13 @@ const styles = StyleSheet.create({
   blueBox: {
       backgroundColor: '#ddeaf6',
       borderColor: Colors.black,
-      borderWidth: wp('.4%'),
+      borderWidth: wp('.3%'),
       padding: wp('2%'),
   },
   smallBlueBox: {
     backgroundColor: '#ddeaf6',
     borderColor: Colors.black,
-    borderWidth: wp('.4%'),
+    borderWidth: wp('.3%'),
     padding: wp('2.5%'),
     width: wp('40%'),
     margin: hp('1%'),
@@ -302,25 +301,18 @@ footer: {
 pageNumber: {
   fontSize: hp('2%'),
   textAlign: 'center',
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Avenir',
 },
 copyright: {
   fontSize: hp('1.2%'),
   textAlign: 'right',
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Avenir',
 },
 
 labelBox: {
   // margin: wp('2%'),
   backgroundColor: '#dbdbdb',
-  borderWidth: 1,
-  // borderRightWidth: 0
-  // paddingTop: wp('.5%'),
-  // paddingBottom: wp('.5%'),
-  // paddingLeft: wp('1%'),
-  // paddingRight: wp('7%'),
-  // alignContent: 'center',
-  // alignItems: 'center'
+  borderWidth: wp('.3%'),
 },
 // triangle: {
 //   width: 0,

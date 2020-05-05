@@ -31,6 +31,24 @@ import {
 } from 'react-native-responsive-screen';
 
 class Page7 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -43,7 +61,8 @@ class Page7 extends Component {
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
-            <View style={styles.body}>
+            <View style={[styles.body]}>
+              
             <View style={styles.contentContainer}>
                 <View style={styles.sectionContainer}>
                     <Text style={[styles.sectionTitle, styles.centerTitle]}> 
@@ -53,7 +72,9 @@ class Page7 extends Component {
                         what are the benefits and risks of each option?
                     </Text>
                 </View>
-                <View style={styles.contentWhiteContainer}>
+                <View
+                onLayout={this.onLayout}
+                style={[styles.contentWhiteContainer, {marginBottom: this.state.height * .15}]}>
                   <View style={styles.sectionContainer}>
                       <View style={styles.whiteContainer}>
                       <Text style={[styles.sectionParagraph, styles.centerTitle]}> 
@@ -69,15 +90,15 @@ class Page7 extends Component {
                 </View>
             </View>
               <View style={styles.sectionNote}>
-                  <Text style={styles.boldText}>
+                  <Text style={[styles.boldText, styles.noteText]}>
                     Please note:
                   </Text>
                   <View style={styles.whiteContainer}>
-                      <Text>
+                      <Text style={styles.noteText}>
                       Numbers used in this decision aid were based on studies of older adults who experienced a heart attack.
                       Your clinical circumstances may be different from the populations observed
                       in these studies.</Text>
-                      <Text style={styles.boldText}>
+                      <Text style={[styles.boldText, styles.noteText]}>
                       Your individual medical history has not been considered in these estimates.
                       </Text>
                   </View>
@@ -103,8 +124,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
-    height: screenheight - hp('10%')
+    backgroundColor: '#f6f6f6',
     // height: hp('90%'),
   },
   contentContainer: {
@@ -113,7 +133,7 @@ const styles = StyleSheet.create({
   },
   contentWhiteContainer: {
     // width: wp('150%'),
-    marginBottom: hp('15%')
+    // marginBottom: hp('15%')
   },
   sectionContainer: {
     marginTop: hp('8%'),
@@ -128,26 +148,28 @@ const styles = StyleSheet.create({
     fontSize: hp('3%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     alignItems: 'center',
   },
   sectionNote: {
-    fontSize: hp('1.5%'),
     // margin: wp('1%'),
     padding: wp('5%'),
   },
   boldText: {
     fontWeight: '700'
   },
+  noteText: {
+    fontSize: wp('2%')
+  },
   whiteContainer: {
     backgroundColor: Colors.white,
-    padding: wp('3%'),
+    padding: wp('1.5%'),
     borderColor: Colors.gray,
     borderWidth: wp('.2%'),
   },
@@ -157,12 +179,12 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 });
 

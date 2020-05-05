@@ -32,6 +32,27 @@ import { HEART_BLOOD_IMAGE } from '../..';
 let screenheight = Dimensions.get("window").height;
 
 class Page2 extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
+
+
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -45,7 +66,9 @@ class Page2 extends Component {
             </View>
           )}
             <View style={styles.body}>
-            <View style={styles.sectionContainer}>
+            <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .03}]}>
                 <Text style={styles.sectionTitle}>Acute myocardial infarction (heart attack)</Text>
                 <Text style={styles.sectionParagraph}>
                     If you are reading this, you are an older adult (age ≥75 years)
@@ -57,10 +80,12 @@ class Page2 extends Component {
                     including medications and procedures.
                     This is a tool for you and your cardiologist to discuss the available 
                     treatment options, learn about their risks and benefits,
-                    and determine if they match your values.
+                    and determine if they match <Text style={styles.highlight}>your values</Text>.
                 </Text>
             </View>
-                <View style={styles.sectionContainer}>
+              <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                 <View style={styles.imageContainer}>
                     <Image style={styles.image} source={ HEART_BLOOD_IMAGE } resizeMode="contain"/>
                 </View>
@@ -86,19 +111,19 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
-    height: screenheight + hp('5%')
+    backgroundColor: '#f6f6f6',
   },
   sectionContainer: {
-    margin: hp('1%'),
-    marginTop: hp('2%'),
+    margin: hp('.05%'),
     paddingHorizontal: wp('5%'),
   },
   imageContainer: {
     height: hp('45%'),
     alignContent: 'center',
     backgroundColor: Colors.white,
-    marginBottom: hp('2%')
+    marginBottom: hp('2%'),
+    borderWidth: 1,
+    borderColor: Colors.gray
   },
   image: {
       width: undefined,
@@ -110,26 +135,26 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
     marginTop: hp('2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   noteTitle: {
     fontSize: hp('2%'),
     fontWeight: '600',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   noteDescription: {
     fontSize: hp('2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   highlight: {
     fontWeight: '700',
@@ -140,12 +165,12 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   }
 });
 

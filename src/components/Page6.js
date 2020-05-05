@@ -34,6 +34,24 @@ import { PCI_IMAGE } from '../..';
 import { CABG_IMAGE } from '../..';
 
 class Page6 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -65,13 +83,16 @@ class Page6 extends Component {
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.listItem}>
-                <Unorderedlist><Text style={styles.listText}>
+                <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
                 Most patients with simple blockages receive a stent.
                 </Text></Unorderedlist>
                 </View>
             </View>
             <View style={styles.sectionContainer}>
-                <View style={styles.imageContainer}>
+            <View
+                onLayout={this.onLayout}
+                style={[styles.imageContainer,
+                  {height: this.state.height * .6, height: this.state.width * .6}]}>
                     {/* <View style={styles.containerWrapper}>
                         <View style={styles.listItem}>
                         <Unorderedlist><Text style={styles.listText}>
@@ -115,13 +136,16 @@ class Page6 extends Component {
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.listItem}>
-                <Unorderedlist><Text style={styles.listText}>
+                <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
                 If patients have many blockages, sometimes coronary artery bypass graft (CABG) surgery is performed.
                 </Text></Unorderedlist>
                 </View>
             </View>
             <View style={styles.sectionContainer}>
-                <View style={styles.imageSmallContainer}>
+                <View
+                onLayout={this.onLayout}
+                style={[styles.imageSmallContainer,
+                  {height: this.state.height * .4, height: this.state.width * .4}]}>
                   <View style={styles.containerWrapper}>
                     <Image style={styles.image} source={ CABG_IMAGE } resizeMode="contain"/>
                     <Text style={styles.attribution}>
@@ -152,10 +176,10 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
   },
   titleContainer: {
-    marginTop: hp('1%'),
+    marginTop: hp('3%'),
     paddingHorizontal: wp('5%'),
   },
   sectionContainer: {
@@ -187,11 +211,13 @@ const styles = StyleSheet.create({
     height: hp('36%'),
     backgroundColor: Colors.white,
     flexDirection: "row",
+    borderWidth: 1
   },
   imageSmallContainer: {
     height: hp('22%'),
     backgroundColor: Colors.white,
     flexDirection: "row",
+    borderWidth: 1
   },
   centerTitle: {
     alignItems: 'center',
@@ -206,7 +232,7 @@ const styles = StyleSheet.create({
     fontSize: hp('3.1%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     // marginBottom: hp('1.5%')
   },
   containerWrapper: {
@@ -220,14 +246,11 @@ const styles = StyleSheet.create({
     // alignItems: 'center'
   },
   labelBox: {
-    margin: wp('1%'),
+    // margin: wp('1%'),
     backgroundColor: '#1f3864',
-    paddingTop: wp('.5%'),
-    paddingBottom: wp('.5%'),
-    paddingLeft: wp('4%'),
-    paddingRight: wp('7%'),
-    // alignContent: 'center',
-    // alignItems: 'center',
+    padding: wp('1%'),
+    // margin: wp('2%'),
+    paddingHorizontal: wp('2%')
   },
   labelContainer: {
     // width: wp('90%')
@@ -238,15 +261,18 @@ const styles = StyleSheet.create({
   footer: {
     margin: hp('.5%')
   },
+  bullet: {
+    fontSize: hp('2%')
+  },
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 });
 

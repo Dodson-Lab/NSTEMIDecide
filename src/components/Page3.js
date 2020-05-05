@@ -33,6 +33,26 @@ let screenheight = Dimensions.get("window").height;
 import Unorderedlist from 'react-native-unordered-list';
 
 class Page3 extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
+
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -45,11 +65,17 @@ class Page3 extends Component {
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
-            <View style={styles.body}>
-                <View style={[styles.sectionContainer, styles.centerTitle]}>
+            <View 
+              onLayout={this.onLayout}
+              style={[styles.body]}>
+              <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, styles.centerTitle, {marginTop: this.state.height * .04}]}>
                     <Text style={styles.sectionTitle}>Your values</Text>
                 </View>
-                <View style={styles.sectionContainer}>
+              <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={styles.sectionParagraph}>
                         We understand that being diagnosed with a heart attack may be causing you worry and fear. 
                         Others like you may even feel sad or depressed because they
@@ -58,37 +84,46 @@ class Page3 extends Component {
                         <Text style={styles.highlight}> These feelings are common among patients with heart issues. </Text>
                     </Text>
                 </View>
-                <View style={styles.sectionContainer}>
+                <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={[styles.sectionParagraph, styles.highlight]}>Communication can help.</Text>
                 </View>
-                <View style={styles.sectionContainer}>
+                <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={styles.sectionParagraph}>
                     Speaking to a professional–like your cardiologist—will help lessen the
                     fears you may have about the disease. Listing your priorities and asking
                     questions with your doctor can help better shape your expectations of the future.
                     </Text>
                 </View>
-                <View style={styles.sectionContainer}>
+                <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .04}]}>
                     <Text style={[styles.sectionParagraph, styles.highlight]}>
                     Consider asking yourself these questions in order to help guide your
                     discussion with your cardiologist:
                     </Text>
                 </View>
-                <View style={styles.sectionContainer}>
+                <View
+              onLayout={this.onLayout} 
+              style={[styles.sectionContainer, {marginTop: this.state.height * .03, marginBottom: this.state.height * .09}]}>
                     <View style={[styles.blueBox]}>
                       <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>What are my priorities?</Text></Unorderedlist>
+                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>What are my priorities?</Text></Unorderedlist>
                       </View>
                       <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>How do I feel about procedures?</Text></Unorderedlist>
+                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>How do I feel about procedures?</Text></Unorderedlist>
                       </View>
                       <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>What are my current fears about the cardiac
+                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>What are my current fears about the cardiac
                             catheterization procedure?</Text></Unorderedlist>
                       </View>
                     </View>
                 </View>
             </View>
+
             </ScrollView>
             <View style={styles.footer}>
               <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
@@ -109,9 +144,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
-    height: screenheight - hp('10%')
-    // height: hp('90%')
+    backgroundColor: '#f6f6f6',
   },
   listItem: {
     marginTop: hp('.5%'),
@@ -120,7 +153,7 @@ const styles = StyleSheet.create({
     fontSize: hp('2.2%'),
   },
   sectionContainer: {
-    marginTop: hp('2%'),
+    // marginTop: hp('2%'),
     paddingHorizontal: wp('5%'),
   },
   centerTitle: {
@@ -131,14 +164,17 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
+  },
+  bullet: {
+    fontSize: hp('2%')
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
     marginTop: hp('1.5%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   highlight: {
     fontWeight: '700',
@@ -147,7 +183,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#ddeaf6',
       borderColor: Colors.black,
       borderRadius: wp('2%'),
-      borderWidth: wp('.4%'),
+      borderWidth: wp('.3%'),
       padding: wp('2.5%')
   },
   footer: {
@@ -156,12 +192,12 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   }
 });
 
