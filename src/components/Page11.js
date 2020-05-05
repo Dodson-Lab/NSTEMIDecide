@@ -33,6 +33,24 @@ import Unorderedlist from 'react-native-unordered-list';
 import { COMFORT_IMAGE } from '../..';
 
 class Page11 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+
+  }
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
         return (
             <SafeAreaView style={{flex: 1}}>
@@ -66,7 +84,11 @@ class Page11 extends Component {
                 </Text>
             </View>
             <View style={styles.imageContainer}>
-                <Image style={styles.image} source={ COMFORT_IMAGE } resizeMode="contain"/>
+                <Image onLayout={this.onLayout}
+                style={[{
+                  width: wp('80%'),
+                  height: wp('40%')}]}
+                source={ COMFORT_IMAGE } resizeMode="contain"/>
             </View>
             <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.centerText]}>
@@ -151,21 +173,21 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
   },
   titleContainer: {
     margin: hp('1.5%'),
   },
   sectionContainer: {
-      marginLeft: 20,
-      marginRight: 20,
+      marginLeft: wp('4%'),
+      marginRight: wp('4%'),
     //   marginTop: 10
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     alignItems: 'center',
   },
   highlight: {
@@ -191,7 +213,7 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     // marginBottom: hp('1.5%'),
     textAlign: 'center'
   },
@@ -201,24 +223,24 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   faqContainer: {
-    marginLeft: 5,
-    marginRight: 5
+    margin: wp('3%')
   },
   attributionWrapper: {
-    margin: 10,
+    marginLeft: wp('5%'),
+    marginBottom: wp('2%')
   },
   attribution: {
     fontSize: hp('1.2%'),
     textAlign: 'left',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 
 });
