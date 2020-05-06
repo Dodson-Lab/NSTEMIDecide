@@ -86,7 +86,7 @@ class Page11 extends Component {
             <View style={styles.imageContainer}>
                 <Image onLayout={this.onLayout}
                 style={[{
-                  width: wp('80%'),
+                  width: wp('100%'),
                   height: wp('40%')}]}
                 source={ COMFORT_IMAGE } resizeMode="contain"/>
             </View>
@@ -177,6 +177,8 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     margin: hp('1.5%'),
+    maxWidth: hp('65%'),
+    alignSelf: "center"
   },
   sectionContainer: {
       marginLeft: wp('4%'),
@@ -210,12 +212,12 @@ const styles = StyleSheet.create({
   },
 
   sectionTitle: {
-    fontSize: hp('3.5%'),
+    fontSize: hp('3%'),
     fontWeight: '700',
     color: Colors.black,
     fontFamily: 'Avenir',
     // marginBottom: hp('1.5%'),
-    textAlign: 'center'
+    textAlign: 'center',
   },
   footer: {
     margin: hp('.5%')

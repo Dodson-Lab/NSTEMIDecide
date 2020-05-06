@@ -80,13 +80,13 @@ class Page9 extends Component {
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Did not have another heart procedure</Text>
+                        <Text style={styles.legendFont}>Did not have another heart procedure</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Had another heart procedure</Text>
+                        <Text style={styles.legendFont}>Had another heart procedure</Text>
                       </View>
                     </View>
                   </View>
@@ -205,11 +205,14 @@ container: {
   alignItems: 'flex-start' // if you want to fill rows left to right
 },
 dotItem: {
-  width: '15%',
-  marginTop: 2
+  width: '10%',
+  marginTop: 5,
 },
 item: {
   width: '85%' // is 50% of container width
+},
+legendFont: {
+  fontSize: wp('2%'),
 },
 cardContainer: {
   padding: 5,

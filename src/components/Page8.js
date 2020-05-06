@@ -77,15 +77,15 @@ class Page8 extends Component {
               </View>
               <View style={[styles.columnContainer]}>
                   <View style={[styles.whiteColumn]}>
-                    <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
+                    <Text style={[styles.sectionParagraph, styles.highlight]}>
                       No cardiac catheterization
                     </Text>
-                    <Text></Text>
-                    <Text style={[styles.sectionParagraph, styles.centerText]}>
+                    {/* <Text></Text> */}
+                    <Text style={[styles.sectionParagraph]}>
                       <Text style={styles.highlight}>79/100 </Text>
                       people did not have another heart attack.
                     </Text>
-                    <Text></Text>
+                    {/* <Text></Text> */}
                     <Text style={[styles.sectionParagraph]}>
                       <Text style={styles.highlight}>21/100 </Text>
                       people did.
@@ -95,40 +95,36 @@ class Page8 extends Component {
                     <Image
                     onLayout={this.onLayout}
                     style={[styles.dotImage, {
-                      width: wp('40%'),
-                      height: wp('40%')}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
+                      width: this.state.width,
+                      height: this.state.width * .3}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
-                      {/* <View style={styles.legendItem}> */}
-                        <View style={styles.dotItem}>
-                          <View style={[styles.circle, styles.blue]}></View>
-                        </View>
-                        <View style={styles.item}>
-                          <Text style={styles.legend}>Did not have another heart attack</Text>
-                        </View>
-                      {/* </View> */}
-                      {/* </View> */}
-                      {/* <View style={styles.legendItem}> */}
-                      <View style={styles.dotItem}>
-                        <View style={[styles.circle, styles.orange]}></View>
+                      {/* <View style={styles.dotColumn}>
+                        <View style={[styles.circle, styles.blue]}></View>
                       </View>
-                      <View style={styles.item}>
-                        <Text style={styles.legend}>Had another heart attack</Text>
-                      </View>
-                      {/* </View> */}
-                      {/* </View> */}
+                      <View style={styles.legendColumn}>
+                      <Text style={styles.legend}>Did not have another heart attack</Text>
+                      </View> */}
+                        <Text style={styles.legend}>
+                        <View style={[styles.circle, styles.blue]}></View>
+                          Did not have another heart attack
+                        </Text>
+                    </View>
+                    <View style={[styles.container]}>
+                      <Text style={styles.legend}>
+                      <View style={[styles.circle, styles.orange]}></View>
+                      Had another heart attack
+                      </Text>
                     </View>
                   </View>
                   <View style={[styles.whiteColumn]}>
-                      <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
+                      <Text style={[styles.sectionParagraph, styles.highlight]}>
                       Cardiac catheterization
                       </Text>
-                      <Text></Text>
-                    <Text style={[styles.sectionParagraph, styles.centerText]}>
+                    <Text style={[styles.sectionParagraph]}>
                       <Text style={styles.highlight}>88/100 </Text>
                       people did not have another heart attack.
                     </Text>
-                    <Text></Text>
                     <Text style={[styles.sectionParagraph]}>
                       <Text style={styles.highlight}>12/100 </Text>
                       people did.
@@ -137,43 +133,49 @@ class Page8 extends Component {
                     <Image 
                     onLayout={this.onLayout}
                     style={[styles.dotImage, {
-                      width: wp('40%'),
-                      height: wp('40%')}]}
+                      width: this.state.width,
+                      height: this.state.width * .3}]}
                       source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
-                    <View style={styles.legendItem}>
-                      <View style={styles.dotItem}>
+                      <View style={[styles.container]}>
+                        <Text style={styles.legend}>
                         <View style={[styles.circle, styles.blue]}></View>
-                      </View>
-                      <View style={styles.item}>
-                        <Text style={styles.legend}>Did not have another heart attack</Text>
+                        Did not have another heart attack
+                        </Text>
                       </View>
                     </View>
-                      <View style={styles.dotItem}>
+                    <View style={[styles.container]}>
+                      <View style={[styles.container]}>
+                        <Text style={styles.legend}>
                         <View style={[styles.circle, styles.darkBlue]}></View>
+                        Prevented from another heart attack due to having the procedure
+                        </Text>
                       </View>
-                      <View style={styles.item}>
-                        <Text style={styles.legend}>Prevented from another heart attack due to having the procedure</Text>
-                      </View>
-                      <View style={styles.dotItem}>
+                    </View>
+                    <View style={[styles.container]}>
+                      <View style={[styles.container]}>
+                        <Text style={styles.legend}>
                         <View style={[styles.circle, styles.orange]}></View>
-                      </View>
-                      <View style={styles.item}>
-                        <Text style={styles.legend}>Had another heart attack</Text>
+                        Had another heart attack
+                        </Text>
                       </View>
                     </View>
                   </View>
               </View>
-              <View style={[styles.smallCardContainer]}>
-              <View style={[styles.smallCard]}>
-                  <Text style={[styles.smallCardText, styles.highlight, styles.centerText]}>
-                  Due to having the procedure, 9/100 additional people did not have another heart attack.
-                  </Text>
-              </View>
+              <View
+              onLayout={this.onLayout}
+              style={[styles.smallCardContainer]}>
+                <View
+                onLayout={this.onLayout}
+                style={[styles.smallCard, {width: this.state.width * .5}]}>
+                    <Text style={[styles.smallCardText, styles.highlight]}>
+                    Due to having the procedure, 9/100 additional people did not have another heart attack.
+                    </Text>
+                </View>
               </View>
               <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionParagraph}>
+                  <Text style={styles.sectionNote}>
                   <Text style={styles.highlightUnderline}>Note</Text>: Many patients who undergo cardiac catheterization also undergo a
                   procedure to open a blocked artery (either a stent or bypass surgery).
                   </Text>
@@ -229,24 +231,35 @@ const styles = StyleSheet.create({
     // width: wp('40%'),
     margin: hp('1.5%'),
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
 },
 legendItem: {
   marginTop: 5
 },
 imageContainer: {
-  margin: wp('2%')
+  margin: wp('2%'),
+  alignItems: "center"
 },
 container: {
   flex: 1,
   flexDirection: 'row',
   flexWrap: 'wrap',
+  // margin: wp('3%'),
   alignItems: 'flex-start' // if you want to fill rows left to right
 },
-dotItem: {
-  width: '10%',
-  marginTop: -5
+dotColumn: {
+  flex: 1,
+  // width: wp('1%')
+  // margin:
 },
+legendColumn: {
+  flex: 1,
+  // width: wp('10%')
+},
+// dotItem: {
+//   width: '10%',
+//   marginTop: -5
+// },
 item: {
   width: '85%', // is 50% of container width
 },
@@ -271,7 +284,7 @@ smallCardContainer: {
 smallCard: {
   margin: wp('2%'),
   padding: wp('2%'),
-  width: wp('70%'),
+  width: wp('80%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
   borderWidth: wp('.2%'),
@@ -294,9 +307,13 @@ cardText: {
   fontSize: hp('2.2%'),
   fontWeight: '700',
 },
+space: {
+  margin: 5,
+},
 smallCardText: {
   fontSize: hp('1.8%'),
-  fontWeight: "200"
+  fontWeight: "200",
+  textAlign: "center"
 },
 orangeText: {
   color: "#ed7d31"
@@ -320,6 +337,14 @@ sectionParagraph: {
   color: Colors.black,
   fontFamily: 'Avenir',
   alignItems: 'center',
+  margin: wp('1%'),
+  textAlign: 'center'
+},
+sectionNote: {
+  fontSize: hp('2%'),
+  fontFamily: 'Avenir',
+  // margin: wp('1%'),
+  textAlign: 'left'
 },
 dotText: {
   fontSize: wp('4%'),
@@ -329,9 +354,11 @@ dotText: {
   alignItems: 'center',
 },
  circle: {
-  width: wp('3%'),
-  height: wp('3%'),
-  borderRadius: hp('3%') / 2,
+  width: wp('2.5%'),
+  height: wp('2.5%'),
+  borderRadius: hp('2.5%') / 2,
+  marginTop: -5,
+  padding: 10
 },
 blue: {
   backgroundColor: "#7cb4d4",
@@ -365,8 +392,9 @@ sideBySide: {
     fontFamily: 'Avenir',
   },
   attributionWrapper: {
-    margin: 10,
-    paddingHorizontal: 20
+    margin: wp('3%'),
+    // marginBottom: wp('4%'),
+    // paddingHorizontal: 15,
   },
   attribution: {
     fontSize: hp('1.2%'),

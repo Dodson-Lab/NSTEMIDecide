@@ -46,7 +46,7 @@ class Page12 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>ABOUT NSTEMI DECIDE</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText, {fontSize: 25}]}>ABOUT NSTEMI DECIDE</Text>
                 <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>Disclaimer:</Text>
                     <Text style={styles.sectionParagraph}>
@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#f6f6f6',
+    margin: wp('1%')
   },
   titleContainer: {
     margin: hp('1.5%'),
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     fontSize: hp('1.8%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     alignItems: 'center',
   },
   highlight: {
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
     fontSize: hp('3.5%'),
     fontWeight: '700',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     // marginBottom: hp('1.5%'),
     textAlign: 'center'
   },
@@ -174,12 +175,12 @@ const styles = StyleSheet.create({
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   faqContainer: {
     marginLeft: 5,
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
   attribution: {
     fontSize: hp('1.2%'),
     textAlign: 'left',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 
 });

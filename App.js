@@ -64,7 +64,7 @@ const App: () => React$Node = () => {
     <>
       {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
       
-        <FlipPage orientation={'horizontal'} responsive='true'>
+        <FlipPage orientation={'horizontal'} responsive='true' loopForever='true'>
           <FlipPagePage>
             <Page1/>
           </FlipPagePage>

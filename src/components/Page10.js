@@ -48,109 +48,110 @@ class Page10 extends Component {
                 </View>
 
                 <View style={[styles.cardContainer]}>
+                  <View style={styles.paragraphContainer}>
                   <Text style={styles.sectionParagraph}>
                   As an older adult, your risks of undergoing a cardiac catheterization
                   procedure are higher than in younger patients.
                   </Text>
-                  <Text></Text>
+                  <Text></Text><Text></Text>
                   <Text style={styles.sectionParagraph}>
                   Studies have shown that older patients who get a cardiac
                   catheterization procedure have these risks within 1 year*:
                   </Text>
-                  <Text></Text>
+                  </View>
 
                   <View style={[styles.listContainer]}>
                     <View style={styles.rowContainer}>
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ BRAIN_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight]}>Stroke</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>Stroke</Text>
                             </View>
                         </View>
                         <View style={styles.rightContainer}>
-                        <Text style={[styles.sectionParagraph, styles.highlight]}>1%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>1%</Text>
                         </View>
                     </View>
+                    <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
                     Out of 100 patients, 1 will experience a stroke. 99 will not.
                     </Text>
+                    </View>
+                    {/* <View style={styles.subheaderContainer}> */}
+ 
+                    {/* </View> */}
                     <Text></Text>
                     <View style={styles.rowContainer}>
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ DROPLET_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight]}>Bleeding</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>Bleeding</Text>
                             </View>
                         </View>
                         <View style={styles.rightContainer}>
-                        <Text style={[styles.sectionParagraph, styles.highlight]}>6%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>6%</Text>
                         </View>
                     </View>
+                    <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
                     Out of 100 patients, 6 will experience bleeding. 94 will not.
                     </Text>
+                    </View>
                     <Text></Text>
                     <View style={styles.rowContainer}>
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ KIDNEY_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight]}>Kidney problems</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>Kidney problems</Text>
                             </View>
                         </View>
                     </View>
                     <View style={styles.rowContainer}>
-                        <View style={styles.leftContainer}>
-                        <View style={styles.listItemContainer}>
-                        <Unorderedlist>
+                      <View style={styles.leftContainer}>
+                        <View style={styles.bulletHeaderContainer}>
+                        <Unorderedlist style={styles.bullet}>
                         <Text style={[styles.sectionParagraph, styles.lightHighlight]}>
                         Temporary, reversible
                         </Text>
                         </Unorderedlist>
                         </View>
                         </View>
-                        <Text style={[styles.sectionParagraph, styles.highlight]}>20%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>20%</Text>
                     </View>
-                    <View style={styles.rowContainer}>
-                        <View style={styles.leftContainer}>
-                        <Text  style={[styles.sectionParagraph]}>
-                        Out of 100 patients, 20 will experience temporary,
+                    <View style={styles.subheaderContainer}>
+                    <Text style={[styles.sectionParagraph]}>
+                    Out of 100 patients, 20 will experience temporary,
                         reversible kidney problems. 80 will not.
-                        </Text>
-                        </View>
+                    </Text>
                     </View>
                     <Text></Text>
                     <View style={styles.rowContainer}>
                         <View style={styles.leftContainer}>
-                        <View style={styles.listItemContainer}>
-                        <Unorderedlist>
+                        <View style={styles.bulletHeaderContainer}>
+                        <Unorderedlist style={styles.bullet}>
                         <Text style={[styles.sectionParagraph, styles.lightHighlight]}>
                         Dialysis
                         </Text>
                         </Unorderedlist>
                         </View>
                         </View>
-                        <Text style={[styles.sectionParagraph, styles.highlight]}>0.1%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>0.1%</Text>
                     </View>
-
-                    <View style={styles.rowContainer}>
-                        <View style={styles.leftContainer}>
-                        <Text  style={[styles.sectionParagraph]}>
-                        Out of 100 patients, less than 1 may require dialysis. Your
+                    <View style={styles.subheaderContainer}>
+                    <Text style={[styles.sectionParagraph]}>
+                    Out of 100 patients, less than 1 may require dialysis. Your
                         physician can determine this risk more precisely with a
                         calculator: <Text style={styles.linkStyle} onPress={ ()=> Linking.openURL('https://www.mdcalc.com/mehran-score-post-pci-contrast-nephropathy')}>Mehran Score</Text>.
-                        </Text>
-                        </View>
+                    </Text>
                     </View>
                     <Text></Text>
-                    {/* <View style={styles.rowContainer}> */}
-                        {/* <View style={styles.listItemContainer}> */}
-                        <Text style={[styles.sectionParagraph, styles.centerText]}>
-                        Due to your medical history, your risk may be higher or lower
-                        than the numbers provided above.
-                        </Text>
-                        {/* </View> */}
-                    {/* </View> */}
-
+                    <View style={styles.sectionContainer}>
+                    <View style={styles.rowContainer}>
+                      <Text style={[styles.sectionParagraph, styles.centerText]}>
+                      Due to your medical history, your risk may be higher or lower
+                      than the numbers provided above.
+                      </Text></View>
+                      </View>
                 </View>
                 <Text></Text>
                 <Text style={[styles.sectionParagraph, styles.smallText]}>
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
   },
   sectionContainer: {
     margin: wp('2%')
@@ -207,15 +208,18 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: hp('3%'),
     fontWeight: '700',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     textAlign: 'center'
   },
   sectionParagraph: {
     fontSize: hp('2.2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     // alignItems: 'center',
+  },
+  bullet: {
+    fontSize: hp('2%')
   },
   linkStyle: {
     color: '#0000EE',
@@ -226,13 +230,13 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   smallText: {
-    fontSize: wp('3.5%')
+    fontSize: wp('2.5%')
   },
   subsetParagraph: {
     fontSize: hp('2.2%'),
     fontWeight: '400',
     color: Colors.black,
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     alignItems: 'center',
     flex: 1,
     flexWrap: 'wrap'
@@ -242,8 +246,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    margin: wp('1%')
     // borderBottomWidth: 1
     // backgroundColor: 'blue',
+  },
+  subheaderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginLeft: wp('10%')
+  },
+  bulletHeaderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginLeft: wp('7.5%')
   },
   subItem: {
     textAlign: "right",
@@ -262,10 +279,13 @@ cardContainer: {
 //   alignItems: 'center',
 //   alignContent: 'center',
 //   justifyContent: 'center',
-  margin: wp('3%'),
+  margin: wp('4%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
   borderWidth: wp('.07%'),
+},
+paragraphContainer: {
+  marginBottom: wp('3%')
 },
 listContainer: {
     // marginLeft: wp('3%'),
@@ -274,7 +294,8 @@ listContainer: {
 listItemContainer: {
     flexDirection: 'row',
     // justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    // marginLeft: wp('10%')
 },
 leftContainer: {
     flex: 1,
@@ -299,7 +320,7 @@ image: {
     marginRight: wp('2%')
 },
 highlight: {
-    fontWeight: '700'
+    fontWeight: '700',
 },
 lightHighlight: {
     fontWeight: '500'
@@ -319,20 +340,20 @@ lightHighlight: {
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   attributionWrapper: {
-    margin: 10,
+    margin: wp('2%'),
   },
   attribution: {
     fontSize: hp('1.2%'),
     textAlign: 'left',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
 
 });
