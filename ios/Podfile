@@ -38,6 +38,8 @@ target 'DecisionAidApp' do
 
 
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'DecisionAidAppTests' do
     inherit! :search_paths
     # Pods for testing

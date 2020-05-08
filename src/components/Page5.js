@@ -30,6 +30,9 @@ import {
 
 import Unorderedlist from 'react-native-unordered-list';
 
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 let screenheight = Dimensions.get("window").height;
 
 import { CARDIAC_CATHETERIZATION_IMAGE } from '../..';
@@ -45,9 +48,14 @@ class Page5 extends Component {
     }
 
     this.onLayout = this.onLayout.bind(this);
-
+    this.navigate = this.navigate.bind(this);
   }
-
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 4', '', 'Page 6','Page 11']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
+  }
   onLayout(e) {
     this.setState({
       width: Dimensions.get('window').width,
@@ -55,6 +63,14 @@ class Page5 extends Component {
     });
   }
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "5",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -127,7 +143,15 @@ class Page5 extends Component {
             <View style={styles.footer}>
               <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
               <Text style={styles.copyright}>All Rights Reserved.</Text>
-              <Text style={styles.pageNumber}>5</Text>
+              <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View>
             </View>
             </SafeAreaView>
         )
@@ -211,6 +235,9 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     fontFamily: 'Avenir',
   },
+  buttonGroup: {
+    alignItems: "center",
+  }
 });
 
 export default Page5;

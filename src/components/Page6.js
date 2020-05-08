@@ -30,6 +30,10 @@ import {
 
 import Unorderedlist from 'react-native-unordered-list';
 let screenheight = Dimensions.get("window").height;
+
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import { PCI_IMAGE } from '../..';
 import { CABG_IMAGE } from '../..';
 
@@ -43,9 +47,14 @@ class Page6 extends Component {
     }
 
     this.onLayout = this.onLayout.bind(this);
-
+    this.navigate = this.navigate.bind(this);
   }
-
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 5', '', 'Page 7','Page 11']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
+  }
   onLayout(e) {
     this.setState({
       width: Dimensions.get('window').width,
@@ -53,6 +62,14 @@ class Page6 extends Component {
     });
   }
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "6",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -160,7 +177,17 @@ class Page6 extends Component {
             <View style={styles.footer}>
               <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
               <Text style={styles.copyright}>All Rights Reserved.</Text>
-              <Text style={styles.pageNumber}>6</Text>
+              <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+              {/* <Text style={styles.pageNumber}>4</Text> */}
+            </View>
+              {/* <Text style={styles.pageNumber}>6</Text> */}
             </View>
             </SafeAreaView>
         )
@@ -274,6 +301,9 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     fontFamily: 'Avenir',
   },
+  buttonGroup: {
+    alignItems: "center",
+  }
 });
 
 export default Page6;

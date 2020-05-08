@@ -35,6 +35,9 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 Icon.loadFont();
 
 
@@ -56,57 +59,83 @@ import Page13 from './src/components/Page13'
 
 import SplashScreen from 'react-native-splash-screen'
 
+const Stack = createStackNavigator();
+
+function MyStack() {
+  return (
+    <NavigationContainer>
+    <Stack.Navigator
+    initialRouteName="Page1">
+      <Stack.Screen name="Page 1" component={Page1} />
+      <Stack.Screen name="Page 2" component={Page2} />
+      <Stack.Screen name="Page 3" component={Page3} />
+      <Stack.Screen name="Page 4" component={Page4} />
+      <Stack.Screen name="Page 5" component={Page5} />
+      <Stack.Screen name="Page 6" component={Page6} />
+      <Stack.Screen name="Page 7" component={Page7} />
+      <Stack.Screen name="Page 8" component={Page8} />
+      <Stack.Screen name="Page 9" component={Page9} />
+      <Stack.Screen name="Page 10" component={Page10} />
+      <Stack.Screen name="Page 11" component={Page11} />
+      <Stack.Screen name="Page 12" component={Page12} />
+      <Stack.Screen name="Page 13" component={Page13} />
+    </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+  
 const App: () => React$Node = () => {
   useEffect( () => {
     SplashScreen.hide()
   }, []);
-  return (
-    <>
-      {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
+  return MyStack()
+  // return (
+  //   <>
+  //     {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
       
-        <FlipPage orientation={'horizontal'} responsive='true' loopForever='true'>
-          <FlipPagePage>
-            <Page1/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page2/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page3/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page4/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page5/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page6/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page7/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page8/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page9/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page10/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page11/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page12/>
-          </FlipPagePage>
-          <FlipPagePage>
-            <Page13/>
-          </FlipPagePage>
-        </FlipPage>
-    </>
-  );
+  //       <FlipPage orientation={'horizontal'} responsive='true' loopForever='true'>
+  //         <FlipPagePage>
+  //           <Page1/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page2/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page3/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page4/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page5/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page6/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page7/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page8/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page9/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page10/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page11/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page12/>
+  //         </FlipPagePage>
+  //         <FlipPagePage>
+  //           <Page13/>
+  //         </FlipPagePage>
+  //       </FlipPage>
+  //   </>
+  // );
 };
 
 const styles = StyleSheet.create({

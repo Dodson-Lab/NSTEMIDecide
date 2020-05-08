@@ -28,6 +28,9 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 let screenheight = Dimensions.get("window").height;
 
 import { HEART_IMAGE, HEART_ATACK_NO_OP_IMAGE, HEART_ATACK_OP_IMAGE } from '../..';
@@ -42,9 +45,14 @@ class Page8 extends Component {
     }
 
     this.onLayout = this.onLayout.bind(this);
-
+    this.navigate = this.navigate.bind(this);
   }
-
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 7', '', 'Page 9','Page 11']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
+  }
   onLayout(e) {
     this.setState({
       width: Dimensions.get('window').width,
@@ -52,6 +60,14 @@ class Page8 extends Component {
     });
   }
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "8",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -69,9 +85,9 @@ class Page8 extends Component {
                   </Text>
               </View>
 
-              <View style={[styles.cardContainer]}>
+              <View style={styles.cardContainer}>
                   <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
-                  <Text style={[styles.cardText, styles.highlight]}>
+                  <Text style={[styles.cardText, styles.highlight, {textAlign: "center", flex: 1, flexWrap: 'wrap'}]}>
                   Chance of Another <Text style={styles.orangeText}>Heart Attack</Text> in the Next Year.
                   </Text>
               </View>
@@ -99,22 +115,19 @@ class Page8 extends Component {
                       height: this.state.width * .3}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
-                      {/* <View style={styles.dotColumn}>
+                      <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
-                      <View style={styles.legendColumn}>
-                      <Text style={styles.legend}>Did not have another heart attack</Text>
-                      </View> */}
-                        <Text style={styles.legend}>
-                        <View style={[styles.circle, styles.blue]}></View>
-                          Did not have another heart attack
-                        </Text>
-                    </View>
-                    <View style={[styles.container]}>
-                      <Text style={styles.legend}>
-                      <View style={[styles.circle, styles.orange]}></View>
-                      Had another heart attack
-                      </Text>
+                      <View style={styles.item}>
+                      <Text style={styles.legendFont}>Did not have another heart attack</Text>
+                      </View>
+                        <View style={styles.dotItem}>
+                        <View style={[styles.circle, styles.orange]}></View>
+                        </View>
+                        <View style={styles.item}>
+                        <Text style={styles.legendFont}>
+                          Had another heart attack
+                          </Text></View>
                     </View>
                   </View>
                   <View style={[styles.whiteColumn]}>
@@ -138,27 +151,23 @@ class Page8 extends Component {
                       source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
-                      <View style={[styles.container]}>
-                        <Text style={styles.legend}>
+                      <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.blue]}></View>
-                        Did not have another heart attack
-                        </Text>
                       </View>
-                    </View>
-                    <View style={[styles.container]}>
-                      <View style={[styles.container]}>
-                        <Text style={styles.legend}>
+                      <View style={styles.item}>
+                      <Text style={styles.legendFont}>Did not have another heart attack</Text>
+                      </View>
+                      <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.darkBlue]}></View>
-                        Prevented from another heart attack due to having the procedure
-                        </Text>
                       </View>
-                    </View>
-                    <View style={[styles.container]}>
-                      <View style={[styles.container]}>
-                        <Text style={styles.legend}>
+                      <View style={styles.item}>
+                      <Text style={styles.legendFont}>Prevented from another heart attack due to having the procedure</Text>
+                      </View>
+                      <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
-                        Had another heart attack
-                        </Text>
+                      </View>
+                      <View style={styles.item}>
+                      <Text style={styles.legendFont}>Had another heart attack</Text>
                       </View>
                     </View>
                   </View>
@@ -192,7 +201,16 @@ class Page8 extends Component {
               <View style={styles.footer}>
                 <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
                 <Text style={styles.copyright}>All Rights Reserved.</Text>
-                <Text style={styles.pageNumber}>8</Text>
+                <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View>
+                {/* <Text style={styles.pageNumber}>8</Text> */}
               </View>
             </SafeAreaView>
         )
@@ -247,21 +265,15 @@ container: {
   // margin: wp('3%'),
   alignItems: 'flex-start' // if you want to fill rows left to right
 },
-dotColumn: {
-  flex: 1,
-  // width: wp('1%')
-  // margin:
+dotItem: {
+  width: '10%',
+  marginTop: 5,
 },
-legendColumn: {
-  flex: 1,
-  // width: wp('10%')
-},
-// dotItem: {
-//   width: '10%',
-//   marginTop: -5
-// },
 item: {
-  width: '85%', // is 50% of container width
+  width: '85%' // is 50% of container width
+},
+legendFont: {
+  fontSize: hp('1.5%'),
 },
 cardContainer: {
   padding: 5,
@@ -269,7 +281,7 @@ cardContainer: {
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  margin: wp('3%'),
+  margin: wp('4%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
   borderWidth: wp('.1%'),
@@ -296,8 +308,10 @@ columnContainer: {
   flexDirection: 'row',
 },
 image: {
-  width: 35,
-  height: 35
+  width: 50,
+  height: 50,
+  marginRight: 10,
+  marginLeft: 10
 },
 dotImage: {
   // width: wp('40%'),
@@ -357,8 +371,6 @@ dotText: {
   width: wp('2.5%'),
   height: wp('2.5%'),
   borderRadius: hp('2.5%') / 2,
-  marginTop: -5,
-  padding: 10
 },
 blue: {
   backgroundColor: "#7cb4d4",
@@ -393,14 +405,15 @@ sideBySide: {
   },
   attributionWrapper: {
     margin: wp('3%'),
-    // marginBottom: wp('4%'),
-    // paddingHorizontal: 15,
   },
   attribution: {
     fontSize: hp('1.2%'),
     textAlign: 'left',
     fontFamily: 'Avenir',
   },
+  buttonGroup: {
+    alignItems: "center",
+  }
 });
 
 export default Page8;

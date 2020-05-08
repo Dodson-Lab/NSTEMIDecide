@@ -32,6 +32,10 @@ import Unorderedlist from 'react-native-unordered-list';
 
 import { COMFORT_IMAGE } from '../..';
 
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+
 class Page11 extends Component {
   constructor(props) {
     super(props);
@@ -42,9 +46,14 @@ class Page11 extends Component {
     }
 
     this.onLayout = this.onLayout.bind(this);
-
+    this.navigate = this.navigate.bind(this);
   }
-
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 10', '', 'Page 12','Page 13']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
+  }
   onLayout(e) {
     this.setState({
       width: Dimensions.get('window').width,
@@ -52,6 +61,14 @@ class Page11 extends Component {
     });
   }
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "11",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -146,18 +163,23 @@ class Page11 extends Component {
             <Text style={{color: 'blue'}}
       onPress={() => Linking.openURL('https://www.heart.org/en/health-topics/heart-attack/diagnosing-a-heart-attack/cardiac-catheterization')}> The American Heart Association, Inc.
             </Text>
-
             </Text>
         </View>
-        
             </View>
-
             </ScrollView>
-
             <View style={styles.footer}>
               <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
               <Text style={styles.copyright}>All Rights Reserved.</Text>
-              <Text style={styles.pageNumber}>11</Text>
+              <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View>
+              {/* <Text style={styles.pageNumber}>11</Text> */}
             </View>
             </SafeAreaView>
         )
@@ -244,7 +266,9 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontFamily: 'Avenir',
   },
-
+  buttonGroup: {
+    alignItems: "center",
+  }
 });
 
 export default Page11;

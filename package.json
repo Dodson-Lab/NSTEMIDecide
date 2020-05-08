@@ -11,10 +11,17 @@
   },
   "dependencies": {
     "@dudigital/react-native-zoomable-view": "^1.0.15",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.2.4",
+    "@react-navigation/stack": "^5.2.19",
     "react": "16.9.0",
     "react-native": "^0.62.2",
+    "react-native-elements": "^2.0.0",
     "react-native-flip-page": "^0.5.0",
+    "react-native-gesture-handler": "^1.6.1",
     "react-native-responsive-screen": "^1.4.1",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.7.0",
     "react-native-splash-screen": "^3.2.0",
     "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^6.6.0"

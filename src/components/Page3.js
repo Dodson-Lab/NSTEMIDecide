@@ -31,6 +31,8 @@ import {
 let screenheight = Dimensions.get("window").height;
 
 import Unorderedlist from 'react-native-unordered-list';
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Page3 extends Component {
 
@@ -43,7 +45,15 @@ class Page3 extends Component {
     }
 
     this.onLayout = this.onLayout.bind(this);
+    this.navigate = this.navigate.bind(this);
 
+  }
+
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 2', '', 'Page 4','Page 11']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
   }
 
   onLayout(e) {
@@ -54,6 +64,14 @@ class Page3 extends Component {
   }
 
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "3",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -100,7 +118,7 @@ class Page3 extends Component {
                 </View>
                 <View
               onLayout={this.onLayout} 
-              style={[styles.sectionContainer, {marginTop: this.state.height * .04}]}>
+              style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={[styles.sectionParagraph, styles.highlight]}>
                     Consider asking yourself these questions in order to help guide your
                     discussion with your cardiologist:
@@ -128,8 +146,16 @@ class Page3 extends Component {
             <View style={styles.footer}>
               <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
               <Text style={styles.copyright}>All Rights Reserved.</Text>
-              <Text style={styles.pageNumber}>3</Text>
-            </View>
+              {/* <Text style={styles.pageNumber}>3</Text> */}
+              <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View></View>
             </SafeAreaView>
         )
     }
@@ -198,6 +224,9 @@ const styles = StyleSheet.create({
     fontSize: hp('1.2%'),
     textAlign: 'right',
     fontFamily: 'Avenir',
+  },
+  buttonGroup: {
+    alignItems: "center",
   }
 });
 

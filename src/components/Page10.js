@@ -25,11 +25,45 @@ import {
 
 import { BRAIN_IMAGE, KIDNEY_IMAGE, DROPLET_IMAGE } from '../..';
 
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import Unorderedlist from 'react-native-unordered-list';
 let screenheight = Dimensions.get("window").height;
 
 class Page10 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+    this.navigate = this.navigate.bind(this);
+  }
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 9', '', 'Page 11','Page 13']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
+  }
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "10",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -184,7 +218,16 @@ class Page10 extends Component {
               <View style={styles.footer}>
                 <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
                 <Text style={styles.copyright}>All Rights Reserved.</Text>
-                <Text style={styles.pageNumber}>10</Text>
+                <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View>
+                {/* <Text style={styles.pageNumber}>10</Text> */}
               </View>
             </SafeAreaView>
         )
@@ -230,7 +273,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   smallText: {
-    fontSize: wp('2.5%')
+    fontSize: hp('1.5%')
   },
   subsetParagraph: {
     fontSize: hp('2.2%'),
@@ -325,14 +368,6 @@ highlight: {
 lightHighlight: {
     fontWeight: '500'
 },
-// columnContainer: {
-//   alignItems: 'center',
-//   alignContent: 'center',
-//   justifyContent: 'center',
-//   flexDirection: 'row',
-// },
-
-
 //  FOOTER 
   footer: {
     margin: hp('.5%')
@@ -355,6 +390,9 @@ lightHighlight: {
     textAlign: 'left',
     fontFamily: 'Avenir',
   },
+  buttonGroup: {
+    alignItems: "center",
+  }
 
 });
 

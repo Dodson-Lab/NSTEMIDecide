@@ -13,7 +13,8 @@ import {
   ScrollView,
   View,
   Text,
-  Dimensions
+  Dimensions,
+  Button
 } from 'react-native';
 
 import {
@@ -27,7 +28,11 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 let screenheight = Dimensions.get("window").height;
+
 
 class Page1 extends Component {
 
@@ -40,7 +45,14 @@ class Page1 extends Component {
     }
 
     this.onLayout = this.onLayout.bind(this);
+    this.navigate = this.navigate.bind(this);
+  }
 
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 1', '', 'Page 2','Page 11']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
   }
 
   onLayout(e) {
@@ -51,6 +63,14 @@ class Page1 extends Component {
   }
 
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "1",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1, backgroundColor: "e8e8e8"}}>
             <ScrollView
@@ -65,6 +85,7 @@ class Page1 extends Component {
             <View 
               onLayout={this.onLayout}
               style={[styles.body, {height: this.state.height}]}>
+
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .05}]}>
@@ -93,9 +114,19 @@ class Page1 extends Component {
             </View>
             </ScrollView>
             <View style={styles.footer}>
+              <View style={styles.attribution}>
               <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
-              <Text style={styles.copyright}>All Rights Reserved.</Text>
-              <Text style={styles.pageNumber}>1</Text>
+              <Text style={styles.copyright}>All Rights Reserved.</Text></View>
+              <View style={styles.buttonGroup}>
+            <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[0,1,2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View>
+              {/* <Text style={styles.pageNumber}>1</Text> */}
             </View>
             </SafeAreaView>
         )
@@ -148,7 +179,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   footer: {
-    margin: hp('.5%')
   },
   pageNumber: {
     fontSize: hp('2%'),
@@ -156,9 +186,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
   },
   copyright: {
-    fontSize: hp('1.2%'),
+    fontSize: hp('1%'),
     textAlign: 'right',
     fontFamily: 'Avenir',
+  },
+  attribution: {
+    backgroundColor: '#f6f6f6',
+    padding: hp('.5%'),
+  },
+  arrow: {
+    fontSize: 20,
+  },
+  buttonGroup: {
+    alignItems: "center",
   }
 });
 

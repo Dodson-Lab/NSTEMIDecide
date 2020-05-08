@@ -28,10 +28,44 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import { ButtonGroup } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import { BED_IMAGE, HEART_PROCEDURE_NO_OP_IMAGE, HEART_PROCEDURE_OP_IMAGE } from '../..';
 
 class Page9 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+    this.navigate = this.navigate.bind(this);
+  }
+  navigate (selectedIndex) {
+    const pages = ['Page 1','Page 8', '', 'Page 10','Page 11']
+    const page = pages[selectedIndex]
+    this.props.navigation.navigate(page)
+    this.setState({selectedIndex})
+  }
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    });
+  }
     render() {
+      const buttons = [
+        <Icon name="angle-double-left" style={{fontSize: 25}}/>,
+        <Icon name="angle-left" style={{fontSize: 25}}/>,
+        "9",
+        <Icon name="angle-right" style={{fontSize: 25}}/>,
+        <Icon name="angle-double-right" style={{fontSize: 25}}/>,
+      ]
+      const { selectedIndex } = this.state
         return (
             <SafeAreaView style={{flex: 1}}>
             <ScrollView
@@ -49,9 +83,9 @@ class Page9 extends Component {
                   </Text>
               </View>
 
-              <View style={[styles.cardContainer]}>
+              <View style={styles.cardContainer}>
                   <Image style={styles.image} source={ BED_IMAGE } resizeMode="contain"/>
-                  <Text style={[styles.cardText, styles.highlight]}>
+                  <Text style={[styles.cardText, styles.highlight, {textAlign: "center", flex: 1, flexWrap: 'wrap'}]}>
                   Chance of Another <Text style={styles.orangeText}>Heart Procedure</Text> in the Next Year.
                   </Text>
               </View>
@@ -72,7 +106,10 @@ class Page9 extends Component {
                       people did.
                     </Text>
                     <View style={styles.imageContainer}>
-                    <Image style={styles.dotImage} source={ HEART_PROCEDURE_NO_OP_IMAGE } resizeMode="contain"/>
+                    <Image style={[styles.dotImage,
+                    {
+                      width: this.state.width,
+                      height: this.state.width * .3}]} source={ HEART_PROCEDURE_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
 
                     <View style={[styles.container]}>
@@ -105,33 +142,39 @@ class Page9 extends Component {
                       people did.
                     </Text>
                     <View style={styles.imageContainer}>
-                    <Image style={styles.dotImage} source={ HEART_PROCEDURE_OP_IMAGE } resizeMode="contain"/>
+                    <Image style={[styles.dotImage,
+                    {
+                      width: this.state.width,
+                      height: this.state.width * .3}]}
+                    source={ HEART_PROCEDURE_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Did not have another heart procedure</Text>
+                      <Text style={styles.legendFont}>Did not have another heart procedure</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.darkBlue]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Prevented from another heart procedure due to having the procedure</Text>
+                      <Text style={styles.legendFont}>Prevented from another heart procedure due to having the procedure</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text>Had another heart procedure</Text>
+                      <Text style={styles.legendFont}>Had another heart procedure</Text>
                       </View>
                     </View>
                   </View>
               </View>
             
               <View style={[styles.smallCardContainer]}>
-              <View style={[styles.smallCard]}>
+              <View
+                onLayout={this.onLayout}
+                style={[styles.smallCard, {width: this.state.width * .5}]}>
                   <Text style={[styles.smallCardText, styles.highlight, styles.centerText]}>
                   Due to having the procedure, 6/100 additional people did not have another heart procedure.
                   </Text>
@@ -157,7 +200,16 @@ class Page9 extends Component {
               <View style={styles.footer}>
                 <Text style={styles.copyright}>Copyright 2020 New York University.</Text>
                 <Text style={styles.copyright}>All Rights Reserved.</Text>
-                <Text style={styles.pageNumber}>9</Text>
+                <View style={styles.buttonGroup}>
+              <ButtonGroup
+            buttons={buttons}
+            onLayout={this.onLayout} 
+            disabled={[2]}
+            onPress={this.navigate}
+            selectedIndex={selectedIndex}
+            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            </View>
+                {/* <Text style={styles.pageNumber}>9</Text> */}
               </View>
             </SafeAreaView>
         )
@@ -173,7 +225,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: '#E8E8E8',
+    backgroundColor: '#f6f6f6',
   },
   sectionContainer: {
     margin: wp('3%')
@@ -181,7 +233,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: hp('3%'),
     fontWeight: '700',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
     textAlign: 'center'
   },
 
@@ -191,7 +243,7 @@ const styles = StyleSheet.create({
     borderWidth: wp('.1%'),
     padding: wp('2%'),
     width: wp('40%'),
-    margin: hp('2%'),
+    margin: hp('1%'),
     flex: 1,
     alignItems: 'center',
 },
@@ -212,7 +264,7 @@ item: {
   width: '85%' // is 50% of container width
 },
 legendFont: {
-  fontSize: wp('2%'),
+  fontSize: hp('1.5%'),
 },
 cardContainer: {
   padding: 5,
@@ -242,7 +294,7 @@ smallCardContainer: {
   smallCard: {
     margin: wp('2%'),
     padding: wp('2%'),
-    width: wp('70%'),
+    width: wp('90%'),
     backgroundColor: Colors.white,
     borderColor: Colors.gray,
     borderWidth: wp('.2%'),
@@ -254,8 +306,10 @@ smallCardContainer: {
   },
 
 image: {
-  width: 35,
-  height: 35
+  width: 50,
+  height: 50,
+  marginRight: -10,
+  marginLeft: 10
 },
 dotImage: {
   width: 170,
@@ -285,20 +339,21 @@ sectionParagraph: {
   fontSize: hp('2%'),
   fontWeight: '400',
   color: Colors.black,
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Avenir',
   alignItems: 'center',
+  textAlign: "center"
 },
 dotText: {
   fontSize: hp('1.5%'),
   fontWeight: '400',
   color: Colors.black,
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Avenir',
   alignItems: 'center',
 },
  circle: {
-  width: 15,
-  height: 15,
-  borderRadius: 15/2,
+  width: wp('2.5%'),
+  height: wp('2.5%'),
+  borderRadius: hp('2.5%') / 2,
 },
 blue: {
   backgroundColor: "#7cb4d4",
@@ -311,7 +366,7 @@ darkBlue: {
 },
 circleContainer: {
   margin: 2,
-  marginTop: -4
+  // marginTop: -5
 },
 sideBySide: {
   flex: 1
@@ -324,21 +379,24 @@ sideBySide: {
   pageNumber: {
     fontSize: hp('2%'),
     textAlign: 'center',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   copyright: {
     fontSize: hp('1.2%'),
     textAlign: 'right',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
   attributionWrapper: {
-    margin: 10,
+    margin: wp('3%'),
   },
   attribution: {
     fontSize: hp('1.2%'),
     textAlign: 'left',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Avenir',
   },
+  buttonGroup: {
+    alignItems: "center",
+  }
 });
 
 export default Page9;
