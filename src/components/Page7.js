@@ -131,7 +131,7 @@ class Page7 extends Component {
             disabled={[2]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
-            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
 
             </View>
               {/* <Text style={styles.pageNumber}>7</Text> */}
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   noteText: {
-    fontSize: wp('2%')
+    fontSize: hp('1.5%')
   },
   whiteContainer: {
     backgroundColor: Colors.white,

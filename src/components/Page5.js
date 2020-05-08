@@ -150,7 +150,7 @@ class Page5 extends Component {
             disabled={[2]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
-            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
             </View>
             </View>
             </SafeAreaView>
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   listText: {
-    fontSize: hp('2.4%')
+    fontSize: hp('2.2%')
   },
   labelText: {
     fontSize: hp('2.5%'),

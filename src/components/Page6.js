@@ -105,11 +105,12 @@ class Page6 extends Component {
                 </Text></Unorderedlist>
                 </View>
             </View>
-            <View style={styles.sectionContainer}>
+            <View style={styles.sectionContainer, {flex: 1, flexDirection: "row", justifyContent: "center"}}>
             <View
                 onLayout={this.onLayout}
                 style={[styles.imageContainer,
-                  {height: this.state.height * .6, height: this.state.width * .6}]}>
+                  {height: hp("60%"), width: this.state.width * .85}]}>
+                    {/* , width: this.state.width * .8 */}
                     {/* <View style={styles.containerWrapper}>
                         <View style={styles.listItem}>
                         <Unorderedlist><Text style={styles.listText}>
@@ -184,7 +185,7 @@ class Page6 extends Component {
             disabled={[2]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
-            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
               {/* <Text style={styles.pageNumber}>4</Text> */}
             </View>
               {/* <Text style={styles.pageNumber}>6</Text> */}
@@ -235,9 +236,10 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   imageContainer: {
-    height: hp('36%'),
+    // height: hp('36%'),
     backgroundColor: Colors.white,
     flexDirection: "row",
+    padding: 10,
     borderWidth: 1
   },
   imageSmallContainer: {

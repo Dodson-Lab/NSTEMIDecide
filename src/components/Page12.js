@@ -63,7 +63,7 @@ class Page12 extends Component {
       const buttons = [
         <Icon name="angle-double-left" style={{fontSize: 25}}/>,
         <Icon name="angle-left" style={{fontSize: 25}}/>,
-        "9",
+        "12",
         <Icon name="angle-right" style={{fontSize: 25}}/>,
         <Icon name="angle-double-right" style={{fontSize: 25}}/>,
       ]
@@ -80,7 +80,7 @@ class Page12 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText, {fontSize: 25}]}>ABOUT NSTEMI DECIDE</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText, {fontSize: 20}]}>ABOUT NSTEMI DECIDE</Text>
                 <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>Disclaimer:</Text>
                     <Text style={styles.sectionParagraph}>
@@ -147,7 +147,7 @@ class Page12 extends Component {
             disabled={[2]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
-            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
             </View>
               {/* <Text style={styles.pageNumber}>12</Text> */}
             </View>

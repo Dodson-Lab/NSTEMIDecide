@@ -64,7 +64,7 @@ class Page13 extends Component {
       const buttons = [
         <Icon name="angle-double-left" style={{fontSize: 25}}/>,
         <Icon name="angle-left" style={{fontSize: 25}}/>,
-        "9",
+        "13",
         <Icon name="angle-right" style={{fontSize: 25}}/>,
         <Icon name="angle-double-right" style={{fontSize: 25}}/>,
       ]
@@ -96,7 +96,7 @@ class Page13 extends Component {
             disabled={[2,3,4]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
-            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
             </View>
               {/* <Text style={styles.pageNumber}>13</Text> */}
             </View>

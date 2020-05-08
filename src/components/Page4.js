@@ -199,7 +199,7 @@ class Page4 extends Component {
             disabled={[2]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
-            containerStyle={{height: hp('6%'), width: this.state.width * .9}}/>
+            containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
               {/* <Text style={styles.pageNumber}>4</Text> */}
             </View></View>
             </SafeAreaView>
