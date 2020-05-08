@@ -80,10 +80,9 @@ class Page8 extends Component {
             </View>
           )}
             <View style={styles.body}>
-              <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization
-                  </Text>
-              </View>
+            <View style={[styles.titleContainer, styles.centerTitle]}>
+                    <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization</Text>
+                </View>
 
               <View style={styles.cardContainer}>
                   <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
@@ -231,6 +230,10 @@ const styles = StyleSheet.create({
   },
   sectionContainer: {
     margin: wp('3%')
+  },
+  titleContainer: {
+    marginTop: hp('3%'),
+    paddingHorizontal: wp('5%'),
   },
   sectionTitle: {
     fontSize: hp('3%'),

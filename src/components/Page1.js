@@ -84,7 +84,7 @@ class Page1 extends Component {
           )}
             <View 
               onLayout={this.onLayout}
-              style={[styles.body, {height: this.state.height}]}>
+              style={[styles.body, {height: this.state.height * .8}]}>
 
               <View
               onLayout={this.onLayout} 
@@ -143,8 +143,6 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#f6f6f6',
-    height: screenheight
-    // height: hp('100%'),
   },
   sectionContainer: {
     marginTop: hp('2%'),

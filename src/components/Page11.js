@@ -200,6 +200,8 @@ const styles = StyleSheet.create({
   titleContainer: {
     margin: hp('1.5%'),
     maxWidth: hp('65%'),
+    marginTop: hp('3%'),
+    paddingHorizontal: wp('5%'),
     alignSelf: "center"
   },
   sectionContainer: {

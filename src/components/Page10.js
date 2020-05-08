@@ -76,9 +76,8 @@ class Page10 extends Component {
             </View>
           )}
             <View style={styles.body}>
-                <View style={styles.sectionContainer}>
-                    <Text style={styles.sectionTitle}>Risks of Cardiac Catheterization
-                    </Text>
+                <View style={[styles.titleContainer, styles.centerTitle]}>
+                    <Text style={styles.sectionTitle}>Risks of Cardiac Catheterization</Text>
                 </View>
 
                 <View style={[styles.cardContainer]}>
@@ -274,6 +273,10 @@ const styles = StyleSheet.create({
   },
   smallText: {
     fontSize: hp('1.5%')
+  },
+  titleContainer: {
+    marginTop: hp('3%'),
+    paddingHorizontal: wp('5%'),
   },
   subsetParagraph: {
     fontSize: hp('2.2%'),

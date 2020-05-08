@@ -161,7 +161,8 @@ class Page4 extends Component {
                       <Text style={styles.sectionParagraph}>
                       If you choose <Text style={styles.highlight}>not</Text> to have a cardiac catheterization procedure, you will still:
                       </Text>
-                      
+                      <Text></Text>
+                      <Text></Text>
                       <Text style={styles.sectionParagraph}>
                       Have the option to get a cardiac catheterization procedure
                       in the future if you have symptoms later on

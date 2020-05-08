@@ -78,10 +78,9 @@ class Page9 extends Component {
             </View>
           )}
             <View style={styles.body}>
-              <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization
-                  </Text>
-              </View>
+            <View style={[styles.titleContainer, styles.centerTitle]}>
+                    <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization</Text>
+                </View>
 
               <View style={styles.cardContainer}>
                   <Image style={styles.image} source={ BED_IMAGE } resizeMode="contain"/>
@@ -241,7 +240,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderColor: Colors.black,
     borderWidth: wp('.1%'),
-    padding: wp('2%'),
+    padding: wp('4%'),
     width: wp('40%'),
     margin: hp('1%'),
     flex: 1,
@@ -249,6 +248,10 @@ const styles = StyleSheet.create({
 },
 imageContainer: {
   margin: wp('2%')
+},
+titleContainer: {
+  marginTop: hp('3%'),
+  paddingHorizontal: wp('5%'),
 },
 container: {
   flex: 1,

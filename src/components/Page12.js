@@ -80,6 +80,7 @@ class Page12 extends Component {
             </View>
           )}
             <View style={styles.body}>
+              <Text></Text>
                 <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText, {fontSize: 20}]}>ABOUT NSTEMI DECIDE</Text>
                 <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>Disclaimer:</Text>
