@@ -1,102 +1,156 @@
 {
   "images" : [
     {
-      "size" : "20x20",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-20@2x.png",
-      "scale" : "2x"
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "20x20"
     },
     {
-      "size" : "20x20",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-20@3x-1.png",
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "20x20"
     },
     {
-      "size" : "29x29",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-29@2x.png",
-      "scale" : "2x"
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "29x29"
     },
     {
-      "size" : "29x29",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-29@3x-1.png",
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "29x29"
     },
     {
-      "size" : "40x40",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-40@2x.png",
-      "scale" : "2x"
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "40x40"
     },
     {
-      "size" : "40x40",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-40@3x-1.png",
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "40x40"
     },
     {
-      "size" : "60x60",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-60@2x.png",
-      "scale" : "2x"
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "60x60"
     },
     {
-      "size" : "60x60",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-60@3x.png",
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "60x60"
     },
     {
-      "size" : "1024x1024",
-      "idiom" : "ios-marketing",
+      "filename" : "20.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "40-1.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "29.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "58.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "40.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "80.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "76.png",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "152.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "167.png",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "83.5x83.5"
+    },
+    {
       "filename" : "iTunesArtwork@3x-1024.png",
-      "scale" : "1x"
+      "idiom" : "ios-marketing",
+      "scale" : "1x",
+      "size" : "1024x1024"
     },
     {
-      "size" : "76x76",
-      "idiom" : "universal",
       "filename" : "iTunesArtwork@3x-76@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "76x76",
       "idiom" : "universal",
+      "scale" : "2x",
+      "size" : "76x76"
+    },
+    {
       "filename" : "iTunesArtwork@3x-76.png",
-      "scale" : "3x"
+      "idiom" : "universal",
+      "scale" : "3x",
+      "size" : "76x76"
     },
     {
-      "size" : "20x20",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-20@3x.png",
-      "unassigned" : true,
-      "scale" : "3x"
-    },
-    {
+      "idiom" : "iphone",
+      "scale" : "3x",
       "size" : "20x20",
-      "idiom" : "iphone",
+      "unassigned" : true
+    },
+    {
       "filename" : "iTunesArtwork@3x-83.5@2x.png",
-      "unassigned" : true,
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "20x20",
+      "unassigned" : true
     },
     {
-      "size" : "29x29",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-29@3x.png",
-      "unassigned" : true,
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "29x29",
+      "unassigned" : true
     },
     {
-      "size" : "40x40",
-      "idiom" : "iphone",
       "filename" : "iTunesArtwork@3x-40@3x.png",
-      "unassigned" : true,
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "40x40",
+      "unassigned" : true
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
