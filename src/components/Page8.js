@@ -323,6 +323,7 @@ dotImage: {
 cardText: {
   fontSize: hp('2.2%'),
   fontWeight: '700',
+  fontFamily: 'Avenir'
 },
 space: {
   margin: 5,
@@ -330,7 +331,8 @@ space: {
 smallCardText: {
   fontSize: hp('1.8%'),
   fontWeight: "200",
-  textAlign: "center"
+  textAlign: "center",
+  fontFamily: 'Avenir'
 },
 orangeText: {
   color: "#ed7d31"

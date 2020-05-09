@@ -219,11 +219,13 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   listText: {
-    fontSize: hp('2.2%')
+    fontSize: hp('2.2%'),
+    fontFamily: 'Avenir'
   },
   labelText: {
     fontSize: hp('2.2%'),
     color: Colors.white,
+    fontFamily: 'Avenir'
   },
   attribution: {
     fontSize: 7,

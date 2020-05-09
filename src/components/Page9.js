@@ -305,7 +305,8 @@ smallCardContainer: {
   },
   smallCardText: {
     fontSize: hp('1.8%'),
-    fontWeight: "200"
+    fontWeight: "200",
+    fontFamily: 'Avenir'
   },
 
 image: {
@@ -321,6 +322,7 @@ dotImage: {
 cardText: {
   fontSize: hp('2.2%'),
   fontWeight: '700',
+  fontFamily: 'Avenir'
 },
 orangeText: {
   color: "#ed7d31"

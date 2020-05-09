@@ -383,7 +383,8 @@ labelText: {
   fontSize: hp('2%'),
   color: Colors.black,
   fontWeight: "700",
-  padding: 3
+  padding: 3,
+  fontFamily: 'Avenir'
 },
 buttonGroup: {
   alignItems: "center",

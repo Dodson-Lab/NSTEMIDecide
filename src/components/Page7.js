@@ -113,10 +113,9 @@ class Page7 extends Component {
                       <Text style={styles.noteText}>
                       Numbers used in this decision aid were based on studies of older adults who experienced a heart attack.
                       Your clinical circumstances may be different from the populations observed
-                      in these studies.</Text>
-                      <Text style={[styles.boldText, styles.noteText]}>
-                      Your individual medical history has not been considered in these estimates.
-                      </Text>
+                      in these studies.
+                      <Text style={[styles.boldText, styles.noteText]}> Your individual medical history has not been considered in these estimates.
+                      </Text></Text>
                   </View>
               </View>
             </View>
@@ -191,7 +190,8 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   noteText: {
-    fontSize: hp('1.5%')
+    fontSize: hp('1.5%'),
+    fontFamily: 'Avenir'
   },
   whiteContainer: {
     backgroundColor: Colors.white,
