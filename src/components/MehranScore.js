@@ -7,11 +7,8 @@ import {
   ScrollView,
   View,
   Text,
-  Image,
   Linking,
   Dimensions,
-  Switch,
-  Button
 } from 'react-native';
 
 import {
@@ -29,7 +26,7 @@ import PropTypes from 'prop-types';
 
 import { BRAIN_IMAGE, KIDNEY_IMAGE, DROPLET_IMAGE } from '../..';
 
-import { ButtonGroup, Divider, Input } from 'react-native-elements';
+import { ButtonGroup, Divider, Input, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -153,7 +150,9 @@ handleInputChange = (value) => {
       this.setState({
         mehranScore: score,
         risk: risk,
-        dialysis: dialysis
+        dialysis: dialysis,
+        mehranScoreUnit: ' points',
+        riskUnit: ' %'
       })
   }
    
@@ -176,7 +175,7 @@ handleInputChange = (value) => {
           'No', 'Yes'
       ]
       const eGFRButtons = [
-          '≥60  0', '40 to <60  +2', '20 to <40  +4', '<20  +6'
+          '≥60  +0', '40 to <60  +2', '20 to <40  +4', '<20  +6'
       ]
       const { selectedIndex } = this.state
       const { selectedFormIndex0 } = this.state
@@ -213,8 +212,8 @@ handleInputChange = (value) => {
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Hypotension</Text>
-                        <Text>SBP 80 for ≥1 hr requiring inotrope or
+                        <Text style={styles.title}>Hypotension</Text>
+                        <Text style={styles.subtext}>SBP 80 for ≥1 hr requiring inotrope or
                         balloon pump within 24 hrs of catheterization</Text>
                     </View>
                     <View style={[styles.column]}>
@@ -227,11 +226,11 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Intra-aortic balloon pump</Text>
+                        <Text style={styles.title}>Intra-aortic balloon pump</Text>
                     </View>
                     <View style={[styles.column]}>
                     <ButtonGroup
@@ -243,12 +242,12 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Congestive heart Failure</Text>
-                        <Text>CHF class III/IV by New York Heart Association
+                        <Text style={styles.title}>Congestive heart failure</Text>
+                        <Text style={styles.subtext}>CHF class III/IV by New York Heart Association
                             Classification and/or history of pulmonary edema</Text>
                     </View>
                     <View style={[styles.column]}>
@@ -261,11 +260,11 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Age >75 years</Text>
+                        <Text style={styles.title}>Age >75 years</Text>
                     </View>
                     <View style={[styles.column]}>
                     <ButtonGroup
@@ -277,12 +276,14 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Anemia</Text>
-                        <Text>Baseline hematocrit value &#60;39&#37; for men and &#60;36&#37; for women</Text>
+                        <Text style={styles.title}>Anemia</Text>
+                        <Text
+                        style={styles.subtext}
+                        >Baseline hematocrit value &#60;39&#37; for men and &#60;36&#37; for women</Text>
                     </View>
                     <View style={[styles.column]}>
                     <ButtonGroup
@@ -294,11 +295,11 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Diabetes</Text>
+                        <Text style={styles.title}>Diabetes</Text>
                     </View>
                     <View style={[styles.column]}>
                     <ButtonGroup
@@ -310,14 +311,15 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                        <Text>Contrast media volume</Text>
+                        <Text style={styles.title}>Contrast media volume</Text>
                     </View>
                     <View style={[styles.column]}>
                     <Input
+                    inputStyle={styles.centerText}
                     keyboardType='numeric'
                     placeholder='mL'
                     onChangeText={this.handleInputChange}
@@ -326,12 +328,12 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
-                    <View style={[styles.column]}>
-                        <Button title="eGFR" onPress={ ()=>{ Linking.openURL('https://www.mdcalc.com/mdrd-gfr-equation')}}/>
-                        <Text>mL/min/1.73 m²</Text>
+                    <View style={[styles.column, styles.center]}>
+                    <Text style={styles.TextStyle} onPress={ ()=> Linking.openURL('https://www.mdcalc.com/mdrd-gfr-equation') } >eGFR</Text>
+                        <Text styles={styles.title}>mL/min/1.73 m²</Text>
                     </View>
                     <View style={[styles.column]}>
                     <ButtonGroup
@@ -344,33 +346,47 @@ handleInputChange = (value) => {
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
-                    <Button title="Submit" onPress={() => this.calculateMehranScore()}>
+                    <Button 
+                     accessibilityLabel="submit"
+                     buttonStyle={styles.submit}
+                    title="Submit" onPress={() => this.calculateMehranScore()}>
                     </Button>
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
                 <View style={styles.sectionParagraph}>
-                <View style={[styles.columnContainer]}>
-                    <View style={[styles.column]}>
-                    <Text>CIN Risk Score</Text>
-                    <Text>{this.state.mehranScore}</Text>
+                <View style={{flexDirection:'row'}}>
+                    <View style={[styles.column, styles.resultColumn]}>
+                    <Text style={styles.resultNum}>{this.state.mehranScore}
+                    <Text style={styles.unit}>{this.state.mehranScoreUnit}</Text>
+                    </Text>
+                    <Text style={styles.result}>CIN Risk Score</Text>
                     </View>
-                    <View style={[styles.column]}>
-                    <Text>Risk of any post-PCI CIN</Text>
-                    <Text>{this.state.risk}</Text>
+                    <View style={[styles.column, styles.resultColumn]}>
+                    <Text style={styles.resultNum}>{this.state.risk}
+                    <Text style={styles.unit}>{this.state.riskUnit}</Text>
+                    </Text>
+                    <Text style={styles.result}>Risk of any post-PCI CIN</Text>
                     </View>
-                    <View style={[styles.column]}>
-                    <Text>Risk of post-PCI CIN requiring dialysis</Text>
-                    <Text>{this.state.dialysis}</Text>
+                    <View style={[styles.column, styles.resultColumn]}>
+                    <Text style={styles.resultNum}>{this.state.dialysis}
+                    <Text style={styles.unit}>{this.state.riskUnit}</Text>
+                    </Text>
+                    <Text style={styles.result}>Risk of post-PCI CIN requiring dialysis</Text>
                     </View>
                 </View>
                 </View>
-                <Divider style={{ backgroundColor: 'blue', height: 1}} />
+                <Divider style={{ backgroundColor: 'gray', height: 1}} />
+                <View style={[styles.sectionParagraph, styles.center]}>
+                <Text style={styles.linkStyle} onPress={ ()=>
+                    Linking.openURL('https://www.mdcalc.com/mehran-score-post-pci-contrast-nephropathy#evidence') } >
+                    Mehran Score methodology
+                </Text></View>
             </View>
             </ScrollView>
               <View style={styles.footer}>
@@ -417,16 +433,27 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: Colors.black,
     fontFamily: 'Avenir',
+    margin: wp('2.5%')
     // alignItems: 'center',
   },
   bullet: {
     fontSize: hp('2%')
   },
-  linkStyle: {
-    color: '#0000EE',
-    textDecorationLine: 'underline',
-    fontWeight: '500'
+  subtext: {
+    fontWeight: '300',
+    fontSize: hp('1.9%'),
   },
+  title: {
+      fontSize: hp('2%'),
+      fontWeight: '500',
+    //   alignSelf: 'center',
+      marginBottom: hp('.5%')
+},
+center: {
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center"
+},
   centerText: {
     textAlign: 'center'
   },
@@ -440,12 +467,42 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
   },
+  submit: {
+    width: wp('50%'),
+    backgroundColor: '#1bb193',
+    alignSelf: 'center',
+    height: hp('5%')
+  },
+  TextStyle: {
+    color: '#0000EE',
+    textDecorationLine: 'underline',
+    fontWeight: '500',
+    fontSize: hp('2%')
+  },
+  unit: {
+    // color: Colors.black,
+    fontSize: hp('2%')
+  },
+  linkStyle: {
+    color: '#0000EE',
+    textDecorationLine: 'underline',
+  },
+  result: {
+    fontSize: hp('1.5%'),
+    fontWeight: '800',
+    fontFamily: 'Avenir'
+  },
+  resultColumn: {
+    margin: wp('2%')
+  },
+  resultNum: {
+    fontWeight: '500',
+    fontSize: hp('3%'),
+    color: '#1bb193'
+  },    
   column: {
     flex: 1,
-    alignItems: 'center',
 },
-
-
 
 //  FOOTER 
   footer: {
