@@ -9,7 +9,8 @@ import {
   Text,
   Image,
   Linking,
-  Dimensions
+  Dimensions,
+  Button
 } from 'react-native';
 
 import {
@@ -110,9 +111,6 @@ class Page10 extends Component {
                     Out of 100 patients, 1 will experience a stroke. 99 will not.
                     </Text>
                     </View>
-                    {/* <View style={styles.subheaderContainer}> */}
- 
-                    {/* </View> */}
                     <Text></Text>
                     <View style={styles.rowContainer}>
                         <View style={styles.leftContainer}>
@@ -171,20 +169,27 @@ class Page10 extends Component {
                         <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>0.1%</Text>
                     </View>
                     <View style={styles.subheaderContainer}>
+
                     <Text style={[styles.sectionParagraph]}>
-                    Out of 100 patients, less than 1 may require dialysis. Your
+                        Out of 100 patients, less than 1 may require dialysis. Your
                         physician can determine this risk more precisely with a
-                        calculator: <Text style={styles.linkStyle} onPress={ ()=> Linking.openURL('https://www.mdcalc.com/mehran-score-post-pci-contrast-nephropathy')}>Mehran Score</Text>.
+                        calculator:
                     </Text>
                     </View>
-                    <Text></Text>
+                    <View>
+                    <Button
+                      title="Mehran Score"
+                      selectedIndex={selectedIndex}
+                      onPress={() => this.props.navigation.navigate('Mehran Score')}
+                      style={{backgroundColor: Colors.red}}/>
+                    </View>
                     <View style={styles.sectionContainer}>
                     <View style={styles.rowContainer}>
                       <Text style={[styles.sectionParagraph, styles.centerText]}>
                       Due to your medical history, your risk may be higher or lower
                       than the numbers provided above.
                       </Text></View>
-                      </View>
+                    </View>
                 </View>
                 <Text></Text>
                 <Text style={[styles.sectionParagraph, styles.smallText]}>
@@ -211,7 +216,6 @@ class Page10 extends Component {
                     coronary intervention: Development and initial validation. JACC. 2004; 1393-1399.
                     </Text>
                 </View>
-
             </View>
             </ScrollView>
               <View style={styles.footer}>
@@ -263,6 +267,9 @@ const styles = StyleSheet.create({
   bullet: {
     fontSize: hp('2%')
   },
+  button: {
+    margin: 0
+  },  
   linkStyle: {
     color: '#0000EE',
     textDecorationLine: 'underline',

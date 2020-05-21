@@ -41,8 +41,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 Icon.loadFont();
 
 
-import FlipPage, {FlipPagePage} from 'react-native-flip-page';
-
 import Page1 from './src/components/Page1'
 import Page2 from './src/components/Page2'
 import Page3 from './src/components/Page3'
@@ -56,6 +54,7 @@ import Page10 from './src/components/Page10'
 import Page11 from './src/components/Page11'
 import Page12 from './src/components/Page12'
 import Page13 from './src/components/Page13'
+import MehranScore from './src/components/MehranScore'
 
 import SplashScreen from 'react-native-splash-screen'
 
@@ -78,6 +77,7 @@ function MyStack() {
       <Stack.Screen name="Page 10" component={Page10} />
       <Stack.Screen name="Page 11" component={Page11} />
       <Stack.Screen name="Page 12" component={Page12} />
+      <Stack.Screen name="Mehran Score" component={MehranScore} />
       <Stack.Screen name="Page 13" component={Page13} />
     </Stack.Navigator>
     </NavigationContainer>
@@ -89,53 +89,6 @@ const App: () => React$Node = () => {
     SplashScreen.hide()
   }, []);
   return MyStack()
-  // return (
-  //   <>
-  //     {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
-      
-  //       <FlipPage orientation={'horizontal'} responsive='true' loopForever='true'>
-  //         <FlipPagePage>
-  //           <Page1/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page2/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page3/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page4/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page5/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page6/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page7/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page8/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page9/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page10/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page11/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page12/>
-  //         </FlipPagePage>
-  //         <FlipPagePage>
-  //           <Page13/>
-  //         </FlipPagePage>
-  //       </FlipPage>
-  //   </>
-  // );
 };
 
 const styles = StyleSheet.create({
