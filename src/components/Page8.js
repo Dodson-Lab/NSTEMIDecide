@@ -111,7 +111,7 @@ class Page8 extends Component {
                     onLayout={this.onLayout}
                     style={[styles.dotImage, {
                       width: this.state.width,
-                      height: this.state.width * .3}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
+                      height: this.state.width * .37}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
                       <View style={styles.dotItem}>
@@ -146,7 +146,7 @@ class Page8 extends Component {
                     onLayout={this.onLayout}
                     style={[styles.dotImage, {
                       width: this.state.width,
-                      height: this.state.width * .3}]}
+                      height: this.state.width * .37}]}
                       source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
@@ -176,7 +176,7 @@ class Page8 extends Component {
               style={[styles.smallCardContainer]}>
                 <View
                 onLayout={this.onLayout}
-                style={[styles.smallCard, {width: this.state.width * .5}]}>
+                style={[styles.smallCard, {width: this.state.width * .6}]}>
                     <Text style={[styles.smallCardText, styles.highlight]}>
                     {strings('page8.paragraph16')}
                     </Text>
@@ -240,14 +240,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     textAlign: 'center'
   },
-  legend: {
-    fontSize: hp('1.5%'),
-  },
   whiteColumn: {
     backgroundColor: Colors.white,
     borderColor: Colors.black,
     borderWidth: wp('.1%'),
-    padding: wp('2.5%'),
+    padding: wp('4%'),
     flex: 1,
 },
 whiteRightColumn: {
@@ -270,17 +267,18 @@ container: {
   flexDirection: 'row',
   flexWrap: 'wrap',
   // margin: wp('3%'),
-  alignItems: 'flex-start' // if you want to fill rows left to right
+  // margin: wp('3%'),
+  // alignItems: 'flex-start' // if you want to fill rows left to right
 },
 dotItem: {
   width: '10%',
   marginTop: 5,
 },
 item: {
-  width: '85%' // is 50% of container width
+  width: '90%' // is 50% of container width
 },
 legendFont: {
-  fontSize: hp('1.5%'),
+  fontSize: hp('2%'),
 },
 cardContainer: {
   padding: 5,
@@ -322,20 +320,17 @@ image: {
   marginRight: 10,
   marginLeft: 10
 },
-dotImage: {
-  // width: wp('40%'),
-  // height: wp('40%')
-},
+
 cardText: {
   fontSize: hp('2.2%'),
-  fontWeight: '700',
+  // fontWeight: '700',
   fontFamily: 'Avenir'
 },
 space: {
   margin: 5,
 },
 smallCardText: {
-  fontSize: hp('1.8%'),
+  fontSize: hp('2.2%'),
   fontWeight: "200",
   textAlign: "center",
   fontFamily: 'Avenir'
@@ -351,18 +346,18 @@ highlightUnderline: {
   textDecorationLine: 'underline'
 },
 highlight: {
-  fontWeight: '700',
+  fontWeight: '800',
 },
 centerText: {
   textAlign: 'center'
 },
 sectionParagraph: {
-  fontSize: hp('2%'),
+  fontSize: hp('2.2%'),
   fontWeight: '400',
   color: Colors.black,
   fontFamily: 'Avenir',
   alignItems: 'center',
-  margin: wp('1%'),
+  margin: wp('1.5%'),
   textAlign: 'center'
 },
 sectionNote: {
@@ -379,9 +374,9 @@ dotText: {
   alignItems: 'center',
 },
  circle: {
-  width: wp('2.5%'),
-  height: wp('2.5%'),
-  borderRadius: hp('2.5%') / 2,
+  width: wp('3%'),
+  height: wp('3%'),
+  borderRadius: wp('3%') / 2,
 },
 blue: {
   backgroundColor: "#7cb4d4",
