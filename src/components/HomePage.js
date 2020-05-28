@@ -14,7 +14,6 @@ import {
   View,
   Text,
   Dimensions,
-  Button,
   Image
 } from 'react-native';
 
@@ -30,15 +29,12 @@ import {
 } from 'react-native-responsive-screen';
 
 import { ButtonGroup, Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { LOGO } from '../..';
 
 import i18n, { translate } from 'i18n-js'
 
 import en from '../../localization/en.json';
 import es from '../../localization/es.json';
-
-let screenheight = Dimensions.get("window").height;
 
 // Define the supported translations
 i18n.translations = {
@@ -176,17 +172,9 @@ const styles = StyleSheet.create({
     color: "#626d7a",
     fontFamily: 'Avenir',
     },
-    imageContainer: {
-        // borderWidth: 1.5,
-        // borderColor: "#D3D3D3"
-    },
     icon: {
     fontSize: hp('2%'),
     color: "#626d7a"
-    },
-    titleContainer: {
-    // width: wp('90%'),
-    // paddingBottom: hp('5%')
     },
     smallContainer: {
 
@@ -194,12 +182,6 @@ const styles = StyleSheet.create({
     marginTop: hp('3%'),
     marginBottom: hp('1.5%')
     },
-
-//  FOOTER 
-  footer: {
-    margin: hp('3%'),
-    alignItems: "center"
-  },
   });
 
 
