@@ -65,8 +65,6 @@ class Page1 extends Component {
     });
   }
     render() {
-      // const text =  this.props.navigation
-      // console.log(this.props.navigation)
       const buttons = [
         <Icon name="angle-double-left" style={{fontSize: 25}}/>,
         <Icon name="angle-left" style={{fontSize: 25}}/>,
@@ -88,7 +86,7 @@ class Page1 extends Component {
           )}
             <View 
               onLayout={this.onLayout}
-              style={[styles.body, {height: this.state.height * .8}]}>
+              style={[styles.body, {height: this.state.height + 15}]}>
 
               <View
               onLayout={this.onLayout} 
