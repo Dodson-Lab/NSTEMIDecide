@@ -30,6 +30,9 @@ import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Unorderedlist from 'react-native-unordered-list';
+
+import { strings } from '../..';
+
 let screenheight = Dimensions.get("window").height;
 
 class Page10 extends Component {
@@ -78,19 +81,16 @@ class Page10 extends Component {
           )}
             <View style={styles.body}>
                 <View style={[styles.titleContainer, styles.centerTitle]}>
-                    <Text style={styles.sectionTitle}>Risks of Cardiac Catheterization</Text>
+                    <Text style={styles.sectionTitle}>{strings('page10.title')}</Text>
                 </View>
-
                 <View style={[styles.cardContainer]}>
                   <View style={styles.paragraphContainer}>
                   <Text style={styles.sectionParagraph}>
-                  As an older adult, your risks of undergoing a cardiac catheterization
-                  procedure are higher than in younger patients.
+                  {strings('page10.paragraph1')}
                   </Text>
                   <Text></Text><Text></Text>
                   <Text style={styles.sectionParagraph}>
-                  Studies have shown that older patients who get a cardiac
-                  catheterization procedure have these risks within 1 year*:
+                  {strings('page10.paragraph2')}
                   </Text>
                   </View>
 
@@ -99,16 +99,16 @@ class Page10 extends Component {
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ BRAIN_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>Stroke</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph3')}</Text>
                             </View>
                         </View>
                         <View style={styles.rightContainer}>
-                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>1%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph4')}</Text>
                         </View>
                     </View>
                     <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
-                    Out of 100 patients, 1 will experience a stroke. 99 will not.
+                    {strings('page10.paragraph5')}
                     </Text>
                     </View>
                     <Text></Text>
@@ -116,16 +116,16 @@ class Page10 extends Component {
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ DROPLET_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>Bleeding</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph6')}</Text>
                             </View>
                         </View>
                         <View style={styles.rightContainer}>
-                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>6%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph7')}</Text>
                         </View>
                     </View>
                     <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
-                    Out of 100 patients, 6 will experience bleeding. 94 will not.
+                    {strings('page10.paragraph8')}
                     </Text>
                     </View>
                     <Text></Text>
@@ -133,7 +133,7 @@ class Page10 extends Component {
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ KIDNEY_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>Kidney problems</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph9')}</Text>
                             </View>
                         </View>
                     </View>
@@ -142,17 +142,16 @@ class Page10 extends Component {
                         <View style={styles.bulletHeaderContainer}>
                         <Unorderedlist style={styles.bullet}>
                         <Text style={[styles.sectionParagraph, styles.lightHighlight]}>
-                        Temporary, reversible
+                        {strings('page10.paragraph10')}
                         </Text>
                         </Unorderedlist>
                         </View>
                         </View>
-                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>20%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph11')}</Text>
                     </View>
                     <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
-                    Out of 100 patients, 20 will experience temporary,
-                        reversible kidney problems. 80 will not.
+                    {strings('page10.paragraph12')}
                     </Text>
                     </View>
                     <Text></Text>
@@ -161,19 +160,17 @@ class Page10 extends Component {
                         <View style={styles.bulletHeaderContainer}>
                         <Unorderedlist style={styles.bullet}>
                         <Text style={[styles.sectionParagraph, styles.lightHighlight]}>
-                        Dialysis
+                        {strings('page10.paragraph13')}
                         </Text>
                         </Unorderedlist>
                         </View>
                         </View>
-                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>0.1%</Text>
+                        <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph14')}</Text>
                     </View>
                     <View style={styles.subheaderContainer}>
 
                     <Text style={[styles.sectionParagraph]}>
-                        Out of 100 patients, less than 1 may require dialysis. Your
-                        physician can determine this risk more precisely with a
-                        calculator:
+                    {strings('page10.paragraph15')}
                     </Text>
                     </View>
                     <View>
@@ -186,14 +183,13 @@ class Page10 extends Component {
                     <View style={styles.sectionContainer}>
                     <View style={styles.rowContainer}>
                       <Text style={[styles.sectionParagraph, styles.centerText]}>
-                      Due to your medical history, your risk may be higher or lower
-                      than the numbers provided above.
+                      {strings('page10.paragraph16')}
                       </Text></View>
                     </View>
                 </View>
                 <Text></Text>
                 <Text style={[styles.sectionParagraph, styles.smallText]}>
-                *Most events occur at the time of catheterization.
+                {strings('page10.paragraph17')}
                 </Text>
 
                 </View>

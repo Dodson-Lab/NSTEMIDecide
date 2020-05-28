@@ -15,7 +15,8 @@ import {
   Text,
   StatusBar,
   Image,
-  Platform
+  Platform,
+  
 } from 'react-native';
 
 import {
@@ -38,9 +39,12 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// import {LocalizationProvider} from './src/components/Translations';
+// import {ThemeProvider} from 'react-native-elements';
+
 Icon.loadFont();
 
-
+import HomePage from './src/components/HomePage'
 import Page1 from './src/components/Page1'
 import Page2 from './src/components/Page2'
 import Page3 from './src/components/Page3'
@@ -58,13 +62,16 @@ import MehranScore from './src/components/MehranScore'
 
 import SplashScreen from 'react-native-splash-screen'
 
+
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
+
     <NavigationContainer>
     <Stack.Navigator
-    initialRouteName="Page1">
+    initialRouteName="Home" component={HomePage}>
+      <Stack.Screen name="Home" component={HomePage} />
       <Stack.Screen name="Page 1" component={Page1} />
       <Stack.Screen name="Page 2" component={Page2} />
       <Stack.Screen name="Page 3" component={Page3} />

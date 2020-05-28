@@ -37,6 +37,8 @@ let screenheight = Dimensions.get("window").height;
 
 import { CARDIAC_CATHETERIZATION_IMAGE } from '../..';
 
+import { strings } from '../..';
+
 class Page5 extends Component {
 
   constructor(props) {
@@ -86,7 +88,7 @@ class Page5 extends Component {
               onLayout={this.onLayout} 
               style={[styles.body]}>
                 <View style={[styles.sectionContainer, styles.centerTitle, {marginTop: this.state.height * .03}]}>
-                    <Text style={styles.sectionTitle}>What is cardiac catheterization?</Text>
+                    <Text style={styles.sectionTitle}>{strings('page5.title')}</Text>
                 </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.sectionParagraph}>
@@ -95,7 +97,7 @@ class Page5 extends Component {
               style={[styles.listItem, {marginTop: this.state.height * .02}]}>
                     <Unorderedlist style={styles.bullet}>
                     <Text style={[styles.boldText, styles.listText]}>
-                      <Text style={styles.underlineText}>Cardiac catheterization</Text> is a procedure to look for blockages in your heart.
+                    {strings('page5.paragraph1')}<Text style={styles.underlineText}>{strings('page5.paragraph2')}</Text> {strings('page5.paragraph3')}
                     </Text> 
                     </Unorderedlist>
                     <Text></Text>
@@ -104,9 +106,7 @@ class Page5 extends Component {
               onLayout={this.onLayout} 
               style={[styles.listItem, {marginTop: this.state.height * .01}]}>
                     <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
-                        A dye is injected through a tube (catheter). This tube can enter
-                        one of two spots: through the leg (femoral artery) or
-                        the wrist (radial artery).
+                    {strings('page5.paragraph4')}
                     </Text></Unorderedlist>
                     <Text></Text>
                     </View>
@@ -114,8 +114,7 @@ class Page5 extends Component {
               onLayout={this.onLayout} 
               style={[styles.listItem, {marginTop: this.state.height * .01}]}>
                     <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
-                    The dye makes the arteries visible on X-ray, allowing doctors
-                    to see  if there are blocked arteries.
+                    {strings('page5.paragraph5')}
                         </Text></Unorderedlist>
                     </View>
                     <Text></Text>
@@ -128,7 +127,7 @@ class Page5 extends Component {
               <View style={[styles.labelContainer, {width: this.state.width * .55}]}>
                   <View style={styles.labelBox}>
                       <Text style={[styles.labelText, styles.boldText]}>
-                          Cardiac catheterization
+                      {strings('page5.paragraph6')}
                       </Text>
                   </View>
               </View>

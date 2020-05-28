@@ -35,6 +35,8 @@ import { COMFORT_IMAGE } from '../..';
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { strings } from '../..';
+
 
 class Page11 extends Component {
   constructor(props) {
@@ -83,21 +85,18 @@ class Page11 extends Component {
             <View style={styles.body}>
                 <View style={[styles.titleContainer, styles.centerText]}>
                     <Text style={styles.sectionTitle}>
-                    To have a cardiac catheterization procedure or not? 
+                    {strings('page11.title')}
                     </Text>
                 </View>
             <View style={styles.sectionContainer}>
                 <Text style={styles.sectionParagraph}>
-                   Now that you have more information about cardiac catheterization,
-                   consider what matters most to you. Will going through
-                   this procedure help you achieve your goals? 
+                {strings('page11.paragraph1')}
                 </Text>
             </View>
             <Text></Text>
             <View style={styles.sectionContainer}>
                 <Text style={styles.sectionParagraph}>
-                Thinking about this will help you make a better decision on
-                whether a cardiac catheterization procedure is right for you.
+                {strings('page11.paragraph2')}
                 </Text>
             </View>
             <View style={styles.imageContainer}>
@@ -109,49 +108,41 @@ class Page11 extends Component {
             </View>
             <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.centerText]}>
-                If you have additional questions or concerns about the procedure, 
-                address them to your clinical care team.
+                {strings('page11.paragraph3')}
                 </Text>
             </View>
             <Text></Text>
         <View style={styles.faqContainer}>
             <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight, styles.underline]}>
-                Frequently Asked Questions:
+                {strings('page11.paragraph4')}
                 </Text>
             </View>
             <Text></Text>
             <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>
-                Will I be asleep during the cardiac catheterization procedure?
+                {strings('page11.paragraph5')}
                 </Text>
                 <Text style={[styles.sectionParagraph]}>
-                Sedation is given to patients for the procedure to alleviate any
-                possible pain or anxiety. To minimize pain at the catheterization
-                site, a local anesthetic is given. The procedure is usually without
-                discomfort once the artery has been accessed.
+                {strings('page11.paragraph6')}
                 </Text>
             </View>
             <Text></Text>
             <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>
-                What happens after cardiac catheterization?
+                {strings('page11.paragraph7')}
                 </Text>
                 <Text style={[styles.sectionParagraph]}>
-                You will be in a recovery room for a few hours where your vital
-                signs and catheterization site will be monitored for safety. 
+                {strings('page11.paragraph8')}
                 </Text>
             </View>
             <Text></Text>
             <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>
-                What happens after I get home? 
+                {strings('page11.paragraph9')}
                 </Text>
                 <Text style={[styles.sectionParagraph]}>
-                You will be instructed to take medications and make
-                follow-up appointments with your doctor. You may be able to
-                return to your normal activities as soon as the day after
-                the procedure, depending on your functional level. 
+                {strings('page11.paragraph10')}
                 </Text>
             </View>
         </View>

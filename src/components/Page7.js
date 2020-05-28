@@ -33,6 +33,8 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import { strings } from '../..';
+
 class Page7 extends Component {
   constructor(props) {
     super(props);
@@ -82,10 +84,11 @@ class Page7 extends Component {
             <View style={styles.contentContainer}>
                 <View style={styles.sectionContainer}>
                     <Text style={[styles.sectionTitle, styles.centerTitle]}> 
-                        Procedure or No Procedure:
+                      {strings('page7.title1')}
+                        
                     </Text>
                     <Text style={[styles.sectionTitle, styles.centerTitle]}>
-                        what are the benefits and risks of each option?
+                    {strings('page7.title2')}
                     </Text>
                 </View>
                 <View
@@ -94,11 +97,11 @@ class Page7 extends Component {
                   <View style={styles.sectionContainer}>
                       <View style={styles.whiteContainer}>
                       <Text style={[styles.sectionParagraph, styles.centerTitle]}> 
-                      In studies to date of patients age ≥75, cardiac catheterization procedure has not been shown to prolong your life. 
+                      {strings('page7.paragraph1')}
                       </Text>
                       <Text></Text>
                       <Text style={[styles.sectionParagraph, styles.centerTitle, styles.boldText]}> 
-                      Your risks of experiencing a repeated heart attack, heart procedure, and other risks will be discussed in the following pages. 
+                      {strings('page7.paragraph2')}
                       </Text>
                       <Text></Text>
                       </View>
@@ -107,14 +110,12 @@ class Page7 extends Component {
             </View>
               <View style={styles.sectionNote}>
                   <Text style={[styles.boldText, styles.noteText]}>
-                    Please note:
+                    {strings('page7.paragraph3')}
                   </Text>
                   <View style={styles.whiteContainer}>
                       <Text style={styles.noteText}>
-                      Numbers used in this decision aid were based on studies of older adults who experienced a heart attack.
-                      Your clinical circumstances may be different from the populations observed
-                      in these studies.
-                      <Text style={[styles.boldText, styles.noteText]}> Your individual medical history has not been considered in these estimates.
+                      {strings('page7.paragraph4')}
+                      <Text style={[styles.boldText, styles.noteText]}>{strings('page7.paragraph5')}
                       </Text></Text>
                   </View>
               </View>

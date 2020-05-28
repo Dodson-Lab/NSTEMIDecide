@@ -34,6 +34,8 @@ import Unorderedlist from 'react-native-unordered-list';
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { strings } from '../..';
+
 class Page3 extends Component {
 
   constructor(props) {
@@ -89,39 +91,33 @@ class Page3 extends Component {
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, styles.centerTitle, {marginTop: this.state.height * .04}]}>
-                    <Text style={styles.sectionTitle}>Your values</Text>
+                    <Text style={styles.sectionTitle}>{strings('page3.title')}</Text>
                 </View>
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={styles.sectionParagraph}>
-                        We understand that being diagnosed with a heart attack may be causing you worry and fear. 
-                        Others like you may even feel sad or depressed because they
-                        are not sure how this diagnosis will interfere with their future
-                        activities.
-                        <Text style={styles.highlight}> These feelings are common among patients with heart issues. </Text>
+                      {strings('page3.paragraph0')}
+                        <Text style={styles.highlight}>{strings('page3.paragraph1')}</Text>
                     </Text>
                 </View>
                 <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
-                    <Text style={[styles.sectionParagraph, styles.highlight]}>Communication can help.</Text>
+                    <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page3.paragraph2')}</Text>
                 </View>
                 <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={styles.sectionParagraph}>
-                    Speaking to a professional–like your cardiologist—will help lessen the
-                    fears you may have about the disease. Listing your priorities and asking
-                    questions with your doctor can help better shape your expectations of the future.
+                    {strings('page3.paragraph3')}
                     </Text>
                 </View>
                 <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                     <Text style={[styles.sectionParagraph, styles.highlight]}>
-                    Consider asking yourself these questions in order to help guide your
-                    discussion with your cardiologist:
+                    {strings('page3.paragraph4')}
                     </Text>
                 </View>
                 <View
@@ -129,14 +125,13 @@ class Page3 extends Component {
               style={[styles.sectionContainer, {marginTop: this.state.height * .03, marginBottom: this.state.height * .09}]}>
                     <View style={[styles.blueBox]}>
                       <View style={styles.listItem}>
-                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>What are my priorities?</Text></Unorderedlist>
+                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>{strings('page3.list1')}</Text></Unorderedlist>
                       </View>
                       <View style={styles.listItem}>
-                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>How do I feel about procedures?</Text></Unorderedlist>
+                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>{strings('page3.list2')}</Text></Unorderedlist>
                       </View>
                       <View style={styles.listItem}>
-                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>What are my current fears about the cardiac
-                            catheterization procedure?</Text></Unorderedlist>
+                        <Unorderedlist style={styles.bullet}><Text style={styles.listText}>{strings('page3.list3')}</Text></Unorderedlist>
                       </View>
                     </View>
                 </View>

@@ -28,11 +28,14 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
+import i18n from 'i18n-js'
+
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-let screenheight = Dimensions.get("window").height;
+import { strings } from '../..';
 
+let screenheight = Dimensions.get("window").height;
 
 class Page1 extends Component {
 
@@ -61,8 +64,9 @@ class Page1 extends Component {
       height: Dimensions.get('window').height,
     });
   }
-
     render() {
+      // const text =  this.props.navigation
+      // console.log(this.props.navigation)
       const buttons = [
         <Icon name="angle-double-left" style={{fontSize: 25}}/>,
         <Icon name="angle-left" style={{fontSize: 25}}/>,
@@ -89,26 +93,25 @@ class Page1 extends Component {
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .05}]}>
-                  <Text style={styles.sectionTitle}>Cardiac catheterization:</Text>
+                  <Text style={styles.sectionTitle}>{strings('page1.title')}</Text>
                   <Text style={styles.sectionDescription}>
-                  Is this procedure right for you?
+                  {strings('page1.description')}
                   </Text>
               </View>
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .03}]}>
-                  <Text style={styles.sectionTitle}>A Decision Aid Tool</Text>
+                  <Text style={styles.sectionTitle}>{strings('page1.sub_title')}</Text>
                   <Text style={styles.sectionDescription}>
-                  for older patients (age ≥75) considering cardiac catheterization as
-                  treatment for a heart attack
+                  {strings('page1.sub_description')}
                   </Text>
               </View>
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .03}]}>
-                  <Text style={styles.noteTitle}>Note for clinicians:</Text>
+                  <Text style={styles.noteTitle}>{strings('page1.note_title')}</Text>
                   <Text style={styles.noteDescription}>
-                  This decision aid is designed for patients with Non-ST elevation MI (NSTEMI) only.
+                  {strings('page1.note_description')}
                   </Text>
               </View>
             </View>
@@ -126,7 +129,6 @@ class Page1 extends Component {
             selectedIndex={selectedIndex}
             containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
             </View>
-              {/* <Text style={styles.pageNumber}>1</Text> */}
             </View>
             </SafeAreaView>
         )

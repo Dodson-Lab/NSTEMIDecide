@@ -32,6 +32,8 @@ import { HEART_BLOOD_IMAGE } from '../..';
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { strings } from '../..';
+
 let screenheight = Dimensions.get("window").height;
 
 class Page2 extends Component {
@@ -87,18 +89,13 @@ class Page2 extends Component {
             <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .03}]}>
-                <Text style={styles.sectionTitle}>Acute myocardial infarction (heart attack)</Text>
+                <Text style={styles.sectionTitle}>{strings('page2.title')}</Text>
                 <Text style={styles.sectionParagraph}>
-                    If you are reading this, you are an older adult (age ≥75 years)
-                    recently diagnosed with a heart attack. 
-                    This means you did not have enough blood flow to your heart,
-                    which can cause damage to your heart muscles. 
-                    Due to the type of heart attack you had, you do not require an emergency
-                    procedure. But there are a few treatment options for you,
-                    including medications and procedures.
-                    This is a tool for you and your cardiologist to discuss the available 
-                    treatment options, learn about their risks and benefits,
-                    and determine if they match <Text style={styles.highlight}>your values</Text>.
+                {strings('page2.paragraph1')}
+                </Text>
+                <Text style={styles.sectionParagraph}>
+                  {strings('page2.paragraph2')}
+                  <Text style={styles.highlight}>{strings('page2.values')}</Text>
                 </Text>
             </View>
               <View

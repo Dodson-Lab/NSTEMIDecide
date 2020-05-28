@@ -37,6 +37,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { PCI_IMAGE } from '../..';
 import { CABG_IMAGE } from '../..';
 
+import { strings } from '../..';
+
 class Page6 extends Component {
   constructor(props) {
     super(props);
@@ -83,25 +85,24 @@ class Page6 extends Component {
           )}
             <View style={styles.body}>
                 <View style={[styles.titleContainer, styles.centerTitle]}>
-                    <Text style={styles.sectionTitle}>Ways to improve blood flow</Text>
+                    <Text style={styles.sectionTitle}>{strings('page6.title')}</Text>
                 </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.sectionParagraph}>
-                <Text style={styles.listText}>If a blockage is found during the cardiac catheterization,
-                two options are usually given to improve blood flow:</Text>
+                <Text style={styles.listText}>{strings('page6.paragraph1')}</Text>
                 </View>
             </View>
             <View style={styles.labelContainer}>
                 <View style={styles.labelBox}>
                     <Text style={[styles.labelText, styles.boldText]}>
-                    Percutaneous Coronary Intervention (PCI), also known as stent
+                    {strings('page6.paragraph2')}
                     </Text>
                 </View>
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.listItem}>
                 <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
-                Most patients with simple blockages receive a stent.
+                {strings('page6.paragraph3')}
                 </Text></Unorderedlist>
                 </View>
             </View>
@@ -148,14 +149,14 @@ class Page6 extends Component {
             <View style={styles.labelContainer}>
                 <View style={styles.labelBox}>
                     <Text style={[styles.labelText, styles.boldText]}>
-                    Coronary Artery Bypass Graft (CABG)
+                    {strings('page6.paragraph4')}
                     </Text>
                 </View>
             </View>
             <View style={styles.sectionContainer}>
                 <View style={styles.listItem}>
                 <Unorderedlist style={styles.bullet}><Text style={styles.listText}>
-                If patients have many blockages, sometimes coronary artery bypass graft (CABG) surgery is performed.
+                {strings('page6.paragraph5')}
                 </Text></Unorderedlist>
                 </View>
             </View>

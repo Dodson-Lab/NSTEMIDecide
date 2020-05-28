@@ -34,6 +34,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 let screenheight = Dimensions.get("window").height;
 
 import { HEART_IMAGE, HEART_ATACK_NO_OP_IMAGE, HEART_ATACK_OP_IMAGE } from '../..';
+import { strings } from '../..';
+
 
 class Page8 extends Component {
   constructor(props) {
@@ -81,29 +83,27 @@ class Page8 extends Component {
           )}
             <View style={styles.body}>
             <View style={[styles.titleContainer, styles.centerTitle]}>
-                    <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization</Text>
+                    <Text style={styles.sectionTitle}>{strings('page8.title')}</Text>
                 </View>
 
               <View style={styles.cardContainer}>
                   <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
                   <Text style={[styles.cardText, styles.highlight, {textAlign: "center", flex: 1, flexWrap: 'wrap'}]}>
-                  Chance of Another <Text style={styles.orangeText}>Heart Attack</Text> in the Next Year.
+                  {strings('page8.subtitle1')}<Text style={styles.orangeText}>{strings('page8.subtitle2')}</Text> {strings('page8.subtitle3')}
                   </Text>
               </View>
               <View style={[styles.columnContainer]}>
-                  <View style={[styles.whiteColumn]}>
+                  <View style={[styles.whiteColumn, styles.whiteLeftColumn]}>
                     <Text style={[styles.sectionParagraph, styles.highlight]}>
-                      No cardiac catheterization
+                    {strings('page8.paragraph1')}
                     </Text>
-                    {/* <Text></Text> */}
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>79/100 </Text>
-                      people did not have another heart attack.
+                      <Text style={styles.highlight}>{strings('page8.paragraph2')}</Text>
+                      {strings('page8.paragraph3')}
                     </Text>
-                    {/* <Text></Text> */}
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>21/100 </Text>
-                      people did.
+                      <Text style={styles.highlight}>{strings('page8.paragraph4')}</Text>
+                      {strings('page8.paragraph5')}
                     </Text>
                     <View
                     style={[styles.imageContainer]}>
@@ -118,28 +118,28 @@ class Page8 extends Component {
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Did not have another heart attack</Text>
+                      <Text style={styles.legendFont}>{strings('page8.paragraph6')}</Text>
                       </View>
                         <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                         </View>
                         <View style={styles.item}>
                         <Text style={styles.legendFont}>
-                          Had another heart attack
+                        {strings('page8.paragraph7')}
                           </Text></View>
                     </View>
                   </View>
-                  <View style={[styles.whiteColumn]}>
+                  <View style={[styles.whiteColumn, styles.whiteRightColumn]}>
                       <Text style={[styles.sectionParagraph, styles.highlight]}>
-                      Cardiac catheterization
+                      {strings('page8.paragraph8')}
                       </Text>
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>88/100 </Text>
-                      people did not have another heart attack.
+                      <Text style={styles.highlight}>{strings('page8.paragraph9')}</Text>
+                      {strings('page8.paragraph10')}
                     </Text>
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>12/100 </Text>
-                      people did.
+                      <Text style={styles.highlight}>{strings('page8.paragraph11')}</Text>
+                      {strings('page8.paragraph12')}
                     </Text>
                     <View style={styles.imageContainer}>
                     <Image 
@@ -154,19 +154,19 @@ class Page8 extends Component {
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Did not have another heart attack</Text>
+                      <Text style={styles.legendFont}>{strings('page8.paragraph13')}</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.darkBlue]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Prevented from another heart attack due to having the procedure</Text>
+                      <Text style={styles.legendFont}>{strings('page8.paragraph14')}</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Had another heart attack</Text>
+                      <Text style={styles.legendFont}>{strings('page8.paragraph15')}</Text>
                       </View>
                     </View>
                   </View>
@@ -178,14 +178,13 @@ class Page8 extends Component {
                 onLayout={this.onLayout}
                 style={[styles.smallCard, {width: this.state.width * .5}]}>
                     <Text style={[styles.smallCardText, styles.highlight]}>
-                    Due to having the procedure, 9/100 additional people did not have another heart attack.
+                    {strings('page8.paragraph16')}
                     </Text>
                 </View>
               </View>
               <View style={styles.sectionContainer}>
                   <Text style={styles.sectionNote}>
-                  <Text style={styles.highlightUnderline}>Note</Text>: Many patients who undergo cardiac catheterization also undergo a
-                  procedure to open a blocked artery (either a stent or bypass surgery).
+                  <Text style={styles.highlightUnderline}>{strings('page8.note1')}</Text>{strings('page8.note2')}
                   </Text>
               </View>
               <View style={styles.attributionWrapper}>
@@ -249,10 +248,15 @@ const styles = StyleSheet.create({
     borderColor: Colors.black,
     borderWidth: wp('.1%'),
     padding: wp('2.5%'),
-    // width: wp('40%'),
-    margin: hp('1.5%'),
     flex: 1,
-    // alignItems: 'center',
+},
+whiteRightColumn: {
+  marginLeft: hp('.5%'),
+  marginRight: hp('1%')
+},
+whiteLeftColumn: {
+  marginRight: hp('.5%'),
+  marginLeft: hp('1%')
 },
 legendItem: {
   marginTop: 5
@@ -284,17 +288,19 @@ cardContainer: {
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  margin: wp('4%'),
+  margin: wp('2%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
   borderWidth: wp('.1%'),
+  marginBottom: wp('4%')
 },
 smallCardContainer: {
   alignItems: 'center',
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  flex: 1
+  flex: 1,
+  marginTop: wp('3%')
 },
 smallCard: {
   margin: wp('2%'),
@@ -360,7 +366,7 @@ sectionParagraph: {
   textAlign: 'center'
 },
 sectionNote: {
-  fontSize: hp('2%'),
+  fontSize: hp('1.5%'),
   fontFamily: 'Avenir',
   // margin: wp('1%'),
   textAlign: 'left'

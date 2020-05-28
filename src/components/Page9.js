@@ -20,7 +20,7 @@ import {
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-let screenheight = Dimensions.get("window").height;
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -31,7 +31,11 @@ import {
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { BED_IMAGE, HEART_PROCEDURE_NO_OP_IMAGE, HEART_PROCEDURE_OP_IMAGE } from '../..';
+let screenheight = Dimensions.get("window").height;
+
+import { HEART_IMAGE, HEART_ATACK_NO_OP_IMAGE, HEART_ATACK_OP_IMAGE } from '../..';
+import { strings } from '../..';
+
 
 class Page9 extends Component {
   constructor(props) {
@@ -79,112 +83,108 @@ class Page9 extends Component {
           )}
             <View style={styles.body}>
             <View style={[styles.titleContainer, styles.centerTitle]}>
-                    <Text style={styles.sectionTitle}>Benefits of Cardiac Catheterization</Text>
+                    <Text style={styles.sectionTitle}>{strings('page9.title')}</Text>
                 </View>
 
               <View style={styles.cardContainer}>
-                  <Image style={styles.image} source={ BED_IMAGE } resizeMode="contain"/>
+                  <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
                   <Text style={[styles.cardText, styles.highlight, {textAlign: "center", flex: 1, flexWrap: 'wrap'}]}>
-                  Chance of Another <Text style={styles.orangeText}>Heart Procedure</Text> in the Next Year.
+                  {strings('page9.subtitle1')}<Text style={styles.orangeText}>{strings('page9.subtitle2')}</Text> {strings('page9.subtitle3')}
                   </Text>
               </View>
-
               <View style={[styles.columnContainer]}>
-                  <View style={[styles.whiteColumn]}>
-                    <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
-                      No cardiac catheterization
+                  <View style={[styles.whiteColumn, styles.whiteLeftColumn]}>
+                    <Text style={[styles.sectionParagraph, styles.highlight]}>
+                    {strings('page9.paragraph1')}
                     </Text>
-                    <Text></Text>
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>91/100 </Text>
-                      people did not have another heart procedure.
+                      <Text style={styles.highlight}>{strings('page9.paragraph2')}</Text>
+                      {strings('page9.paragraph3')}
                     </Text>
-                    <Text></Text>
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>9/100 </Text>
-                      people did.
+                      <Text style={styles.highlight}>{strings('page9.paragraph4')}</Text>
+                      {strings('page9.paragraph5')}
                     </Text>
-                    <View style={styles.imageContainer}>
-                    <Image style={[styles.dotImage,
-                    {
+                    <View
+                    style={[styles.imageContainer]}>
+                    <Image
+                    onLayout={this.onLayout}
+                    style={[styles.dotImage, {
                       width: this.state.width,
-                      height: this.state.width * .3}]} source={ HEART_PROCEDURE_NO_OP_IMAGE } resizeMode="contain"/>
+                      height: this.state.width * .3}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
-
                     <View style={[styles.container]}>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                        <Text style={styles.legendFont}>Did not have another heart procedure</Text>
+                      <Text style={styles.legendFont}>{strings('page9.paragraph6')}</Text>
                       </View>
-                      <View style={styles.dotItem}>
+                        <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
-                      </View>
-                      <View style={styles.item}>
-                        <Text style={styles.legendFont}>Had another heart procedure</Text>
-                      </View>
+                        </View>
+                        <View style={styles.item}>
+                        <Text style={styles.legendFont}>
+                        {strings('page9.paragraph7')}
+                          </Text></View>
                     </View>
                   </View>
-                  <View style={[styles.whiteColumn]}>
-                      <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText]}>
-                      Cardiac catheterization
+                  <View style={[styles.whiteColumn, styles.whiteRightColumn]}>
+                      <Text style={[styles.sectionParagraph, styles.highlight]}>
+                      {strings('page9.paragraph8')}
                       </Text>
-                      <Text></Text>
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>97/100 </Text>
-                      people did not have another heart procedure.
+                      <Text style={styles.highlight}>{strings('page9.paragraph9')}</Text>
+                      {strings('page9.paragraph10')}
                     </Text>
-                    <Text></Text>
                     <Text style={[styles.sectionParagraph]}>
-                      <Text style={styles.highlight}>3/100 </Text>
-                      people did.
+                      <Text style={styles.highlight}>{strings('page9.paragraph11')}</Text>
+                      {strings('page9.paragraph12')}
                     </Text>
                     <View style={styles.imageContainer}>
-                    <Image style={[styles.dotImage,
-                    {
+                    <Image 
+                    onLayout={this.onLayout}
+                    style={[styles.dotImage, {
                       width: this.state.width,
                       height: this.state.width * .3}]}
-                    source={ HEART_PROCEDURE_OP_IMAGE } resizeMode="contain"/>
+                      source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.blue]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Did not have another heart procedure</Text>
+                      <Text style={styles.legendFont}>{strings('page9.paragraph13')}</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.darkBlue]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Prevented from another heart procedure due to having the procedure</Text>
+                      <Text style={styles.legendFont}>{strings('page9.paragraph14')}</Text>
                       </View>
                       <View style={styles.dotItem}>
                         <View style={[styles.circle, styles.orange]}></View>
                       </View>
                       <View style={styles.item}>
-                      <Text style={styles.legendFont}>Had another heart procedure</Text>
+                      <Text style={styles.legendFont}>{strings('page9.paragraph15')}</Text>
                       </View>
                     </View>
                   </View>
               </View>
-            
-              <View style={[styles.smallCardContainer]}>
               <View
+              onLayout={this.onLayout}
+              style={[styles.smallCardContainer]}>
+                <View
                 onLayout={this.onLayout}
                 style={[styles.smallCard, {width: this.state.width * .5}]}>
-                  <Text style={[styles.smallCardText, styles.highlight, styles.centerText]}>
-                  Due to having the procedure, 6/100 additional people did not have another heart procedure.
-                  </Text>
+                    <Text style={[styles.smallCardText, styles.highlight]}>
+                    {strings('page9.paragraph16')}
+                    </Text>
+                </View>
               </View>
-              </View>
-
               <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionParagraph}>
-                  <Text style={styles.highlightUnderline}>Note</Text>: Many patients who undergo cardiac
-                  catheterization also undergo a procedure to open a blocked artery
-                  (either a stent or bypass surgery).
+                  <Text style={styles.sectionNote}>
+                  <Text style={styles.highlightUnderline}>{strings('page9.note1')}</Text>{strings('page9.note2')}
                   </Text>
               </View>
               <View style={styles.attributionWrapper}>
@@ -193,7 +193,7 @@ class Page9 extends Component {
                     With Non-ST-Segment Elevation Acute Coronary Syndrome: A Systematic Review and Meta-Analysis. Mayo Clinical Proceedings. 2018; 436-444.
                 </Text>
               </View>
-              
+              <View></View>
             </View>
             </ScrollView>
               <View style={styles.footer}>
@@ -208,7 +208,7 @@ class Page9 extends Component {
             selectedIndex={selectedIndex}
             containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>
             </View>
-                {/* <Text style={styles.pageNumber}>9</Text> */}
+                {/* <Text style={styles.pageNumber}>8</Text> */}
               </View>
             </SafeAreaView>
         )
@@ -225,9 +225,14 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#f6f6f6',
+    // height: screenheight
   },
   sectionContainer: {
     margin: wp('3%')
+  },
+  titleContainer: {
+    marginTop: hp('3%'),
+    paddingHorizontal: wp('5%'),
   },
   sectionTitle: {
     fontSize: hp('3%'),
@@ -235,28 +240,36 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     textAlign: 'center'
   },
-
+  legend: {
+    fontSize: hp('1.5%'),
+  },
   whiteColumn: {
     backgroundColor: Colors.white,
     borderColor: Colors.black,
     borderWidth: wp('.1%'),
-    padding: wp('4%'),
-    width: wp('40%'),
-    margin: hp('1%'),
+    padding: wp('2.5%'),
     flex: 1,
-    alignItems: 'center',
+},
+whiteRightColumn: {
+  marginLeft: hp('.5%'),
+  marginRight: hp('1%')
+},
+whiteLeftColumn: {
+  marginRight: hp('.5%'),
+  marginLeft: hp('1%')
+},
+legendItem: {
+  marginTop: 5
 },
 imageContainer: {
-  margin: wp('2%')
-},
-titleContainer: {
-  marginTop: hp('3%'),
-  paddingHorizontal: wp('5%'),
+  margin: wp('2%'),
+  alignItems: "center"
 },
 container: {
   flex: 1,
   flexDirection: 'row',
   flexWrap: 'wrap',
+  // margin: wp('3%'),
   alignItems: 'flex-start' // if you want to fill rows left to right
 },
 dotItem: {
@@ -275,10 +288,27 @@ cardContainer: {
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  margin: wp('4%'),
+  margin: wp('2%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
   borderWidth: wp('.1%'),
+  marginBottom: wp('4%')
+},
+smallCardContainer: {
+  alignItems: 'center',
+  alignContent: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  flex: 1,
+  marginTop: wp('3%')
+},
+smallCard: {
+  margin: wp('2%'),
+  padding: wp('2%'),
+  width: wp('80%'),
+  backgroundColor: Colors.white,
+  borderColor: Colors.gray,
+  borderWidth: wp('.2%'),
 },
 columnContainer: {
   alignItems: 'center',
@@ -286,42 +316,28 @@ columnContainer: {
   justifyContent: 'center',
   flexDirection: 'row',
 },
-
-smallCardContainer: {
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    flex: 1
-  },
-  smallCard: {
-    margin: wp('2%'),
-    padding: wp('2%'),
-    width: wp('90%'),
-    backgroundColor: Colors.white,
-    borderColor: Colors.gray,
-    borderWidth: wp('.2%'),
-    fontSize: wp('2%')
-  },
-  smallCardText: {
-    fontSize: hp('1.8%'),
-    fontWeight: "200",
-    fontFamily: 'Avenir'
-  },
-
 image: {
   width: 50,
   height: 50,
-  marginRight: -10,
+  marginRight: 10,
   marginLeft: 10
 },
 dotImage: {
-  width: 170,
-  height: 170
+  // width: wp('40%'),
+  // height: wp('40%')
 },
 cardText: {
   fontSize: hp('2.2%'),
   fontWeight: '700',
+  fontFamily: 'Avenir'
+},
+space: {
+  margin: 5,
+},
+smallCardText: {
+  fontSize: hp('1.8%'),
+  fontWeight: "200",
+  textAlign: "center",
   fontFamily: 'Avenir'
 },
 orangeText: {
@@ -346,10 +362,17 @@ sectionParagraph: {
   color: Colors.black,
   fontFamily: 'Avenir',
   alignItems: 'center',
-  textAlign: "center"
+  margin: wp('1%'),
+  textAlign: 'center'
+},
+sectionNote: {
+  fontSize: hp('1.5%'),
+  fontFamily: 'Avenir',
+  // margin: wp('1%'),
+  textAlign: 'left'
 },
 dotText: {
-  fontSize: hp('1.5%'),
+  fontSize: wp('4%'),
   fontWeight: '400',
   color: Colors.black,
   fontFamily: 'Avenir',
@@ -371,7 +394,7 @@ darkBlue: {
 },
 circleContainer: {
   margin: 2,
-  // marginTop: -5
+  marginTop: -4
 },
 sideBySide: {
   flex: 1

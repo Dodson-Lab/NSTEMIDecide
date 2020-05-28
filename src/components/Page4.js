@@ -34,6 +34,8 @@ let screenheight = Dimensions.get("window").height;
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { strings } from '../..';
+
 class Page4 extends Component {
 
   constructor(props) {
@@ -83,24 +85,22 @@ class Page4 extends Component {
           )}
             <View style={styles.body}>
                 <View style={[styles.titleContainer, styles.centerTitle]}>
-                    <Text style={styles.sectionTitle}>I had a heart attack.</Text>
-                    <Text style={styles.sectionTitle}>What are my options?</Text>
+                    <Text style={styles.sectionTitle}>{strings('page4.title')}</Text>
+                    <Text style={styles.sectionTitle}>{strings('page4.subtitle1')}</Text>
                 </View>
                 <View style={styles.sectionContainer}>
                     <Text style={styles.sectionParagraph}>
-                        We understand that this is a major decision for you.
-                        While your cardiologist may have already recommended the procedure,
-                        knowing about your options may help you better make an informed decision.
+                    {strings('page4.paragraph')}
                     </Text>
                 </View>
                 <View style={styles.sectionBlueContainer}>
                     <View style={[styles.blueBox]}>
                         <View style={styles.sectionBox}>
                             <Text style={[styles.sectionParagraph, styles.highlight]}>
-                                Acute myocardial infarction
+                            {strings('page4.subtitle2')}
                             </Text>
                             <Text style={[styles.sectionParagraph, styles.highlight]}>
-                                (heart attack)
+                            {strings('page4.subtitle3')}
                             </Text>
                         </View>
                     </View>
@@ -115,14 +115,14 @@ class Page4 extends Component {
                     <View style={[styles.smallBlueBox]}>
                         <View style={styles.sectionBox}>
                             <Text style={[styles.sectionParagraph, styles.highlight]}>
-                                Procedure
+                              {strings('page4.subtitle4')}
                             </Text>
                         </View>
                     </View>
                     <View style={[styles.smallBlueBox]}>
                         <View style={styles.sectionBox}>
                             <Text style={[styles.sectionParagraph, styles.highlight]}>
-                                No procedure
+                            {strings('page4.subtitle5')}
                             </Text>
                         </View>
                     </View>
@@ -132,40 +132,37 @@ class Page4 extends Component {
                     <View style={[styles.smallBlueBox]}>
                         {/* <View style={styles.sectionBox}> */}
                             <Text style={styles.sectionParagraph}>
-                            If you choose to have a cardiac catheterization procedure,
-                            and you are found to have a blocked artery,
-                            you may also be considered for: 
+                            {strings('page4.subtitle6')}
                             </Text>
 
                             <View style={styles.labelContainer}>
                               <View style={styles.labelBox}>
                                   <Text style={[styles.labelText, styles.boldText]}>
-                                      Option 1
+                                  {strings('page4.subtitle7')}
                                   </Text>
                               </View>
                             </View>
                             <Text style={styles.sectionParagraph}>
-                              Stent placement during procedure</Text>
+                            {strings('page4.subtitle8')}</Text>
                               <View style={styles.labelContainer}>
                               <View style={styles.labelBox}>
                                   <Text style={[styles.labelText, styles.boldText]}>
-                                      Option 2
+                                  {strings('page4.subtitle9')}
                                   </Text>
                               </View>
                             </View>
                             <Text style={styles.sectionParagraph}>
-                            Further discussion with your cardiologist for possible future bypass surgery
+                            {strings('page4.subtitle10')}
                             </Text>
                     </View>
                     <View style={[styles.smallBlueBox]}>
                       <Text style={styles.sectionParagraph}>
-                      If you choose <Text style={styles.highlight}>not</Text> to have a cardiac catheterization procedure, you will still:
+                      {strings('page4.subtitle11')}<Text style={styles.highlight}>{strings('page4.subtitle12')}</Text> {strings('page4.subtitle13')}
                       </Text>
                       <Text></Text>
                       <Text></Text>
                       <Text style={styles.sectionParagraph}>
-                      Have the option to get a cardiac catheterization procedure
-                      in the future if you have symptoms later on
+                      {strings('page4.subtitle14')}
                       </Text>
                     </View>
                 </View>
@@ -174,8 +171,7 @@ class Page4 extends Component {
                     <View style={[styles.smallBlueBox]}>
                         <View style={styles.sectionBox}>
                             <Text style={[styles.sectionParagraph, styles.centerText]}>
-                            With either a procedure or no procedure, you will still
-                            receive medicines to help your heart.
+                            {strings('page4.subtitle15')}
                             </Text>
                         </View>
                     </View>
@@ -183,7 +179,7 @@ class Page4 extends Component {
                 {/* <View style={styles.sectionContainer}>  */}
                 <View style={styles.textWithIcon}>
                   <Text style={styles.iconText}>
-                  These options are described in detail on the following pages
+                  {strings('page4.subtitle16')}
                   </Text>
                   <Icon name="long-arrow-right" style={styles.rightArrow}/>
                 </View>

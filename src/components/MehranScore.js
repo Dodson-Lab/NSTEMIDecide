@@ -333,7 +333,7 @@ handleInputChange = (value) => {
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column, styles.center]}>
                     <Text style={styles.TextStyle} onPress={ ()=> Linking.openURL('https://www.mdcalc.com/mdrd-gfr-equation') } >eGFR</Text>
-                        <Text styles={styles.title}>mL/min/1.73 m²</Text>
+                    <Text style={styles.subtext}>mL/min/1.73 m²</Text>
                     </View>
                     <View style={[styles.column]}>
                     <ButtonGroup
@@ -351,6 +351,10 @@ handleInputChange = (value) => {
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
                     <Button 
+                    titleStyle={{
+                      fontSize: 20,
+                      fontWeight: '700'
+                    }}
                      accessibilityLabel="submit"
                      buttonStyle={styles.submit}
                     title="Submit" onPress={() => this.calculateMehranScore()}>
@@ -382,7 +386,19 @@ handleInputChange = (value) => {
                 </View>
                 </View>
                 <Divider style={{ backgroundColor: 'gray', height: 1}} />
-                <View style={[styles.sectionParagraph, styles.center]}>
+                <View style={[styles.sectionParagraph]}>
+                    <Text style={styles.aboutText}>ABOUT THE CREATOR</Text>
+                    <Text>
+
+                    Roxana Mehran, MD, FACC, FACP, FCCP, FESC, FAHA, FSCAI,
+                    is a professor in the department of medicine, cardiology, and
+                    population health science and policy at the Icahn School of Medicine
+                    at Mount Sinai. She is also the director of the Center for Interventional
+                    Cardiovascular Research and Clinical Trials at the Zena and Michael A. Wiener
+                    Cardiovascular Institute. Dr. Mehran’s primary research is focused
+                    on angioplasty and stent placement, cardiac catheterization, and
+                    acute coronary syndromes.
+                    </Text>
                 <Text style={styles.linkStyle} onPress={ ()=>
                     Linking.openURL('https://www.mdcalc.com/mehran-score-post-pci-contrast-nephropathy#evidence') } >
                     Mehran Score methodology
@@ -441,10 +457,10 @@ const styles = StyleSheet.create({
   },
   subtext: {
     fontWeight: '300',
-    fontSize: hp('1.9%'),
+    fontSize: hp('2%'),
   },
   title: {
-      fontSize: hp('2%'),
+      fontSize: hp('2.2%'),
       fontWeight: '500',
     //   alignSelf: 'center',
       marginBottom: hp('.5%')
@@ -471,13 +487,14 @@ center: {
     width: wp('50%'),
     backgroundColor: '#1bb193',
     alignSelf: 'center',
-    height: hp('5%')
+    height: hp('5%'),
+    fontSize: hp('2.2%'),
   },
   TextStyle: {
     color: '#0000EE',
     textDecorationLine: 'underline',
     fontWeight: '500',
-    fontSize: hp('2%')
+    fontSize: hp('2.2%'),
   },
   unit: {
     // color: Colors.black,
@@ -487,8 +504,12 @@ center: {
     color: '#0000EE',
     textDecorationLine: 'underline',
   },
+  aboutText: {
+    fontFamily: 'Avenir',
+    fontWeight: '700',
+  },
   result: {
-    fontSize: hp('1.5%'),
+    fontSize: hp('2.2%'),
     fontWeight: '800',
     fontFamily: 'Avenir'
   },
@@ -497,7 +518,7 @@ center: {
   },
   resultNum: {
     fontWeight: '500',
-    fontSize: hp('3%'),
+    fontSize: hp('3.5%'),
     color: '#1bb193'
   },    
   column: {
