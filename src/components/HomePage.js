@@ -94,31 +94,37 @@ class HomePage extends Component {
           <View 
               onLayout={this.onLayout}
               style={[styles.body]}>
-            <View style={[styles.imageContainer]}>
+            <View
+              onLayout={this.onLayout} 
+              style={[styles.imageContainer, {marginTop: this.state.height * .05, marginBottom: this.state.height * .02}]}>
                 <Image style={styles.image} source={ LOGO } resizeMode="contain"/>
                 </View>
-            <View style={styles.smallContainer}>
-            <Text style={styles.sectionTitle}>A Cardiac Catheterization Decision Aid Tool</Text></View>
+                <View
+              onLayout={this.onLayout} 
+              style={[styles.smallContainer, {marginTop: this.state.height * .06, marginBottom: this.state.height * .05}]}>
+            <Text style={styles.sectionTitle}>A Cardiac Catheterization Decision Aid Tool</Text>
+            </View>
                 <Card
-  title='select a language'
-  titleStyle={[styles.selectText, {marginBottom: 10}]}>
-      <ButtonGroup
-      onLayout={this.onLayout}
-textStyle={{
-fontSize: hp('2.5%'),
-fontWeight: '500',
-fontFamily: "Avenir",
-}}
-onPress={this.navigate}
-selectedIndex={selectedIndex}
-buttons={buttons}
-containerStyle={{height: 100, width: this.state.width * .8}}
-/>
-</Card>
+                onLayout={this.onLayout} 
+                title='select a language'
+                titleStyle={[styles.selectText, {marginBottom: this.state.height * .01}]}>
+                    <ButtonGroup
+                    onLayout={this.onLayout}
+                textStyle={{
+                fontSize: hp('2.5%'),
+                fontWeight: '500',
+                fontFamily: "Avenir",
+                }}
+                onPress={this.navigate}
+                selectedIndex={selectedIndex}
+                buttons={buttons}
+                containerStyle={{height: this.state.height * .08, width: this.state.width * .8}}
+                />
+                </Card>
 
         <View
         onLayout={this.onLayout}
-        style={[styles.smallContainer, {height: this.state.height * .2}]}>
+        style={[styles.smallContainer, {marginTop: this.state.height * .1, marginBottom: this.state.height * .1}]}>
         <Text style={styles.attribute}>New York University</Text>
         </View>
           </View>
@@ -178,8 +184,6 @@ const styles = StyleSheet.create({
     },
     smallContainer: {
     justifyContent: "center",
-    marginTop: hp('3%'),
-    marginBottom: hp('1.5%')
     },
   });
 

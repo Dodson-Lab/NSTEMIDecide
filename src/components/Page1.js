@@ -87,7 +87,6 @@ class Page1 extends Component {
             <View 
               onLayout={this.onLayout}
               style={[styles.body, {height: this.state.height + 15}]}>
-
               <View
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .05}]}>
