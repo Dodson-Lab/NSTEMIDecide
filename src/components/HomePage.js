@@ -177,7 +177,6 @@ const styles = StyleSheet.create({
     color: "#626d7a"
     },
     smallContainer: {
-
     justifyContent: "center",
     marginTop: hp('3%'),
     marginBottom: hp('1.5%')
