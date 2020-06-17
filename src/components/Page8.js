@@ -50,7 +50,7 @@ class Page8 extends Component {
     this.navigate = this.navigate.bind(this);
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 7', '', 'Page 9','Page 11']
+    const pages = ['Home','Page 7', '', 'Page 9','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -266,8 +266,7 @@ container: {
   flex: 1,
   flexDirection: 'row',
   flexWrap: 'wrap',
-  // margin: wp('3%'),
-  // margin: wp('3%'),
+  marginTop: wp('2'),
   // alignItems: 'flex-start' // if you want to fill rows left to right
 },
 dotItem: {
@@ -279,6 +278,7 @@ item: {
 },
 legendFont: {
   fontSize: hp('2%'),
+  fontFamily: 'Avenir',
 },
 cardContainer: {
   padding: 5,

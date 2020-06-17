@@ -49,7 +49,7 @@ class Page13 extends Component {
     this.navigate = this.navigate.bind(this);
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 12', '', '','']
+    const pages = ['Home','Page 12', '', '','']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})

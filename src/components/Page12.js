@@ -31,9 +31,7 @@ import {
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Unorderedlist from 'react-native-unordered-list';
-
-import { COMFORT_IMAGE } from '../..';
+import { strings } from '../..';
 
 class Page12 extends Component {
   constructor(props) {
@@ -48,7 +46,7 @@ class Page12 extends Component {
     this.navigate = this.navigate.bind(this);
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 11', '', 'Page 13','Page 13']
+    const pages = ['Home','Page 11', '', 'Page 13','Page 13']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -81,23 +79,23 @@ class Page12 extends Component {
           )}
             <View style={styles.body}>
               <Text></Text>
-                <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText, {fontSize: 20}]}>ABOUT NSTEMI DECIDE</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight, styles.centerText, {fontSize: 20}]}>{strings('page12.title')}</Text>
                 <View style={styles.sectionContainer}>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>Disclaimer:</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle1')}</Text>
                     <Text style={styles.sectionParagraph}>
-                    This application is intended to facilitate discussion between patients and healthcare professionals. It is not intended as a substitute for professional medical judgment, diagnosis, or treatment. It should not be used by patients without direct consultation with, and supervision by, their healthcare provider.  
+                    {strings('page12.paragraph1')}
                     </Text>
                 </View>
                 <Text></Text>
                 <View style={styles.sectionContainer}>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>Funding:</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle2')}</Text>
                     <Text style={styles.sectionParagraph}>
-                    NSTEMI DECIDE was supported by a grant from the National Institute on Aging of the National Institutes of Health to NYU Grossman School of Medicine (Award Number K23AG052463). The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health. 
+                    {strings('page12.paragraph2')}
                     </Text>
                 </View>
                 <Text></Text>
                 <View style={styles.sectionContainer}>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>References:</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle3')}</Text>
                     <Text style={styles.sectionParagraph}>
                     Garg et al. Routine Invasive Versus Selective Invasive Strategy in Elderly Patients Older Than 75 Years With Non-ST-Segment Elevation Acute Coronary Syndrome: A Systematic Review and Meta-Analysis. Mayo Clinical Proceedings. 2018; 436-444.
                     </Text>
@@ -116,11 +114,15 @@ class Page12 extends Component {
                 </View>
                 <Text></Text>
                 <View style={styles.sectionContainer}>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>Credits (alphabetical):</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle4')}</Text>
+                <Text style={styles.sectionParagraph}>John A. Dodson, MD</Text>
+                </View>
+                <Text></Text>
+                <View style={styles.sectionContainer}>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle5')}</Text>
                 <Text style={styles.sectionParagraph}>Mallory Barnett, MD</Text>
                 <Text style={styles.sectionParagraph}>Sarwat I. Chaudhry, MD</Text>
                 <Text style={styles.sectionParagraph}>Victoria V. Dickson, PhD</Text>
-                <Text style={styles.sectionParagraph}>John A. Dodson, MD (Principal Investigator)</Text>
                 <Text style={styles.sectionParagraph}>Sohah Iqbal, MD</Text>
                 <Text style={styles.sectionParagraph}>Nicholas J. Kiefer, MD</Text>
                 <Text style={styles.sectionParagraph}>Daniel D. Matlock, MD</Text>
@@ -130,7 +132,7 @@ class Page12 extends Component {
                 </View>
                 <View style={styles.sectionContainer}>
                 <Text></Text>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>Software Development:</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle6')}</Text>
                 <Text style={styles.sectionParagraph}>
                 Anna Kiefer
                 </Text>

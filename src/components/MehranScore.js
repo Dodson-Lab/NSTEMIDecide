@@ -22,10 +22,6 @@ import {
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
 
-import PropTypes from 'prop-types';
-
-import { BRAIN_IMAGE, KIDNEY_IMAGE, DROPLET_IMAGE } from '../..';
-
 import { ButtonGroup, Divider, Input, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -40,7 +36,12 @@ class MehranScore extends Component {
     this.state = {
       width: Dimensions.get('window').width,
       height: Dimensions.get('window').height,
-      score: {}
+      score: {},
+      mehranScore: 0,
+      risk: 0,
+      dialysis: 0,
+      mehranScoreUnit: ' points',
+      riskUnit: ' %'
     }
     this.updateIndex0 = this.updateIndex0.bind(this)
     this.updateIndex1 = this.updateIndex1.bind(this)
@@ -65,7 +66,6 @@ class MehranScore extends Component {
       }
       this.state.score[0] = val
       this.setState({selectedFormIndex0})
-      console.log(this.state.score)
   }
   updateIndex1 (selectedFormIndex1) {
     let val = 0;
@@ -120,13 +120,12 @@ updateIndex6 (selectedFormIndex6) {
     this.setState({selectedFormIndex6})
 }
 handleInputChange = (value) => {
-    if (/^\d+$/.test(value)) {
-      this.setState({
-        value: value
-      });
-    }
+  if (isNaN(value)) {
+    alert('please enter a valid positive number')
+  } else {
     this.state.score['cml'] = Math.floor(value / 100)
   }
+}
   calculateMehranScore () {
       let score = 0;
       for (let [key, value] of Object.entries(this.state.score)) {
@@ -175,7 +174,7 @@ handleInputChange = (value) => {
           'No', 'Yes'
       ]
       const eGFRButtons = [
-          '≥60  +0', '40 to <60  +2', '20 to <40  +4', '<20  +6'
+          '≥60', '40 to <60', '20 to <40', '<20'
       ]
       const { selectedIndex } = this.state
       const { selectedFormIndex0 } = this.state
@@ -316,12 +315,15 @@ handleInputChange = (value) => {
                 <View style={[styles.columnContainer]}>
                     <View style={[styles.column]}>
                         <Text style={styles.title}>Contrast media volume</Text>
+                        <Text
+                        style={styles.asteriskText}>*These numbers are suggested estimates only, and do not take into account your clinical circumstances or the individual cardiologist doing your procedure.</Text>
                     </View>
                     <View style={[styles.column]}>
                     <Input
                     inputStyle={styles.centerText}
                     keyboardType='numeric'
-                    placeholder='mL'
+                    placeholder='50-150 mL*'
+                    placeholderTextColor = "#5e6977"
                     onChangeText={this.handleInputChange}
                     value={this.state.value}
                     />
@@ -403,6 +405,11 @@ handleInputChange = (value) => {
                     Linking.openURL('https://www.mdcalc.com/mehran-score-post-pci-contrast-nephropathy#evidence') } >
                     Mehran Score methodology
                 </Text></View>
+                <View style={styles.attributionWrapper}>
+                    <Text style={[styles.attribution, styles.highlight]}>Sources of Information</Text>
+                    <Text style={styles.attribution}>Singh R, Zughaib M. Timeout for Contrast: Using Physician Behavior Modification to Reduce Contrast in the Catheterization Laboratory. Cardiol Res Pract. 2019;2019:9238124. Published 2019 Jan 15. doi:10.1155/2019/9238124
+                    </Text>
+                </View>
             </View>
             </ScrollView>
               <View style={styles.footer}>
@@ -458,6 +465,10 @@ const styles = StyleSheet.create({
   subtext: {
     fontWeight: '300',
     fontSize: hp('2%'),
+  },
+  asteriskText: {
+    fontSize: hp('1.5%'),
+    fontWeight: '300',
   },
   title: {
       fontSize: hp('2.2%'),
@@ -549,8 +560,10 @@ center: {
   },
   buttonGroup: {
     alignItems: "center",
-  }
-
+  },
+  highlight: {
+    fontWeight: '700',
+  },
 });
 
 export default MehranScore;

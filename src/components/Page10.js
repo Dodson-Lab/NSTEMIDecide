@@ -10,7 +10,7 @@ import {
   Image,
   Linking,
   Dimensions,
-  Button
+  // Button
 } from 'react-native';
 
 import {
@@ -26,7 +26,7 @@ import {
 
 import { BRAIN_IMAGE, KIDNEY_IMAGE, DROPLET_IMAGE } from '../..';
 
-import { ButtonGroup } from 'react-native-elements';
+import { ButtonGroup, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Unorderedlist from 'react-native-unordered-list';
@@ -48,7 +48,7 @@ class Page10 extends Component {
     this.navigate = this.navigate.bind(this);
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 9', '', 'Page 11','Page 13']
+    const pages = ['Home','Page 9', '', 'Page 11','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -109,6 +109,8 @@ class Page10 extends Component {
                     <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
                     {strings('page10.paragraph5')}
+                    <Text style={{fontWeight: '700'}}>{strings('page10.number1')}</Text>
+                    {strings('page10.paragraph5a')}
                     </Text>
                     </View>
                     <Text></Text>
@@ -126,6 +128,8 @@ class Page10 extends Component {
                     <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
                     {strings('page10.paragraph8')}
+                    <Text style={{fontWeight: '700'}}>{strings('page10.number2')}</Text>
+                    {strings('page10.paragraph8a')}
                     </Text>
                     </View>
                     <Text></Text>
@@ -133,7 +137,9 @@ class Page10 extends Component {
                         <View style={styles.leftContainer}>
                             <View style={styles.listItemContainer}>
                             <Image style={[styles.image, {textAlign: 'left'}]} source={ KIDNEY_IMAGE } resizeMode="contain"/>
-                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>{strings('page10.paragraph9')}</Text>
+                            <Text style={[styles.sectionParagraph, styles.highlight, {fontSize: hp('2.5%')}]}>
+                              {strings('page10.paragraph9')}
+                            </Text>
                             </View>
                         </View>
                     </View>
@@ -143,6 +149,7 @@ class Page10 extends Component {
                         <Unorderedlist style={styles.bullet}>
                         <Text style={[styles.sectionParagraph, styles.lightHighlight]}>
                         {strings('page10.paragraph10')}
+
                         </Text>
                         </Unorderedlist>
                         </View>
@@ -152,6 +159,8 @@ class Page10 extends Component {
                     <View style={styles.subheaderContainer}>
                     <Text style={[styles.sectionParagraph]}>
                     {strings('page10.paragraph12')}
+                    <Text style={{fontWeight: '700'}}>{strings('page10.number3')}</Text>
+                        {strings('page10.paragraph12a')}
                     </Text>
                     </View>
                     <Text></Text>
@@ -171,14 +180,27 @@ class Page10 extends Component {
 
                     <Text style={[styles.sectionParagraph]}>
                     {strings('page10.paragraph15')}
+                    <Text style={{fontWeight: '700'}}>{strings('page10.number4')}</Text>
+                        {strings('page10.paragraph15a')}
                     </Text>
                     </View>
-                    <View>
+                    <View style={styles.buttonStyle}>
                     <Button
                       title="Mehran Score"
+                      accessibilityLabel="Mehran Score"
+                      buttonStyle={{
+                        backgroundColor: '#1bb193',
+                        justifyContent: "center",
+                        alignSelf: "center",
+                      }}
+                      titleStyle={{
+                        fontSize: hp('2.2%'),
+                        fontWeight: '700'
+                      }}
+                      // titleStyle={{textDecorationLine: "underline"}}
                       selectedIndex={selectedIndex}
                       onPress={() => this.props.navigation.navigate('Mehran Score')}
-                      style={{backgroundColor: Colors.red}}/>
+                      />
                     </View>
                     <View style={styles.sectionContainer}>
                     <View style={styles.rowContainer}>
@@ -260,6 +282,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     // alignItems: 'center',
   },
+  buttonStyle: {
+    // width: 200,
+    margin: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex"
+  },
   bullet: {
     fontSize: hp('2%')
   },
@@ -296,8 +325,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     margin: wp('1%')
-    // borderBottomWidth: 1
-    // backgroundColor: 'blue',
   },
   subheaderContainer: {
     flexDirection: 'row',
@@ -313,21 +340,12 @@ const styles = StyleSheet.create({
   },
   subItem: {
     textAlign: "right",
-    // justifyContent: "right",
-    // alignContent: "right"
     alignItems: "flex-end",
     marginTop: 0,
     // marginLeft: 20
   },
-// rightSide: {
-//     alignItems: "center"
-// },
-
 cardContainer: {
   padding: wp('3%'),
-//   alignItems: 'center',
-//   alignContent: 'center',
-//   justifyContent: 'center',
   margin: wp('4%'),
   backgroundColor: Colors.white,
   borderColor: Colors.gray,
@@ -337,8 +355,7 @@ paragraphContainer: {
   marginBottom: wp('3%')
 },
 listContainer: {
-    // marginLeft: wp('3%'),
-    // marginRight: wp('3%'),
+
 },
 listItemContainer: {
     flexDirection: 'row',
@@ -348,8 +365,7 @@ listItemContainer: {
 },
 leftContainer: {
     flex: 1,
-    // flexDirection: 'row',
-    // justifyContent: 'flex-start',
+
 },
 rightContainer: {
     flex: 1,

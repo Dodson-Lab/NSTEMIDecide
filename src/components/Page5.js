@@ -35,9 +35,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 let screenheight = Dimensions.get("window").height;
 
-import { CARDIAC_CATHETERIZATION_IMAGE } from '../..';
+import { CARDIAC_CATHETERIZATION_IMAGE, CARDIAC_CATHETERIZATION_IMAGE_ES } from '../..';
 
 import { strings } from '../..';
+
+import i18n from 'i18n-js'
 
 class Page5 extends Component {
 
@@ -51,9 +53,15 @@ class Page5 extends Component {
 
     this.onLayout = this.onLayout.bind(this);
     this.navigate = this.navigate.bind(this);
+
+    if (i18n.locale == "es") {
+      this.state.image = CARDIAC_CATHETERIZATION_IMAGE_ES
+    } else {
+      this.state.image = CARDIAC_CATHETERIZATION_IMAGE
+    }
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 4', '', 'Page 6','Page 11']
+    const pages = ['Home','Page 4', '', 'Page 6','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -135,7 +143,7 @@ class Page5 extends Component {
                 <View
                 onLayout={this.onLayout} 
                 style={[styles.imageContainer, {height: hp("40%")}]}>
-                    <Image style={styles.image} source={ CARDIAC_CATHETERIZATION_IMAGE } resizeMode="contain"/>
+                    <Image style={styles.image} source={ this.state.image } resizeMode="contain"/>
                 </View>
             </View>
             </ScrollView>

@@ -34,10 +34,12 @@ let screenheight = Dimensions.get("window").height;
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { PCI_IMAGE } from '../..';
-import { CABG_IMAGE } from '../..';
+import { PCI_IMAGE, PCI_1, PCI_1_ES, PCI_2, PCI_3, PCI_4 } from '../..';
+import { CABG_IMAGE_EN, CABG_IMAGE_ES } from '../..';
 
 import { strings } from '../..';
+
+import i18n from 'i18n-js'
 
 class Page6 extends Component {
   constructor(props) {
@@ -50,9 +52,18 @@ class Page6 extends Component {
 
     this.onLayout = this.onLayout.bind(this);
     this.navigate = this.navigate.bind(this);
+
+    if (i18n.locale == "es") {
+      this.state.CABGimage = CABG_IMAGE_ES
+      this.state.pci_1 = PCI_1_ES
+    } else {
+      this.state.CABGimage = CABG_IMAGE_EN
+      this.state.pci_1 = PCI_1
+    }
+    this.state.pci_2 = PCI_2
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 5', '', 'Page 7','Page 11']
+    const pages = ['Home','Page 5', '', 'Page 7','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -106,44 +117,50 @@ class Page6 extends Component {
                 </Text></Unorderedlist>
                 </View>
             </View>
-            <View style={styles.sectionContainer, {flex: 1, flexDirection: "row", justifyContent: "center"}}>
-            <View
-                onLayout={this.onLayout}
+            <View style={styles.sectionContainer}>
+            {/* <View> */}
+                {/* onLayout={this.onLayout}
                 style={[styles.imageContainer,
-                  {height: hp("60%"), width: this.state.width * .85}]}>
-                    {/* , width: this.state.width * .8 */}
-                    {/* <View style={styles.containerWrapper}>
-                        <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>
-                        Balloon catheter is inserted into the artery.
-                        </Text></Unorderedlist>
-                        </View>
-                        <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>
-                        Balloon is inflated to expand the stent.
-                        </Text></Unorderedlist>
-                        </View>
-                        <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>
-                        Balloon is deflated.
-                        </Text></Unorderedlist>
-                        </View>
-                        <View style={styles.listItem}>
-                        <Unorderedlist><Text style={styles.listText}>
-                        Catheter is removed. Stent remains to hold artery open.
-                        </Text></Unorderedlist>
-                        </View>
-                    </View> */}
+                  {height: hp("20%"), width: this.state.width * .85}]}> */}
                     <View style={styles.containerWrapper}>
-                        <Image style={styles.image} source={ PCI_IMAGE } resizeMode="contain"/>
+                      <View style={{alignItems: 'center'}}>
+                        <View onLayout={this.onLayout}
+                        style={[styles.imageContainer,
+                        {height: hp("15%")}]}>
+                        <Image style={styles.image} source={ this.state.pci_1 } resizeMode="contain"/>
+                        </View>
+                        {/* <View styles={styles.textContainer}> */}
+                        <Text style={styles.imageText}>{strings('page6.image1')}</Text>
+                        <View onLayout={this.onLayout}
+                        style={[styles.imageContainer,
+                        {height: hp("12%")}]}>
+                        <Image style={styles.image} source={ PCI_2 } resizeMode="contain"/>
+                        </View>
+                        {/* <View styles={styles.textContainer}> */}
+                        <Text style={styles.imageText}>{strings('page6.image2')}</Text>
+                        {/* </View> */}
+                        <View onLayout={this.onLayout}
+                        style={[styles.imageContainer,
+                        {height: hp("12%")}]}>
+                        <Image style={styles.image} source={ PCI_3 } resizeMode="contain"/>
+                        </View>
+                        {/* <View styles={styles.textContainer}> */}
+                        <Text style={styles.imageText}>{strings('page6.image3')}</Text>
+                        <View onLayout={this.onLayout}
+                        style={[styles.imageContainer,
+                        {height: hp("12%")}]}>
+                        <Image style={styles.image} source={ PCI_4 } resizeMode="contain"/>
+                        </View>
+                        {/* <View styles={styles.textContainer}> */}
+                        <Text style={styles.imageText}>{strings('page6.image4')}</Text>
+                      </View>  
+                        {/* <View style={styles.attributionContainer}> */}
                         <Text style={styles.attribution}>
-                          © RelayHealth and/or its affiliates.
+                          Adapted from RelayHealth and/or its affiliates. All rights reserved.
                         </Text>
-                        <Text style={styles.attribution}>
-                          All rights reserved.
-                        </Text>
-                    </View>
-                </View>
+                        {/* </View> */}
+                  </View>
+                {/* </View> */}
             </View>
             <View style={styles.sectionContainer}></View>
             <View style={styles.labelContainer}>
@@ -164,13 +181,13 @@ class Page6 extends Component {
                 <View
                 onLayout={this.onLayout}
                 style={[styles.imageSmallContainer,
-                  {height: this.state.height * .4, height: this.state.width * .4}]}>
-                  <View style={styles.containerWrapper}>
-                    <Image style={styles.image} source={ CABG_IMAGE } resizeMode="contain"/>
+                  {height: this.state.width * .6}]}>
+                  {/* <View style={styles.containerWrapper}> */}
+                    <Image style={styles.image} source={ this.state.CABGimage } resizeMode="contain"/>
                     <Text style={styles.attribution}>
-                      © American Heart Association.
+                      Adapted from American Heart Association.
                     </Text>
-                  </View>
+                  {/* </View> */}
                 </View>
             </View>
             <View style={styles.sectionContainer}></View>
@@ -233,22 +250,36 @@ const styles = StyleSheet.create({
     textAlign: 'right'
   },
   listItem: {
-    margin: wp('2%')
+    margin: wp('2%'),
   },
   underlineText: {
     textDecorationLine: 'underline',
   },
   imageContainer: {
-    // height: hp('36%'),
-    backgroundColor: Colors.white,
     flexDirection: "row",
-    padding: 10,
-    borderWidth: 1
+  },
+  attributionContainer: {
+    backgroundColor: Colors.white,
+    margin: 5,
+    marginTop: 20
+  },
+  imageText: {
+    backgroundColor: Colors.white,
+    textAlign: "left",
+    margin: 10,
+    marginTop: 5,
+    fontSize: hp('1.8%'),
+    // fontWeight: "700",
+    fontFamily: 'Avenir'
+  },
+  textContainer: {
+    backgroundColor: Colors.white,
   },
   imageSmallContainer: {
-    height: hp('22%'),
+    // height: hp('22%'),
     backgroundColor: Colors.white,
-    flexDirection: "row",
+    // flexDirection: "row",
+    padding: 5,
     borderWidth: 1
   },
   centerTitle: {
@@ -268,13 +299,11 @@ const styles = StyleSheet.create({
     // marginBottom: hp('1.5%')
   },
   containerWrapper: {
-    // width: wp('1%'),
-    // marginLeft: wp('2%'),
-    // marginTop: wp('3%'),
-    // marginBottom: wp('3%'),
-    flex: 1,
-    justifyContent: 'center',
-    margin: wp('1.5%')
+    // marginLeft: wp('5%'),
+    // marginRight: wp('5%'),
+    padding: 5,
+    backgroundColor: Colors.white,
+    borderWidth: 1
     // alignItems: 'center'
   },
   labelBox: {

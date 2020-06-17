@@ -13,8 +13,9 @@ import {
   ScrollView,
   View,
   Text,
-  Image
-  ,Dimensions
+  Image,
+  Dimensions,
+  Linking
 } from 'react-native';
 
 import {
@@ -27,8 +28,6 @@ import {
   listenOrientationChange as lor,
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
-
-import Unorderedlist from 'react-native-unordered-list';
 
 import { COMFORT_IMAGE } from '../..';
 
@@ -51,7 +50,7 @@ class Page11 extends Component {
     this.navigate = this.navigate.bind(this);
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 10', '', 'Page 12','Page 13']
+    const pages = ['Home','Page 10', '', 'Page 12','Page 13']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -150,8 +149,8 @@ class Page11 extends Component {
         <View style={styles.attributionWrapper}>
             <Text style={[styles.attribution, styles.highlight]}>Sources of Information</Text>
             <Text style={styles.attribution}>Cardiac Catheterization.</Text>
-            <Text style={styles.attribution}>Retrieved from: 
-            <Text style={{color: 'blue'}}
+            <Text style={styles.attribution}>Retrieved from:
+            <Text style={{color: '#0000EE'}}
       onPress={() => Linking.openURL('https://www.heart.org/en/health-topics/heart-attack/diagnosing-a-heart-attack/cardiac-catheterization')}> The American Heart Association, Inc.
             </Text>
             </Text>
@@ -252,7 +251,8 @@ const styles = StyleSheet.create({
   },
   attributionWrapper: {
     marginLeft: wp('5%'),
-    marginBottom: wp('2%')
+    marginBottom: wp('2%'),
+    marginTop: wp('2%')
   },
   attribution: {
     fontSize: hp('1.2%'),

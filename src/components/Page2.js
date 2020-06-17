@@ -27,12 +27,14 @@ import {
   listenOrientationChange as lor,
   removeOrientationChange as rol
 } from 'react-native-responsive-screen';
-import { HEART_BLOOD_IMAGE } from '../..';
+import { HEART_BLOOD_IMAGE_EN, HEART_BLOOD_IMAGE_ES } from '../..';
 
 import { ButtonGroup } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { strings } from '../..';
+
+import i18n from 'i18n-js'
 
 let screenheight = Dimensions.get("window").height;
 
@@ -48,10 +50,16 @@ class Page2 extends Component {
 
     this.onLayout = this.onLayout.bind(this);
     this.navigate = this.navigate.bind(this);
+
+    if (i18n.locale == "es") {
+      this.state.image = HEART_BLOOD_IMAGE_ES
+    } else {
+      this.state.image = HEART_BLOOD_IMAGE_EN
+    }
   }
 
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 1', '', 'Page 3','Page 11']
+    const pages = ['Home','Page 1', '', 'Page 3','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -102,7 +110,7 @@ class Page2 extends Component {
               onLayout={this.onLayout} 
               style={[styles.sectionContainer, {marginTop: this.state.height * .02}]}>
                 <View style={styles.imageContainer}>
-                    <Image style={styles.image} source={ HEART_BLOOD_IMAGE } resizeMode="contain"/>
+                    <Image style={styles.image} source={ this.state.image } resizeMode="contain"/>
                 </View>
                 </View>
             </View>
@@ -141,7 +149,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp('5%'),
   },
   imageContainer: {
-    height: hp('45%'),
+    height: hp('50%'),
     alignContent: 'center',
     backgroundColor: Colors.white,
     marginBottom: hp('2%'),

@@ -52,7 +52,7 @@ class Page1 extends Component {
   }
 
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 1', '', 'Page 2','Page 11']
+    const pages = ['Home','Home', '', 'Page 2','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -121,7 +121,7 @@ class Page1 extends Component {
             <ButtonGroup
             buttons={buttons}
             onLayout={this.onLayout} 
-            disabled={[0,1,2]}
+            // disabled={[0,1,2]}
             onPress={this.navigate}
             selectedIndex={selectedIndex}
             containerStyle={{height: hp('8%'), width: this.state.width * .9}}/>

@@ -52,7 +52,7 @@ class Page3 extends Component {
   }
 
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 2', '', 'Page 4','Page 11']
+    const pages = ['Home','Page 2', '', 'Page 4','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -172,9 +172,9 @@ const styles = StyleSheet.create({
   },
   listText: {
     fontSize: hp('2.2%'),
+    fontFamily: 'Avenir',
   },
   sectionContainer: {
-    // marginTop: hp('2%'),
     paddingHorizontal: wp('5%'),
   },
   centerTitle: {

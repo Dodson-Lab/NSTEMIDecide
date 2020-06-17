@@ -33,7 +33,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 let screenheight = Dimensions.get("window").height;
 
-import { HEART_IMAGE, HEART_ATACK_NO_OP_IMAGE, HEART_ATACK_OP_IMAGE } from '../..';
+import { BED_IMAGE, HEART_PROCEDURE_NO_OP_IMAGE, HEART_PROCEDURE_OP_IMAGE } from '../..';
 import { strings } from '../..';
 
 
@@ -50,7 +50,7 @@ class Page9 extends Component {
     this.navigate = this.navigate.bind(this);
   }
   navigate (selectedIndex) {
-    const pages = ['Page 1','Page 8', '', 'Page 10','Page 11']
+    const pages = ['Home','Page 8', '', 'Page 10','Page 12']
     const page = pages[selectedIndex]
     this.props.navigation.navigate(page)
     this.setState({selectedIndex})
@@ -87,7 +87,7 @@ class Page9 extends Component {
                 </View>
 
               <View style={styles.cardContainer}>
-                  <Image style={styles.image} source={ HEART_IMAGE } resizeMode="contain"/>
+                  <Image style={styles.image} source={ BED_IMAGE } resizeMode="contain"/>
                   <Text style={[styles.cardText, styles.highlight, {textAlign: "center", flex: 1, flexWrap: 'wrap'}]}>
                   {strings('page9.subtitle1')}<Text style={styles.orangeText}>{strings('page9.subtitle2')}</Text> {strings('page9.subtitle3')}
                   </Text>
@@ -111,7 +111,7 @@ class Page9 extends Component {
                     onLayout={this.onLayout}
                     style={[styles.dotImage, {
                       width: this.state.width,
-                      height: this.state.width * .37}]} source={ HEART_ATACK_NO_OP_IMAGE } resizeMode="contain"/>
+                      height: this.state.width * .37}]} source={ HEART_PROCEDURE_NO_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
                       <View style={styles.dotItem}>
@@ -147,7 +147,7 @@ class Page9 extends Component {
                     style={[styles.dotImage, {
                       width: this.state.width * .37,
                       height: this.state.width * .37}]}
-                      source={ HEART_ATACK_OP_IMAGE } resizeMode="contain"/>
+                      source={ HEART_PROCEDURE_OP_IMAGE } resizeMode="contain"/>
                     </View>
                     <View style={[styles.container]}>
                       <View style={styles.dotItem}>
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderColor: Colors.black,
     borderWidth: wp('.1%'),
-    paddingTop: wp('4%'),
+    padding: wp('4%'),
     flex: 1,
 },
 whiteRightColumn: {
@@ -255,6 +255,9 @@ whiteLeftColumn: {
   marginRight: hp('.5%'),
   marginLeft: hp('1%')
 },
+legendItem: {
+  marginTop: 5
+},
 imageContainer: {
   margin: wp('2%'),
   alignItems: "center"
@@ -263,20 +266,19 @@ container: {
   flex: 1,
   flexDirection: 'row',
   flexWrap: 'wrap',
-  margin: wp('3%'),
-  
-  // alignItems: '' // if you want to fill rows left to right
+  marginTop: wp('2'),
+  // alignItems: 'flex-start' // if you want to fill rows left to right
 },
 dotItem: {
   width: '10%',
   marginTop: 5,
 },
 item: {
-  width: '90%',
-
+  width: '90%' // is 50% of container width
 },
 legendFont: {
   fontSize: hp('2%'),
+  fontFamily: 'Avenir',
 },
 cardContainer: {
   padding: 5,
@@ -321,7 +323,7 @@ image: {
 
 cardText: {
   fontSize: hp('2.2%'),
-  // fontWeight: "100",
+  // fontWeight: '700',
   fontFamily: 'Avenir'
 },
 space: {
@@ -372,9 +374,9 @@ dotText: {
   alignItems: 'center',
 },
  circle: {
-  width: wp('2.5%'),
-  height: wp('2.5%'),
-  borderRadius: hp('2.5%') / 2,
+  width: wp('3%'),
+  height: wp('3%'),
+  borderRadius: wp('3%') / 2,
 },
 blue: {
   backgroundColor: "#7cb4d4",
