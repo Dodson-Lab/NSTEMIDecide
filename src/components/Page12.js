@@ -97,6 +97,13 @@ class Page12 extends Component {
                 <View style={styles.sectionContainer}>
                 <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle3')}</Text>
                     <Text style={styles.sectionParagraph}>
+                    {strings('page12.paragraph3')}
+                    </Text>
+                </View>
+                <Text></Text>
+                <View style={styles.sectionContainer}>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle4')}</Text>
+                    <Text style={styles.sectionParagraph}>
                     Garg et al. Routine Invasive Versus Selective Invasive Strategy in Elderly Patients Older Than 75 Years With Non-ST-Segment Elevation Acute Coronary Syndrome: A Systematic Review and Meta-Analysis. Mayo Clinical Proceedings. 2018; 436-444.
                     </Text>
                     <Text></Text>
@@ -114,12 +121,12 @@ class Page12 extends Component {
                 </View>
                 <Text></Text>
                 <View style={styles.sectionContainer}>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle4')}</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle5')}</Text>
                 <Text style={styles.sectionParagraph}>John A. Dodson, MD</Text>
                 </View>
                 <Text></Text>
                 <View style={styles.sectionContainer}>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle5')}</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle6')}</Text>
                 <Text style={styles.sectionParagraph}>Mallory Barnett, MD</Text>
                 <Text style={styles.sectionParagraph}>Sarwat I. Chaudhry, MD</Text>
                 <Text style={styles.sectionParagraph}>Victoria V. Dickson, PhD</Text>
@@ -132,7 +139,7 @@ class Page12 extends Component {
                 </View>
                 <View style={styles.sectionContainer}>
                 <Text></Text>
-                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle6')}</Text>
+                <Text style={[styles.sectionParagraph, styles.highlight]}>{strings('page12.subtitle7')}</Text>
                 <Text style={styles.sectionParagraph}>
                 Anna Kiefer
                 </Text>

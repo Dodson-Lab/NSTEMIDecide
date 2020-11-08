@@ -167,11 +167,13 @@
       "title": "ABOUT NSTEMI DECIDE",
       "subtitle1": "Disclaimer",
       "paragraph1": "This application is intended to facilitate discussion between patients and healthcare professionals. It is not intended as a substitute for professional medical judgment, diagnosis, or treatment. It should not be used by patients without direct consultation with, and supervision by, their healthcare provider.",
-      "subtitle2": "Funding",
-      "paragraph2": "NSTEMI DECIDE was supported by a grant from the National Institute on Aging of the National Institutes of Health to NYU Grossman School of Medicine (Award Number K23AG052463). The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.",
-      "subtitle3": "References",
-      "subtitle4": "Principal Investigator",
-      "subtitle5": "Credits (alphabetical)",
-      "subtitle6": "Software Development"
+      "subtitle2": "Licensing",
+      "paragraph2": "No part of this publication may be used in any commercial development or effort without the express prior written permission of the publisher. No part of this publication may be used in any derivative work without the first obtaining permission from the publisher and providing acknowledgement thereof.",
+      "subtitle3": "Funding",
+      "paragraph3": "NSTEMI DECIDE was supported by a grant from the National Institute on Aging of the National Institutes of Health to NYU Grossman School of Medicine (Award Number K23AG052463). The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.",
+      "subtitle4": "References",
+      "subtitle5": "Principal Investigator",
+      "subtitle6": "Credits (alphabetical)",
+      "subtitle7": "Software Development"
     }
   }
